@@ -23,7 +23,7 @@ Target: Bandas, músicos, estudiantes y público en general
 #### Integrantes:
 
 - Mathias Marqués: Licenciado en TI, 31 años.
-- Antonio Santafe:
+- Antonio Santafe: Fanitico del futbol y la tecnologia, de 33 años y nacionalidad Venezolana.
 - Santiago VB:
 - Santiago Vitalli:
 
