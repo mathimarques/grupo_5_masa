@@ -24,6 +24,6 @@ Target: Bandas, músicos, estudiantes y público en general
 
 - Mathias Marqués: Licenciado en TI, 31 años.
 - Antonio Santafe: Fanatico del futbol y la tecnologia, de 33 años y nacionalidad Venezolana.
-- Santiago VB:
+- Santiago VB: 32 años. Productor musical y emprendedor online.
 - Santiago Vitalli:
 
