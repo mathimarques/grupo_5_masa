@@ -1,3 +1,72 @@
+/* Font - No se si es la mejor manera de importar las fonts esta */ 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+/* GLOBAL */
+*{
+    box-sizing: border-box;
+}
+
 body{
     margin: 0;
+    font-family: roboto;
+}
+
+/* Header y Navbar */
+
+header{
+    display: flex;
+    justify-content:space-between;
+    border-bottom: 1px solid black;
+}
+
+header h1{
+    margin-left: 2vw;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    width: 33vw;
+    background-color: #006D77;
+}
+
+.navbar{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    
+}
+
+.navbar a{
+    text-decoration: none;
+    color: aliceblue;
+}
+.navbar a:hover{
+    color: rgb(159, 206, 247);
+}
+
+
+/* BANNER */
+
+.banner{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.left_banner{
+    width: 40%;
+}
+
+.left_banner img{
+    width: 100%;
+    height: auto;
+}
+
+.right_banner{
+    width: 40%;
+    display: flex;
+    align-items: center;
 }
