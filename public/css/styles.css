@@ -3,6 +3,7 @@
 /* GLOBAL */
 *{
     box-sizing: border-box;
+    margin: 0;
 }
 
 body{
@@ -68,4 +69,36 @@ nav{
     width: 40%;
     display: flex;
     align-items: center;
+}
+
+/*   L O G     I N    F O R M  */
+
+.main_container{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.sign_in_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    width: max-content;
+
+    padding: 10px 40px;
+}
+
+.sign_in{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px 0;
+}
+
+.form_element{
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+
 }
