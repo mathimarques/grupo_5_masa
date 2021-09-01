@@ -3,12 +3,13 @@
 /* GLOBAL */
 *{
     box-sizing: border-box;
-    margin: 0;
+    
 }
 
 body{
     margin: 0;
     font-family: roboto;
+    background-color: #7fffd4;
 }
 
 /* Header y Navbar */
@@ -19,15 +20,16 @@ header{
     border-bottom: 1px solid black;
 }
 
-header h1{
-    margin-left: 2vw;
+.logo {
+    margin: auto;
+    display: block;
 }
 
 nav{
     display: flex;
     justify-content: center;
     width: 33vw;
-    background-color: #006D77;
+    /*background-color: #006D77;*/
 }
 
 .navbar{
@@ -37,15 +39,21 @@ nav{
     align-items: center;
     list-style: none;
     padding: 0;
-    
+    display: none;
 }
+
 
 .navbar a{
     text-decoration: none;
     color: aliceblue;
 }
-.navbar a:hover{
+/*.navbar a:hover{
     color: rgb(159, 206, 247);
+}*/
+
+.hamburger-buttom {
+    text-align: center;
+    margin: auto 50%;
 }
 
 
@@ -71,34 +79,52 @@ nav{
     align-items: center;
 }
 
-/*   L O G     I N    F O R M  */
-
-.main_container{
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
+/*MAIN PRODUCT*/
+.section1-main-product {
+    width: 90%;
+    margin: 5%;
+    background-color: white;
+    color: #143018;
 }
 
-.sign_in_form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid black;
-    width: max-content;
-
-    padding: 10px 40px;
+.estilo-imagen-product{
+    width: 100%;
 }
 
-.sign_in{
+.container-flex1 {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 10px 0;
+    justify-content: space-between;
+    height: 55px;
 }
 
-.form_element{
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
+.button-arrows {
+    background-color: #143018;
+    padding: 0 10px;
+    height: 55px;
+    color: white;
+}
 
+.section2-main-product{
+    width: 90%;
+    margin: 5%;
+}
+
+.arrow {
+    padding: 5px 0;
+}
+
+.estilo-precio {
+    color: #143018;
+    display: inline;
+}
+
+.estilo-comprar {
+    color: #143018;
+    font-weight: bold;
+    display: inline;
+    border: 0 solid gray;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 0 30px;
+    background-color: white;
 }
