@@ -64,13 +64,12 @@ nav{
     justify-content: space-evenly;
 }
 
-.left_banner{
+/* .left_banner{
     width: 40%;
-}
+} */
 
 .left_banner img{
-    width: 100%;
-    height: auto;
+    height: 91vh;
 }
 
 .right_banner{
