@@ -3,13 +3,12 @@
 /* GLOBAL */
 *{
     box-sizing: border-box;
-    
+    margin: 0;
 }
 
 body{
-    margin: 0;
     font-family: roboto;
-    background-color: #7fffd4;
+    /* background-color: #7fffd4; /// ATENCION QUE ESTO VA A AFECTAR TODAS LAS VIEWS */
 }
 
 /* Header y Navbar */
@@ -29,7 +28,7 @@ nav{
     display: flex;
     justify-content: center;
     width: 33vw;
-    /*background-color: #006D77;*/
+    background-color: #006D77;
 }
 
 .navbar{
@@ -39,7 +38,7 @@ nav{
     align-items: center;
     list-style: none;
     padding: 0;
-    display: none;
+    /* display: none; */
 }
 
 
@@ -51,7 +50,7 @@ nav{
     color: rgb(159, 206, 247);
 }*/
 
-.hamburger-buttom {
+.hamburger-button {
     text-align: center;
     margin: auto 50%;
 }
@@ -127,3 +126,34 @@ nav{
     margin: 0 30px;
     background-color: white;
 }
+
+
+/* * * * * * * * *    L O G     I N     F O R M    * * * * * * * * */
+
+.sign_in_form{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    border: 1px solid black;
+    width: max-content;
+    padding: 20px;
+    margin:auto;
+    margin-top: 5%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.nombre_usuario_login{
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0 0 0;
+}
+.password_login{
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+}
+
