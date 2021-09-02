@@ -139,7 +139,7 @@ nav{
     display: flex;
     flex-direction: column;
     align-self: center;
-    width: max-content;
+    width: 40vw;
     padding: 40px;
     margin:auto;
     margin-top: 5%;
@@ -177,3 +177,10 @@ form button{
     border: none;
 }
 
+@media (max-width: 680px){
+    .sign_in_form{
+        width: 80%;
+    }
+}
+
+/* * * * * * * *  F I N     D E     L O G I N * * * * * * */
