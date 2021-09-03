@@ -4,7 +4,7 @@
 
 1. Comenzar a hacer:
 
- - Reunirnos dos veces por semana como mínimo.
+   - Reunirnos dos veces por semana como mínimo.
 
 2. Hacer más:
 
