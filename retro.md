@@ -1,6 +1,6 @@
 # Retroespectiva:
 
-####La retrospectiva se centra en mejorar como equipo. Los invitamos a que implementen la dinámica de la estrella de mar que busca resaltar aquello que hay que:
+#### La retrospectiva se centra en mejorar como equipo. Los invitamos a que implementen la dinámica de la estrella de mar que busca resaltar aquello que hay que:
 
 1. Comenzar a hacer:
 
