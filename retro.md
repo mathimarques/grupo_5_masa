@@ -8,18 +8,18 @@
 
 2. Hacer más:
 
- - Pair Programming 
- - Reuniones con presentación de pantalla para ver avances.
+   - Pair Programming 
+   - Reuniones con presentación de pantalla para ver avances.
 
 3. Continuar haciendo:
 
- - Continuar ordenado tareas y responsabilidades
+   - Continuar ordenado tareas y responsabilidades
 
 4. Hacer menos:
 
- - Esperar al final del sprint para reunirnos.
- - No hacer la reunion de planning 
+   - Esperar al final del sprint para reunirnos.
+   - No hacer la reunion de planning 
  
 5. Dejar de hacer:
 
- - No coordinar bien los horarios de reuniones.
+   - No coordinar bien los horarios de reuniones.
