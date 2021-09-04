@@ -16,6 +16,7 @@ app.get('/', (req,res)=>{
     res.sendFile(path.resolve('./views/index.html'));
 });
 
+// Ruta raíz del login
 app.get('/login', (req,res)=>{
     res.sendFile(path.resolve('./views/login.html'));
 });
@@ -23,4 +24,10 @@ app.get('/login', (req,res)=>{
 // Ruta raíz del product
 app.get('/product', (req,res)=>{
     res.sendFile(path.resolve('./views/product.html'));
+});
+
+// Ruta raíz del carrito
+
+app.get('/productCart', (req, res) => {
+    res.sendFile(path.resolve('./views/productCart.html'));
 });
