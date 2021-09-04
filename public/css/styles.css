@@ -119,6 +119,7 @@ nav{
     margin: 5%;
 }
 
+
 .arrow {
     padding: 5px 0;
 }
@@ -227,3 +228,16 @@ form button{
         margin-top: 50px;
     }
 }
+
+/* CARRITO STYLES */
+
+section article p {
+    padding-right: 5px;
+
+}
+
+.mapa-carrito {
+  display: flex;
+  width: 350px;
+}
+
