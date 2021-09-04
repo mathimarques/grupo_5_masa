@@ -40,13 +40,20 @@ nav{
     padding: 0;
     /* display: none; */
 }
-
+.navbar a{
+    text-decoration: none;
+    color: aliceblue;
+}
+/* NAV BAR EN PRODUCT*/
 .navbar-product {
     display: none;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    padding: 0
 }
-
-
-.navbar a{
+.navbar-product a{
     text-decoration: none;
     color: aliceblue;
 }
@@ -101,7 +108,7 @@ nav{
 }
 
 .button-arrows {
-    background-color: #143018;
+    background-color: #006D77;
     padding: 0 10px;
     height: 55px;
     color: white;
@@ -128,8 +135,11 @@ nav{
     border: 0 solid gray;
     border-radius: 15px;
     padding: 5px;
-    margin: 0 30px;
+    margin: 0 20px;
     background-color: white;
+}
+.margen-superior {
+    margin-top: 30px;
 }
 
 
@@ -193,8 +203,27 @@ form button{
 /*BREAKPOINTS*/
 @media (min-width: 460px){
     /* Tablets */
-
+    .hamburger-button {
+        display: none;
     }
+    .navbar-product {
+        display: flex;
+    }
+    nav {
+        width: 70vw;
+    }
+    main {
+        display: flex;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .magen-precio-comprar {
+        margin-top: 40px;
+    }
+}
     @media (min-width: 768px){
     /* Laptop */
+    .magen-precio-comprar {
+        margin-top: 50px;
     }
+}
