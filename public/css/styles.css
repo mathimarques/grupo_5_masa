@@ -41,6 +41,10 @@ nav{
     /* display: none; */
 }
 
+.navbar-product {
+    display: none;
+}
+
 
 .navbar a{
     text-decoration: none;
@@ -53,6 +57,7 @@ nav{
 .hamburger-button {
     text-align: center;
     margin: auto 50%;
+    color: white;
 }
 
 
@@ -184,3 +189,12 @@ form button{
 }
 
 /* * * * * * * *  F I N     D E     L O G I N * * * * * * */
+
+/*BREAKPOINTS*/
+@media (min-width: 460px){
+    /* Tablets */
+
+    }
+    @media (min-width: 768px){
+    /* Laptop */
+    }
