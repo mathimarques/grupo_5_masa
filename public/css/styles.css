@@ -207,6 +207,24 @@ nav {
 }
 
 /* * * * * * * * *    L O G     I N     F O R M    * * * * * * * * */
+.main_login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login_container{
+    border: 1px solid #caccd2;
+    border-radius: 20px;
+    width: 40vw;
+    margin-top: 10vh;
+    width: auto;
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #d3dadf, #e8ebed); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
 
 .intro_login {
   text-align: center;
@@ -217,7 +235,7 @@ nav {
   display: flex;
   flex-direction: column;
   align-self: center;
-  width: 40vw;
+  width: 30vw;
   padding: 40px;
   margin: auto;
   margin-top: 5%;
@@ -242,18 +260,49 @@ form {
 
 .login_input {
   border: 0.0625rem solid #caccd2;
-  height: 2rem;
+  border-radius: 6px;
+  height: 2.5rem;
 }
 
 form button {
-  background-color: #175fff;
+  background-color: #f49f46;
   color: white;
   border-radius: 5px;
   appearance: none;
   font-family: roboto;
-  height: 30px;
+  height: 2.5rem;
   border: none;
 }
+
+/* LOGIN FOOTER */
+.login_footer{
+    display: flex;
+    margin-left: 8vw;
+    margin-right: 5vw;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.login_bar{
+    margin-top: 4vh;
+    height: 1px;
+    width: 70vw;
+    border: 1px solid black;
+}
+
+.login_social_media{
+    display: flex;
+    width: 14vw;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.login_social_media i{
+    color: black;
+    font-size: 1.4em;
+}
+
 
 @media (max-width: 680px) {
   .sign_in_form {
