@@ -24,7 +24,7 @@ app.get('/login', (req,res)=>{
 // Ruta raíz del register
 
 app.get('/register', (req, res) => {
-    res.sendFile(path.resolve('./views/registro.html'));
+    res.sendFile(path.resolve('./views/register.html'));
 });
 
 // Ruta raíz del product

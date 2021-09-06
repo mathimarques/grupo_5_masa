@@ -30,10 +30,20 @@
         </ul>
       </nav>
     </header>
-    <main>
-        <form class="form-reg" action="" method="GET">
-          <section>
-            <h4>Datos de usuario</h4>
+    <div class="cursor"></div>
+    <main class="main_login">
+      <div class="login_container"> 
+        <section class="intro_login">
+          <h2>Crea tu cuenta de Usuario</h2>
+          <br />
+          <p>Completa el formulario de admisión.</p>
+          <p>Si ya tienes una cuenta, <a href="/login">Ingresa aquí</a>.</p>
+        </section>
+        <section class="sign_in_form">
+        <form action="/" method="GET">
+          <div class="nombre_usuario_login">
+            <h3><strong>Datos de Usuario</strong></h3>
+            <br>
             <label for="name">Nombre y apellido</label>
             <input type="text" minlength="4" name="name" id="name" required=true/>
             <!-- Usuario -->
@@ -45,23 +55,54 @@
             <!-- Domicilio -->
             <label for="addres">Domicilio</label>
             <input type="text" name="addres" id="address" required=true/>
-          </section>
+          </div>
           <br>
-          <section>
-            <h4>Contraseña</h4>
+          <div class="password_login">
+            <h3><strong>Contraseña</strong></h3>
+            <br>
             <!-- Contraseña -->
             <label for="password">Password</label>
             <input type="password" name="password" id="password" required=true/>
             <!-- Confirmar contraseña -->
             <label for="confirm-pass">Confirmar Password</label>
             <input type="password" name="confirm-pass" id="confirm-pass" required=true/>
-          </section>
-          <br>
-          <!-- boton Enviar -->
+          </div>
+          <div class="btn_login">
+            <!-- boton Enviar -->
           <button type="submit">Enviar</button>
           <!-- boton borrar -->
-          <button type="reset">Borrar</button>
+          <button class="borrar" type="reset">Borrar</button>
+          </div>
+          
         </form>
+        </section>
+      </div>
+        
       </main>
+      <footer>
+        <div class="login_footer">
+          <div class="login_bar"></div>
+          <ul class="login_social_media">
+            <li> <a href="#"><i class="fab fa-facebook"></i></a> </li>
+            <li> <a href="#"><i class="fab fa-twitter-square"></i></a> </li>
+            <li> <a href="#"><i class="fab fa-instagram"></i></a> </li>
+          </ul>
+        </div>
+      </footer>
+      <script>
+        const cursor = document.querySelector('.cursor');
+
+        document.addEventListener('mousemove', e => {
+        cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+        })
+
+        document.addEventListener('click', () => {
+        cursor.classList.add("expand");
+
+        setTimeout(() => {
+        cursor.classList.remove("expand");
+        }, 500)
+        })
+   </script>
   </body>
 </html>

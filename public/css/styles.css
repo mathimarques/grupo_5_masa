@@ -9,6 +9,10 @@
 body {
   font-family: roboto;
   cursor: none;
+  background-image: url(/img/bck_page.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   /* background-color: #7fffd4; /// ATENCION QUE ESTO VA A AFECTAR TODAS LAS VIEWS */
 }
 
@@ -219,9 +223,10 @@ nav {
     width: 40vw;
     margin-top: 10vh;
     width: auto;
+    backdrop-filter: blur(4px);
     background: #bdc3c7;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #d3dadf, #e8ebed); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #d3dadf9c, #e8ebed71); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 
@@ -269,10 +274,30 @@ form button {
   color: white;
   border-radius: 5px;
   appearance: none;
-  font-family: roboto;
+  font-family: 'roboto';
+  font-weight: 900;
   height: 2.5rem;
   border: none;
 }
+.btn_login {
+  display: flex;
+}
+.btn_login button {
+  width: 48%;
+  margin: 1%;
+}
+.borrar{
+  border: 1px solid #a34e1d;
+  background-color: #f4a04600;
+  color: #a34e1d;
+  transition: ease-in-out 1s;
+}
+.borrar:hover{
+  background-color: #f49f46;
+  color: white;
+  border: 0px;
+}
+
 
 /* LOGIN FOOTER */
 .login_footer{
