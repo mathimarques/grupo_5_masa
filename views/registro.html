@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="/">
+          <img src="/img/logo_masa_black.svg" alt="" />
+        </a>
+      </div>
+      <nav>
+        <ul class="navbar">
+          <li><a href="/product">Productos</a></li>
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="/login">Sign in</a></li>
+          <li>
+            <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+        <form class="form-reg" action="" method="GET">
+          <section>
+            <h4>Datos de usuario</h4>
+            <label for="name">Nombre y apellido</label>
+            <input type="text" minlength="4" name="name" id="name" required=true/>
+            <!-- Usuario -->
+            <label for="username">Usuario</label>
+            <input type="text" name="username" id="username" required=true/>
+            <!-- Fecha de nacimiento -->
+            <label for="date">Fecha de nacimiento</label>
+            <input type="date" name="date" id="date" required=true/>
+            <!-- Domicilio -->
+            <label for="addres">Domicilio</label>
+            <input type="text" name="addres" id="address" required=true/>
+          </section>
+          <br>
+          <section>
+            <h4>Contraseña</h4>
+            <!-- Contraseña -->
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required=true/>
+            <!-- Confirmar contraseña -->
+            <label for="confirm-pass">Confirmar Password</label>
+            <input type="password" name="confirm-pass" id="confirm-pass" required=true/>
+          </section>
+          <br>
+          <!-- boton Enviar -->
+          <button type="submit">Enviar</button>
+          <!-- boton borrar -->
+          <button type="reset">Borrar</button>
+        </form>
+      </main>
+  </body>
+</html>
