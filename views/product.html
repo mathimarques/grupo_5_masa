@@ -63,5 +63,30 @@
             </div>
         </section>
     </main>
+    <footer>
+        <div class="login_footer">
+          <div class="login_bar"></div>
+          <ul class="login_social_media">
+            <li> <a href="#"><i class="fab fa-facebook"></i></a> </li>
+            <li> <a href="#"><i class="fab fa-twitter-square"></i></a> </li>
+            <li> <a href="#"><i class="fab fa-instagram"></i></a> </li>
+          </ul>
+        </div>
+      </footer>
+      <script>
+        const cursor = document.querySelector('.cursor');
+
+        document.addEventListener('mousemove', e => {
+        cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+        })
+
+        document.addEventListener('click', () => {
+        cursor.classList.add("expand");
+
+        setTimeout(() => {
+        cursor.classList.remove("expand");
+        }, 500)
+        })
+   </script>
 </body>
 </html>
