@@ -17,7 +17,7 @@ body {
 }
 
 main {
-  justify-content: center;
+  /*justify-content: center;*/
 }
 
 /* * * * * *  Header y Navbar * * * * * */
@@ -25,25 +25,27 @@ main {
 header {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid black;
+  margin-bottom: -150px;
+  z-index: 99999;
 }
 
 .logo {
-  margin: auto;
+  margin: 2% 5%;
   display: block;
+  width: 42vw;
 }
 
 nav {
   display: flex;
   justify-content: center;
   width: 33vw;
-  background-color: #006d77;
+  background-color: #12261C;
 }
 
 .navbar {
   display: flex;
   width: 100%;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
   list-style: none;
   padding: 0;
@@ -52,6 +54,9 @@ nav {
 .navbar a {
   text-decoration: none;
   color: aliceblue;
+}
+.navbar li{
+  padding: 0 20px;
 }
 /* NAV BAR EN PRODUCT*/
 .navbar-product {
@@ -62,6 +67,7 @@ nav {
   list-style: none;
   padding: 0;
 }
+
 .navbar-product a {
   text-decoration: none;
   color: aliceblue;
@@ -136,26 +142,7 @@ nav {
   animation: cursorAnim3 .5s forwards;
   border: 1px solid red;
 }
-/* BANNER */
 
-.banner {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-/* .left_banner{
-    width: 40%;
-} */
-
-.left_banner img {
-  height: 91vh;
-}
-
-.right_banner {
-  width: 40%;
-  display: flex;
-  align-items: center;
-}
 
 /*MAIN PRODUCT*/
 .estilo-imagen-product {
@@ -347,12 +334,13 @@ form button {
     display: flex;
   }
   nav {
-    width: 70vw;
+    width: 35vw;
   }
   main {
     display: flex;
     padding-top: 5px;
     padding-bottom: 5px;
+    z-index: 1;
   }
   .magen-precio-comprar {
     margin-top: 40px;
