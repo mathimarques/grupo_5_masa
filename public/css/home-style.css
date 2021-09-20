@@ -24,8 +24,25 @@ body {
     background-image: url(../img/guitarra-home.png);
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
 
   }
+  #circular-text {
+    position: absolute;
+    right: 10%;
+    top: 44%;
+    background: #ff782ad4;
+    color: #272727;
+    border-radius: 100%;
+    box-shadow: 0 0 30px rgb(0 0 0 / 15%);
+    padding: 20px;
+}
+  
+  #circular-text span {
+    position: absolute;
+    transform-origin: top left;
+  }
+  
   
   .right_banner {
     width: 35%;
