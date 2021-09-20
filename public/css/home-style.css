@@ -18,11 +18,13 @@ body {
       width: 40%;
   } */
   
-  .left_banner img {
-    height: 91vh;
-  }
   .left_banner {
-    width: 45%;
+    width: 55%;
+    height: 105vh;
+    background-image: url(../img/guitarra-home.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
   }
   
   .right_banner {
@@ -34,10 +36,13 @@ body {
   .right_banner h2 {
     font-family: 'Oswald', sans-serif;
     font-weight: 700;
-    font-size: 5em;
+    font-size: 3em;
     text-transform: uppercase;
     letter-spacing: -2px;
 }
 .right_banner h2 span {
     color: #95deb6;
+}
+footer {
+  margin-top: -5%;
 }
