@@ -4,16 +4,16 @@ const mainController = {
     res.render("index");
   },
   login: (req, res) => {
-    res.render("login");
+    res.render("./users/login");
   },
   product: (req, res) => {
-    res.render("product");
+    res.render("./products/product");
   },
   productCart: (req, res) => {
     res.render("productCart");
   },
   register: (req, res) => {
-    res.render("register");
+    res.render("./users/register");
   },
 };
 module.exports = mainController;
