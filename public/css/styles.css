@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
+/* Variables */
+:root {
+  --input_box_height: 2.5rem;
+}
+
 /* GLOBAL */
 * {
   box-sizing: border-box;
@@ -304,6 +309,12 @@ form {
   flex-direction: column;
 }
 
+.input_containers{
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0 0 0;
+}
+
 .nombre_usuario_login {
   display: flex;
   flex-direction: column;
@@ -387,6 +398,32 @@ form button {
 }
 
 /* * * * * * * *  F I N     D E     L O G I N * * * * * * */
+
+/* * * * * * * * * C R E A T E    P R O D U C T * * * * * */
+
+.product_radio{
+  display: flex;
+  align-items: center;
+}
+
+.product_radio label{
+  margin-left: 15px;
+}
+
+.new_product_price{
+  display: flex;
+  flex-direction: column;
+}
+
+.create_button{
+  margin-top: 30px;
+}
+
+.price_input{
+  height: var(--input_box_height);
+  border-radius: 6px;
+  width: 60px;
+}
 
 /*BREAKPOINTS*/
 @media (min-width: 460px) {

@@ -14,5 +14,7 @@ router.get("/product", mainController.product);
 router.get("/productCart", mainController.productCart);
 // Metodo get de la ruta register
 router.get("/register", mainController.register);
+// Metodo get de la ruta create product
+router.get("/createProduct", mainController.createProduct);
 
 module.exports = router;
