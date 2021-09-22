@@ -425,6 +425,12 @@ form button {
   width: 60px;
 }
 
+.upload_file{
+  border: 1px solid rgb(197, 196, 196);
+  height: 260px;
+  background-color: rgb(230, 224, 224);
+}
+
 /*BREAKPOINTS*/
 @media (min-width: 460px) {
   /* Tablets */
