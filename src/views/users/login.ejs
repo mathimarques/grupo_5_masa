@@ -14,25 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header>
-      <div class="logo">
-        <a href="/">
-          <img src="/img/logo_masa_black.svg" alt="" />
-        </a>
-      </div>
-      <nav>
-        <ul class="navbar">
-          <li><a href="/product">Productos</a></li>
-          <li><a href="#">Nosotros</a></li>
-          <li><a href="#">Contacto</a></li>
-          <li><a href="/login">Sign in</a></li>
-          <li>
-            <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <div class="cursor"></div>
+    <%- include ('../partials/header') %> 
     <main class="main_login">
 
       <div class="login_container">
@@ -60,30 +42,7 @@
       </div>
     </main>
 
-    <footer>
-      <div class="login_footer">
-        <div class="login_bar"></div>
-        <ul class="login_social_media">
-          <li> <a href="#"><i class="fab fa-facebook"></i></a> </li>
-          <li> <a href="#"><i class="fab fa-twitter-square"></i></a> </li>
-          <li> <a href="#"><i class="fab fa-instagram"></i></a> </li>
-        </ul>
-      </div>
-    </footer>
-    <script>
-      const cursor = document.querySelector('.cursor');
-
-      document.addEventListener('mousemove', e => {
-      cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
-      })
-
-      document.addEventListener('click', () => {
-      cursor.classList.add("expand");
-
-      setTimeout(() => {
-      cursor.classList.remove("expand");
-      }, 500)
-      })
- </script>
+    <%- include ('../partials/footer') %>
+    <%- include ('../partials/cursor') %>  
   </body>
 </html>

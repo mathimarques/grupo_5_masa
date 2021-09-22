@@ -15,21 +15,9 @@
         rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <div class="logo"><a href="/">
-            <img src="/img/logo_masa_black.svg" alt="">
-        </a></div>
-        <nav>
-            <ul class="navbar">
-                <li><a href="/product">Productos</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Contacto</a></li>
-                <li><a href="/login">Sign in</a></li>
-                <li><a href="/productCart"><i class="fas fa-shopping-cart"></i></a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="cursor"></div>
+    
+    <%- include ("partials/header") %> <!--HEADER-->
+    
     <main>
         <div class="banner">
             <div class="left_banner">
@@ -42,32 +30,9 @@
 
         </div>
     </main>
-
-    <footer>
-        <div class="login_footer">
-          <div class="login_bar"></div>
-          <ul class="login_social_media">
-            <li> <a href="#"><i class="fab fa-facebook"></i></a> </li>
-            <li> <a href="#"><i class="fab fa-twitter-square"></i></a> </li>
-            <li> <a href="#"><i class="fab fa-instagram"></i></a> </li>
-          </ul>
-        </div>
-      </footer>
-    <script>
-         const cursor = document.querySelector('.cursor');
-
-         document.addEventListener('mousemove', e => {
-         cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
-         })
-
-         document.addEventListener('click', () => {
-         cursor.classList.add("expand");
-
-         setTimeout(() => {
-         cursor.classList.remove("expand");
-         }, 500)
-         })
-    </script>
+    <%- include ("partials/footer") %> <!--FOOTER-->
+    <%- include ('partials/cursor') %> 
+    
     <script>
         const degreeToRadian = (angle) => {
   return angle * (Math.PI / 180);
