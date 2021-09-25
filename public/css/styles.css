@@ -156,7 +156,6 @@ nav {
   border: 1px solid red;
 }
 
-
 /*MAIN PRODUCT*/
 .mainProduct {
   padding-top: 10%;
@@ -266,6 +265,25 @@ nav {
 .list-descrip {
   margin-top: 30px;
 }
+
+.image-listProducts {
+  width: 100px;
+  height: 100px;
+}
+
+.section-listProducts {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 90%;
+  margin: 5%;
+}
+
+.mainlistProduct{
+padding-top: 10% !important;
+display: flex;
+flex-wrap: wrap;
+}
+
 /* * * * * * * * *    L O G     I N     F O R M    * * * * * * * * */
 .main_login{
     display: flex;
@@ -459,6 +477,7 @@ form button {
   .magen-precio-comprar {
     margin-top: 50px;
   }
+
 }
 /* INPUT */
 input {

@@ -1,55 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MASA I.M./ Productos</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-</head>
-<body>
-    <%- include ('../partials/header') %> 
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <%- include ('../partials/header') %>
     <main class="mainProduct">
-        <section class="section1-main-product">
-            <div class="button-arrows">
-                <i class="fas fa-angle-left arrow"></i><br>
-                <i class="fas fa-angle-right arrow"></i>
-            </div>
-            <div class="container-flex1">
-                <h1>Fender</h1>
-                <h3>Player Stratocaster Floyd Rose MN TPL</h3>
-                <h5>Guitarra eléctrica Strat</h5>
-                <span>01/12</span>
-            </div>
-            
-            <img class="estilo-imagen-product" src="./img/guitarra-product.png">
-        </section>
         <section class="section2-main-product">
-                <h3><strong>Descripción /</strong> Opciones / videos</h3>
-                <p class="margen-superior"> Guitarra eléctrica Fender Player Stratocaster Floyd Rose MN TPL. El inspirador sonido de una Stratocaster es uno de los fundamentos de Fender. Con este clásico sonido "acampanado", medios fuertes y graves robustos, combinado con una articulación cristalina, la Player Stratocaster HSS Floyd Rose está repleta de la auténtica sensación y estilo Fender. Está lista para servir a tu visión musical, es lo suficientemente versátil como para manejar cualquier estilo de música y es la plataforma perfecta para crear tu propio sonido.</p>
-                <ul class="list-descrip">
-                    <li>Cuerpo de aliso con acabado "gloss"</li>
-                    <li>1x Pastilla Humbucker Player Series, 2x Pastillas Player Series single-coil Stratocaster</li>
-                    <li>Perfil de mástil en "Modern C"</li>
-                    <li>Diapasón con radio 12"</li>
-                    <li>Trastes Medium Jumbo</li>
-                    <li>Puente Floyd Rose Double-Locking Tremolo System</li>
-                    <li>Diapasón de arce</li>
-                    <li>Acabado: Tidepool</li>
-                </ul>
-            <div class="sale-prod">
-                <h4 class="estilo-precio">$191.85</h4>
-                <p class="estilo-comprar">COMPRAR</p>
-            </div>
-        </section>
+      <% for( let i = 0; i < products.length; i++ ) { %>
+
+        <h3><strong><%= products[i].type %> </strong></h3>
+        <ul class="list-descrip">
+          <li><strong>ID: </strong><%= products[i].id %></li>
+          <li><strong>MARCA: </strong> <%= products[i].brand %></li>
+          <li><strong>MODELO: </strong> <%= products[i].model %></li>
+          <li><strong>COLOR: </strong><%= products[i].color %></li>
+          <li><strong>DESCRIPCION: </strong><%= products[i].description %></li>
+          <li><strong>PRECIO: </strong><%= products[i].price %></li>
+        </ul>
+        <div class="sale-prod">
+          <p class="estilo-comprar">VER</p>
+        </div>
+
+      <!-- <section class="section-listProducts">
+          <img class="image-listProducts" src="../img/<%= products[i].image %> " alt="<%= products[i].image %>">
+      </section> -->
+      <% } %>
+    </section>
     </main>
-    <%- include('../partials/footer') %>
-    <%- include('../partials/cursor') %> 
-      
-</body>
+    <%- include('../partials/footer') %> <%- include('../partials/cursor') %>
+  </body>
 </html>
