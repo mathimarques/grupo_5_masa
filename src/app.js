@@ -5,6 +5,7 @@ const path = require("path");
 
 // Requerimos rutas
 const mainRoutes = require("./routes/mainRoutes");
+const productsRoutes = require("./routes/productsRoutes");
 
 // Definimos el path public como recurso de archivo estatico
 const public = path.resolve(__dirname, "../public");
@@ -21,3 +22,5 @@ app.listen("3000", () => {
 
 // Ruta raíz del proyecto
 app.use("/", mainRoutes);
+// Ruta de productos del proyecto
+app.use("/products", productsRoutes);

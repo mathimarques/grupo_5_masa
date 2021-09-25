@@ -6,17 +6,11 @@ const mainController = {
   login: (req, res) => {
     res.render("./users/login");
   },
-  product: (req, res) => {
-    res.render("./products/product");
+  register: (req, res) => {
+    res.render("./users/register");
   },
   productCart: (req, res) => {
     res.render("productCart");
   },
-  register: (req, res) => {
-    res.render("./users/register");
-  },
-  createProduct: (req, res) => {
-    res.render("./products/createProduct");
-  }
 };
 module.exports = mainController;
