@@ -20,10 +20,10 @@ const productsController = {
   },
   // Devolver un producto
   detail: (req, res) => {
-    res.send("Este es el producto a editar nro: " + req.params.id);
+    res.send("./products/editProduct");
   },
-   // Eliminar un producto
-   detail: (req, res) => {
+  // Eliminar un producto
+  destroy: (req, res) => {
     res.send("Se va a eliminar el producto: " + req.params.id);
   },
 };
