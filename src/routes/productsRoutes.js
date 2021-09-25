@@ -5,7 +5,7 @@ const productsController = require('../controllers/productsController');
 const router = express.Router();
 
 // Devolver todos los productos
-router.get("/", productsController.product);
+router.get("/", productsController.listProducts);
 
 // Crear un producto
 router.get("/createProduct", productsController.createProduct);
@@ -16,9 +16,9 @@ router.get("/editProduct/:id", productsController.editProduct);
 // router.put("/:id", productsController.updateProduct);
 
 // Devolver un producto 
-router.get('/:id/', productsController.detail); 
+router.get('/:id/', productsController.detailProduct); 
 
 // Eliminar un producto 
-// router.delete('/:id', productsController.destroy);
+// router.delete('/:id', productsController.destroyProduct);
 
 module.exports = router;

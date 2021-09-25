@@ -1,7 +1,7 @@
 // Generamos el controlador con sus métodos
 const productsController = {
   // Listar todos productos
-  product: (req, res) => {
+  listProducts: (req, res) => {
     res.render("./products/product");
   },
   // Crear Producto
@@ -19,11 +19,11 @@ const productsController = {
     res.send("Actualizo el producto");
   },
   // Devolver un producto
-  detail: (req, res) => {
+  detailProduct: (req, res) => {
     res.render("./products/detailProduct");
   },
   // Eliminar un producto
-  destroy: (req, res) => {
+  destroyProduct: (req, res) => {
     res.send("Se va a eliminar el producto: " + req.params.id);
   },
 };
