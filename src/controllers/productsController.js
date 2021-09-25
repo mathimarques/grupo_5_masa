@@ -20,7 +20,7 @@ const productsController = {
   },
   // Devolver un producto
   detail: (req, res) => {
-    res.send("./products/editProduct");
+    res.render("./products/detailProduct");
   },
   // Eliminar un producto
   destroy: (req, res) => {
