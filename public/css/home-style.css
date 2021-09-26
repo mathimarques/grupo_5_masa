@@ -1,65 +1,9 @@
-body {
-    font-family: roboto;
-    cursor: none;
-    width: 100%;
-    height: 100vh;
-    background-color: #ffffff!important;
-    background-image: none;
-    overflow-x: inherit;
-  }
-/* BANNER */
-
-.banner {
-    display: flex;
-    /*justify-content: space-evenly;*/
-  }
+body 
   
   /* .left_banner{
       width: 40%;
   } */
   
-  .left_banner {
-    width: 55%;
-    height: 105vh;
-    background-image: url(../img/guitarra-home.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-
-  }
-  #circular-text {
-    position: absolute;
-    right: 10%;
-    top: 44%;
-    background: #ff782ad4;
-    color: #272727;
-    border-radius: 100%;
-    box-shadow: 0 0 30px rgb(0 0 0 / 15%);
-    padding: 20px;
-}
-  
-  #circular-text span {
-    position: absolute;
-    transform-origin: top left;
-  }
+ 
   
   
-  .right_banner {
-    width: 35%;
-    display: flex;
-    align-items: center;
-  }
-
-  .right_banner h2 {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 700;
-    font-size: 3em;
-    text-transform: uppercase;
-    letter-spacing: -2px;
-}
-.right_banner h2 span {
-    color: #95deb6;
-}
-footer {
-  margin-top: -5%;
-}

@@ -21,10 +21,20 @@ body {
   min-height: 100vh;
   /* background-color: #7fffd4; /// ATENCION QUE ESTO VA A AFECTAR TODAS LAS VIEWS */
 }
+.home-body{
+  font-family: roboto;
+  cursor: none;
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff!important;
+  background-image: none;
+  overflow-x: inherit;
+}
+/* BANNER */
 
-main {
-  /*justify-content: center;*/
-  
+.banner {
+  display: flex;
+  /*justify-content: space-evenly;*/
 }
 
 /* * * * * *  Header y Navbar * * * * * */
@@ -42,57 +52,70 @@ header {
   display: block;
   width: 42vw;
 }
-
+/* nav */
 nav {
-  display: flex;
-  justify-content: center;
-  width: 30vw;
-  background-color: #12261C;
-}
-
-.navbar {
-  display: flex;
-  width: 100%;
-  justify-content: flex-end;
-  align-items: center;
-  list-style: none;
-  padding: 0;
-  /* display: none; */
-}
-.navbar a {
-  text-decoration: none;
-  color: aliceblue;
-}
-.navbar a:hover , .navbar a:focus, .navbar a:active {
-  text-decoration: none;
-  color: #95deb6;
-}
-.navbar li{
-  padding: 0 20px;
-}
-/* NAV BAR EN PRODUCT*/
-.navbar-product {
   display: none;
-  width: 100%;
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
-  padding: 0;
+}
+header .header-bottom-burger-menu {
+  background-color: #12261c;
+  width: 30%;
+  display: flex;
 }
 
-.navbar-product a {
-  text-decoration: none;
-  color: aliceblue;
-}
-/*.navbar a:hover{
-    color: rgb(159, 206, 247);
-}*/
-
-.hamburger-button {
+.burger {
   text-align: center;
   margin: auto 50%;
   color: white;
 }
+main {
+  /*justify-content: center;*/
+}
+main .banner .left_banner {
+  width: 100%;
+  height: 105vh;
+  background-image: url(../img/guitarra-home.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+}
+#circular-text {
+  position: absolute;
+  right: 10%;
+  top: 44%;
+  background: #ff782ad4;
+  color: #272727;
+  border-radius: 100%;
+  box-shadow: 0 0 30px rgb(0 0 0 / 15%);
+  padding: 20px;
+}
+
+#circular-text span {
+  position: absolute;
+  transform-origin: top left;
+}
+
+main .banner .left_banner h2 {
+  position: absolute;
+  top: 25%;
+  width: 50%;
+  left: 20%;
+  font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 2em;
+    text-transform: uppercase;
+}
+main .banner .left_banner h2 span {
+  color: #fff;
+}
+main .banner .left_banner #circular-text {
+  right: 10%;
+  top: 62%;
+}
+main .banner .right_banner {
+  display: none;
+}
+
 /* CURSOR */
 .cursor {
   width: 20px;
@@ -158,7 +181,7 @@ nav {
 
 /*MAIN PRODUCT*/
 .mainProduct {
-  padding-top: 10%;
+  padding-top: 20vh;
 }
 .estilo-imagen-product {
   width: 80%;
@@ -290,13 +313,13 @@ flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     padding-top: 10%;
+    min-height: 100vh;
 }
 
 .login_container{
     border: 1px solid #caccd2;
     border-radius: 20px;
-    width: 40vw;
-    margin-top: 10vh;
+    margin-top: 20vh;
     width: auto;
     backdrop-filter: blur(4px);
     background: #bdc3c7;  /* fallback for old browsers */
@@ -308,7 +331,8 @@ flex-wrap: wrap;
 
 .intro_login {
   text-align: center;
-  margin-top: 10vh;
+  margin-top: 6vh;
+  padding: 0 8%
 }
 
 .sign_in_form {
@@ -316,7 +340,7 @@ flex-wrap: wrap;
   flex-direction: column;
   align-self: center;
   width: 30vw;
-  padding: 40px;
+  padding: 14% 2%;
   margin: auto;
   margin-top: 5%;
   /* background-image: url('/img/login-bck.jpg'); */
@@ -379,6 +403,7 @@ form button {
   border: 0px;
 }
 
+/* FOOTER */
 
 /* LOGIN FOOTER */
 .login_footer{
@@ -390,18 +415,18 @@ form button {
     padding-bottom: 20px;
 }
 
-.login_bar{
-    height: 1px;
-    width: 70vw;
-    border: 1px solid black;
+.login_bar {
+  height: 1px;
+  width: 41vw;
+  border: 1px solid black;
+}
+.login_social_media {
+  display: flex;
+  width: 41vw;
+  justify-content: space-around;
+  list-style: none;
 }
 
-.login_social_media{
-    display: flex;
-    width: 14vw;
-    justify-content: space-around;
-    list-style: none;
-}
 
 .login_social_media i{
     color: black;
@@ -409,11 +434,7 @@ form button {
 }
 
 
-@media (max-width: 680px) {
-  .sign_in_form {
-    width: 80%;
-  }
-}
+
 
 /* * * * * * * *  F I N     D E     L O G I N * * * * * * */
 
@@ -452,31 +473,104 @@ form button {
 /*BREAKPOINTS*/
 @media (min-width: 460px) {
   /* Tablets */
-  .hamburger-button {
-    display: none;
-  }
   .navbar-product {
     display: flex;
   }
-  nav {
-    width: 45vw;
-    z-index: 999999999999999;
-  }
-  main {
-    display: flex;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    z-index: 1;
-  }
+  
   .magen-precio-comprar {
     margin-top: 40px;
   }
+ 
+
+}
+@media (max-width: 680px) {
+  .sign_in_form {
+    width: 80%;
+  }
 }
 @media (min-width: 768px) {
+  header .header-bottom-burger-menu {
+    display: none;
+  }
   /* Laptop */
   .magen-precio-comprar {
     margin-top: 50px;
   }
+/* nav bar*/
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #12261C;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+.navbar a {
+  text-decoration: none;
+  color: aliceblue;
+}
+.navbar a:hover , .navbar a:focus, .navbar a:active {
+  text-decoration: none;
+  color: #95deb6;
+}
+.navbar li{
+  padding: 0 20px;
+}
+/* NAV BAR EN PRODUCT*/
+.navbar-product {
+  display: none;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.navbar-product a {
+  text-decoration: none;
+  color: aliceblue;
+}
+/*.navbar a:hover{
+    color: rgb(159, 206, 247);
+}*/
+/* main */
+main .banner .left_banner h2 {
+  position: absolute;
+  top: 25%;
+  width: 25%;
+  left: 55%;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 3em;
+  text-transform: uppercase;
+}
+main .banner .left_banner h2 span {
+  color: #95deb6;
+}
+main .banner .left_banner #circular-text {
+  right: 50%;
+  top: 46%;
+}
+/* FOOTER */
+
+.login_social_media{
+  width: 14vw;
+}
+.login_container {
+  margin-top: 10vh;
+}
+.sign_in_form {
+  padding: 14% 10%;
+}
+.login_bar {
+  width: 70vw;
+}
 
 }
 /* INPUT */
