@@ -42,7 +42,7 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: -150px;
+  /* margin-bottom: -150px; */
   z-index: 999;
   position: relative;
 }
@@ -67,9 +67,7 @@ header .header-bottom-burger-menu {
   margin: auto 50%;
   color: white;
 }
-main {
-  /*justify-content: center;*/
-}
+
 main .banner .left_banner {
   width: 100%;
   height: 105vh;
@@ -334,7 +332,7 @@ main .banner .right_banner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 10%;
+  padding-top: 30px;
   min-height: 100vh;
 }
 
@@ -367,10 +365,9 @@ main .banner .right_banner {
   display: flex;
   flex-direction: column;
   align-self: center;
-  width: 30vw;
-  padding: 14% 2%;
+  width: 450px;
+  padding: 30px 30px;
   margin: auto;
-  margin-top: 5%;
   /* background-image: url('/img/login-bck.jpg'); */
 }
 
@@ -507,7 +504,8 @@ form button {
 }
 @media (max-width: 680px) {
   .sign_in_form {
-    width: 80%;
+    transform: scale(0.9);
+    width: 350px;
   }
 }
 @media (min-width: 768px) {
