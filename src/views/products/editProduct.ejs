@@ -1,12 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h2>Hola Soy Editar Producto</h2>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editar Producto</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <%- include ('../partials/header') %> 
+    <main class="main_login">
+
+      <div class="login_container">
+        <section class="intro_login">
+          <h2>Editar producto</h2>
+          <br />
+        </section>
+        <!-- SIGN IN -->
+        <section class="sign_in_form">
+          <form action="/">
+
+            <div class="input_containers">
+              <label for="model">Modelo</label>
+              <input class="login_input" type="text" id="model" placeholder="<%= product.model %> "/>
+            </div>
+
+            <div class="input_containers">
+              <p>Categoría</p>
+              <div class="product_radio">
+                  <input class="login_input" type="radio" name="type" id="guitarra"  <% if(product.type == 'Guitarra'){
+                      %> checked="checked" <%
+                  } %>  />
+                  <label for="guitarra">Guitarra</label>
+            </div>
+
+              <div class="product_radio">
+                  <input class="login_input" type="radio" name="type" id="piano" <% if(product.type == 'Piano'){
+                      %> checked="checked" <%
+                  } %>/>
+                <label for="piano">Piano</label>
+            </div>
+              <div class="product_radio">
+                  <input class="login_input" type="radio" name="type" id="bajo" <% if(product.type == 'Bajo'){
+                      %> checked="checked" <%
+                  } %>/>
+                <label for="bajo">Bajo</label>
+            </div>
+            <div class="product_radio">
+                  <input class="login_input" type="radio" name="type" id="bateria" <% if(product.type == 'Batería'){
+                      %> checked="checked" <%
+                  } %>/>
+                <label for="bateria">Batería</label>
+            </div>
+              <div class="product_radio">
+                  <input class="login_input" type="radio" name="type" id="violin" <% if(product.type == 'Violin'){
+                      %> checked="checked" <%
+                  } %>/>    
+                <label for="violin">Violín</label>
+            </div>
+
+            <div class="new_product_price">
+              <label for="price">Precio</label>
+              <input class="price_input" type="number" name="price" id="price" placeholder="<%= product.price  %> " />
+            </div>
+
+            <div class="input_containers">
+              <label for="brand">Marca</label>
+              <input class="login_input" type="text" name="brand" id="brand" placeholder="<%= product.brand %> "/>
+            </div>
+
+            <div class="input_containers">
+              <label for="color">Color</label>
+              <input class="login_input" type="text" name="color" id="color" placeholder="<%= product.color %> "/>
+            </div>
+
+            <div class="input_containers">
+              <label for="description">Descripción del producto</label>
+              <input class="login_input" type="text" name="description" id="description" placeholder="<%= product.description %> "/>
+            </div>
+            
+            <br>
+            
+              <br>
+
+              <div class="upload_file">
+                  <input type="file" name="upload_img" id="upload_img">
+                  <label for="upload_img">Upload Image (this will be a drag and drop)</label>
+              </div>
+              
+            </div>
+            <button class="create_button">Crear</button>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <%- include ('../partials/footer') %> 
+    <%- include ('../partials/cursor') %> 
+  </body>
 </html>

@@ -13,7 +13,7 @@
 
 body {
   font-family: roboto;
-  cursor: none;
+  /* cursor: none; */
   background-image: url(/img/bck_page.jpg);
   background-size: cover;
   background-position: center;

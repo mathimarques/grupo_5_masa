@@ -25,37 +25,54 @@
         <!-- SIGN IN -->
         <section class="sign_in_form">
           <form action="/">
+
             <div class="input_containers">
-              <label for="productname">Nombre del producto</label>
-              <input class="login_input" type="text" id="productname" />
+              <label for="model">Modelo</label>
+              <input class="login_input" type="text" id="model" />
             </div>
-            <div class="input_containers">
-              <label for="prod_description">Descripción del producto</label>
-              <input class="login_input" type="text" name="" id="prod_description" />
-            </div>
+
             <div class="input_containers">
               <p>Categoría</p>
               <div class="product_radio">
-                  <input class="login_input" type="radio" name="category" id="guitarra" />
-                <label for="guitarra">Guitarra</label>
+                  <input class="login_input" type="radio" name="type" id="guitarra" />
+                  <label for="guitarra">Guitarra</label>
             </div>
+
               <div class="product_radio">
-                  <input class="login_input" type="radio" name="category" id="piano" />
+                  <input class="login_input" type="radio" name="type" id="piano" />
                 <label for="piano">Piano</label>
             </div>
               <div class="product_radio">
-                  <input class="login_input" type="radio" name="category" id="bajo" />
+                  <input class="login_input" type="radio" name="type" id="bajo" />
                 <label for="bajo">Bajo</label>
             </div>
               <div class="product_radio">
-                  <input class="login_input" type="radio" name="category" id="violin" />
+                  <input class="login_input" type="radio" name="type" id="violin" />
                 <label for="violin">Violín</label>
             </div>
-            <br>
+
             <div class="new_product_price">
-                <label for="prod_price">Precio</label>
-                <input class="price_input" type="number" name="" id="prod_price" />
-              </div>
+              <label for="price">Precio</label>
+              <input class="price_input" type="number" name="price" id="price" />
+            </div>
+
+            <div class="input_containers">
+              <label for="brand">Marca</label>
+              <input class="login_input" type="text" name="brand" id="brand" />
+            </div>
+
+            <div class="input_containers">
+              <label for="color">Color</label>
+              <input class="login_input" type="text" name="color" id="color" />
+            </div>
+
+            <div class="input_containers">
+              <label for="description">Descripción del producto</label>
+              <input class="login_input" type="text" name="description" id="description" />
+            </div>
+            
+            <br>
+            
               <br>
 
               <div class="upload_file">

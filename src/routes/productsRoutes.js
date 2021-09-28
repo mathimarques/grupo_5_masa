@@ -15,7 +15,7 @@ router.get("/createProduct", productsController.createProduct);
 router.get("/editProduct/:id", productsController.editProduct);
 // router.put("/:id", productsController.updateProduct);
 
-// Devolver un producto 
+// Devolver un producto
 router.get('/:id/', productsController.detailProduct); 
 
 // Eliminar un producto 
