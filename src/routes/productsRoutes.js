@@ -8,17 +8,17 @@ const router = express.Router();
 router.get("/", productsController.listProducts);
 
 // Crear un producto
-router.get("/createProduct", productsController.createProduct);
-// router.post("/", productController.storeProduct);
+router.get("/create", productsController.createProduct);
+// router.post("/create", productController.storeProduct);
 
 // Editar un producto
-router.get("/editProduct/:id", productsController.editProduct);
-// router.put("/:id", productsController.updateProduct);
+router.get("/edit/:id", productsController.editProduct);
+// router.put("/edit/:id", productsController.updateProduct);
 
 // Devolver un producto
-router.get('/:id/', productsController.detailProduct); 
+router.get('/detail/:id', productsController.detailProduct); 
 
 // Eliminar un producto 
-// router.delete('/:id', productsController.destroyProduct);
+// router.delete('/delete/:id', productsController.destroyProduct);
 
 module.exports = router;

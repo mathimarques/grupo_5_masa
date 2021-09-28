@@ -24,3 +24,7 @@ app.listen("3000", () => {
 app.use("/", mainRoutes);
 // Ruta de productos del proyecto
 app.use("/products", productsRoutes);
+// Ruta NotFound404
+app.use((req, res, next) => {
+  res.status(404).render("error404")
+});
