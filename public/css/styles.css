@@ -632,14 +632,15 @@ form button {
   /* main */
   main .banner .left_banner h2 {
     position: absolute;
-    top: 25%;
-    width: 25%;
+    top: 42%;
+    width: 33%;
     left: 55%;
     font-family: "Oswald", sans-serif;
     font-weight: 700;
-    font-size: 3em;
+    font-size: 4em;
+    line-height: 1.15;
     text-transform: uppercase;
-  }
+}
   main .banner .left_banner h2 span {
     color: #95deb6;
   }
