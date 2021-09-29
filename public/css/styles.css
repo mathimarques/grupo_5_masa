@@ -42,7 +42,7 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-  /* margin-bottom: -150px; */
+  margin-bottom: -150px;
   z-index: 999;
   position: relative;
 }
@@ -181,10 +181,11 @@ main .banner .right_banner {
   padding-top: 20vh;
 }
 .estilo-imagen-product {
-  width: 80%;
+  width: 100%;
   mix-blend-mode: multiply;
   position: absolute;
-  top: 0%;
+  top: 35%;
+  left: 0%;
 }
 
 .container-flex1 {
@@ -232,7 +233,7 @@ main .banner .right_banner {
 }
 
 .section1-main-product {
-  width: 90%;
+  width: 100%;
   margin: 5% 0;
   padding-left: 10%;
   background-color: white;
@@ -243,17 +244,18 @@ main .banner .right_banner {
 
 .section2-main-product {
   width: 90%;
-  margin: 5%;
+  margin: 1% 5%;
 }
 
 .arrow {
   padding: 5px 0;
 }
 .section2-main-product h3 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Oswald", sans-serif;
   font-weight: 300;
   margin-bottom: 30px;
 }
+
 .estilo-precio {
   color: #143018;
   display: inline;
@@ -263,19 +265,22 @@ main .banner .right_banner {
 }
 
 .estilo-comprar {
-  color: #143018;
+  color: #ffffff;
   font-weight: bold;
-  display: inline;
+  display: block;
   border: 0 solid gray;
   border-radius: 50px;
   padding: 15px 35px;
-  margin: 0 20px;
-  background-color: white;
+  margin: 5% auto;
+  background-color: #12261c;
   transition: 0.5s ease-in-out;
+  text-align: center;
+  width: 50%;
 }
+
 .estilo-comprar:hover {
   color: #fff;
-  background-color: #143018;
+  background-color: #a34e1d;
 }
 .sale-prod {
   margin-top: 30px;
@@ -287,18 +292,25 @@ main .banner .right_banner {
   margin-top: 30px;
   width: 100%;
 }
-
+.list-descrip li {
+  list-style: none;
+  line-height: 1.5;
+  color: #12261ca6;
+}
 .sale-listProduct {
   margin-top: 30px;
-  display: flex;
+  display: block;
   justify-content: end;
   align-items: center;
-  width: 40%;
+  width: 100%;
 }
 
+
 .image-listProducts {
-  width: 50%;
+  width: 100%;
   height: 50%;
+  text-align: center;
+  mix-blend-mode: multiply;
 }
 
 .divListProducts {
@@ -311,20 +323,28 @@ main .banner .right_banner {
 
 .divListProducts h3 {
   width: 200px;
+  font-size: 2em;
   text-transform: uppercase;
   margin-bottom: 0px !important;
 }
 
 .articleListProducts {
-  display: flex;
+  display: block;
   flex-wrap: nowrap;
   width: 100%;
   flex-direction: row;
   align-items: center;
   align-content: center;
   justify-content: space-between;
-  border-bottom: 1px solid gray;
-  padding-bottom: 30px;
+  padding: 3%;
+  background: #ffffffb5;
+  border: 2px solid #ffffff38;
+  border-radius: 8px;
+  margin-bottom: 7%;
+  transition: ease-in-out 1s;
+}
+.articleListProducts:hover {
+  background: #fff;
 }
 
 /* * * * * * * * *    L O G     I N     F O R M    * * * * * * * * */
@@ -459,6 +479,54 @@ form button {
 
 /* * * * * * * *  F I N     D E     L O G I N * * * * * * */
 
+/*  C A R R I T O   */ 
+
+.cart {
+  display: block;
+  height: inherit;
+  align-items: center;
+  width: 90%;
+  margin: 20vh auto 5vh;
+  border-radius: 8px;
+  padding: 11% 5%;
+  background: #ffffffb0;
+}
+
+.cart img {
+  mix-blend-mode: multiply;
+  width: 80%;
+}
+.cart section .title {
+  padding-top: 3%;
+  padding-bottom: 20px;
+}
+.cart section .title h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 5em;
+  text-transform: uppercase;
+  color: #12261c;
+}
+.btn-submit {
+  background-color: #f49f46;
+  color: white;
+  border-radius: 45px;
+  appearance: none;
+  font-family: "Roboto";
+  height: 2.5rem;
+  padding: 2% 10%;
+  border: none;
+}
+.btn-add {
+  background-color: #f4a04600;
+  color: #ca771e;
+  border-radius: 45px;
+  appearance: none;
+  font-family: "Roboto";
+  height: 2.5rem;
+  padding: 2% 10%;
+  border: 2px solid #ca771e;
+}
+
 /* * * * * * * * * C R E A T E    P R O D U C T * * * * * */
 
 .product_radio {
@@ -579,7 +647,66 @@ form button {
     right: 50%;
     top: 46%;
   }
-  /* FOOTER */
+/* ARTICLES  */
+
+.articleListProducts {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  padding: 1% 3%;
+  background: #ffffffb5;
+  border: 2px solid #ffffff38;
+  border-radius: 8px;
+  margin-bottom: 1%;
+}
+.sale-listProduct {
+  margin-top: 30px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 50%;
+}
+.image-listProducts {
+  width: 40%;
+  height: 50%;
+  text-align: center;
+  mix-blend-mode: multiply;
+}
+/* DETALLE DE PRODUCTO */
+.mainProduct {
+  padding-top: 20vh;
+  display: flex;
+}
+.section1-main-product {
+  width: 90%;
+  margin: 0;
+}
+.estilo-imagen-product {
+  width: 75%;
+  mix-blend-mode: multiply;
+  position: absolute;
+  top: 0%;
+  left: 30%;
+}
+/* CARRITO */
+.cart {
+  display: flex;
+  height: 75vh;
+  align-items: center;
+  width: 61%;
+  margin: 20vh auto 5vh;
+  border-radius: 8px;
+  padding: 2% 5%;
+  background: #ffffffb0;
+}
+.cart img {
+  width: inherit;
+}
+/* FOOTER */
 
   .login_social_media {
     width: 14vw;
@@ -610,11 +737,6 @@ main section p {
   display: flex;
   width: 10px;
   padding-top: 20px;
-}
-
-.title {
-  padding-top: 100px;
-  padding-bottom: 20px;
 }
 
 .selection {
