@@ -1,0 +1,79 @@
+/* Styles for Header and Navbar */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    /* margin-bottom: -150px; */
+    z-index: 999;
+    position: relative;
+  }
+  
+  .logo {
+    margin: 2% 5%;
+    display: block;
+    width: 42vw;
+  }
+
+  /* nav */
+  /* nav {
+    display: none;
+  } */
+
+  header .header-bottom-burger-menu {
+    background-color: #12261c;
+    width: 30%;
+    display: flex;
+  }
+  
+  .burger {
+    text-align: center;
+    margin: auto 50%;
+    color: white;
+  }
+  
+  main .banner .left_banner {
+    width: 100%;
+    height: 105vh;
+    background-image: url(../img/guitarra-home.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  #circular-text {
+    position: absolute;
+    right: 10%;
+    top: 44%;
+    background: #ff782ad4;
+    color: #272727;
+    border-radius: 100%;
+    box-shadow: 0 0 30px rgb(0 0 0 / 15%);
+    padding: 20px;
+  }
+  
+  #circular-text span {
+    position: absolute;
+    transform-origin: top left;
+  }
+  
+  main .banner .left_banner h2 {
+    position: absolute;
+    top: 25%;
+    width: 50%;
+    left: 20%;
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 2em;
+    text-transform: uppercase;
+  }
+  main .banner .left_banner h2 span {
+    color: #fff;
+  }
+  main .banner .left_banner #circular-text {
+    right: 10%;
+    top: 62%;
+  }
+  main .banner .right_banner {
+    display: none;
+  }
+
+  

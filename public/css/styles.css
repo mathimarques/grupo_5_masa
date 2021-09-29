@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
+/* Importando archivos CSS modularizados */
+@import "header_navbar.css";
+@import "mainProduct.css";
+@import "create.css";
+@import "login.css";
+
 /* Variables */
 :root {
   --input_box_height: 2.5rem;
@@ -23,7 +29,6 @@ body {
 }
 .home-body {
   font-family: roboto;
-  cursor: none;
   width: 100%;
   height: 100vh;
   background-color: #ffffff !important;
@@ -39,21 +44,21 @@ body {
 
 /* * * * * *  Header y Navbar * * * * * */
 
-header {
+/* header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; */
   /* margin-bottom: -150px; */
-  z-index: 999;
+  /* z-index: 999;
   position: relative;
-}
+} */
 
-.logo {
+/* .logo {
   margin: 2% 5%;
   display: block;
   width: 42vw;
-}
+} */
 /* nav */
-nav {
+/* nav {
   display: none;
 }
 header .header-bottom-burger-menu {
@@ -111,7 +116,7 @@ main .banner .left_banner #circular-text {
 }
 main .banner .right_banner {
   display: none;
-}
+} */
 
 /* CURSOR */
 .cursor {
@@ -177,7 +182,7 @@ main .banner .right_banner {
 }
 
 /*MAIN PRODUCT*/
-.mainProduct {
+/* .mainProduct {
   padding-top: 20vh;
 }
 .estilo-imagen-product {
@@ -325,10 +330,10 @@ main .banner .right_banner {
   justify-content: space-between;
   border-bottom: 1px solid gray;
   padding-bottom: 30px;
-}
+} */
 
 /* * * * * * * * *    L O G     I N     F O R M    * * * * * * * * */
-.main_login {
+/* .main_login {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -342,18 +347,18 @@ main .banner .right_banner {
   margin-top: 20vh;
   width: auto;
   backdrop-filter: blur(4px);
-  background: #bdc3c7; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
+  background: #bdc3c7; fallback for old browsers */
+  /* background: -webkit-linear-gradient(
     to right,
     #2c3e50,
     #bdc3c7
   ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
+  /* background: linear-gradient(
     to right,
     #d3dadf9c,
     #e8ebed71
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
+  );  */
+/* }
 
 .intro_login {
   text-align: center;
@@ -367,9 +372,9 @@ main .banner .right_banner {
   align-self: center;
   width: 450px;
   padding: 30px 30px;
-  margin: auto;
+  margin: auto; */
   /* background-image: url('/img/login-bck.jpg'); */
-}
+/* }
 
 form {
   display: flex;
@@ -426,7 +431,7 @@ form button {
   background-color: #f49f46;
   color: white;
   border: 0px;
-}
+} */
 
 /* FOOTER */
 
@@ -461,7 +466,7 @@ form button {
 
 /* * * * * * * * * C R E A T E    P R O D U C T * * * * * */
 
-.product_radio {
+/* .product_radio {
   display: flex;
   align-items: center;
 }
@@ -489,7 +494,7 @@ form button {
   border: 1px solid rgb(197, 196, 196);
   height: 260px;
   background-color: rgb(230, 224, 224);
-}
+} */
 
 /*BREAKPOINTS*/
 @media (min-width: 460px) {
