@@ -11,6 +11,9 @@ const productsRoutes = require("./routes/productsRoutes");
 const public = path.resolve(__dirname, "../public");
 app.use(express.static(public));
 
+app.use(express.urlencoded({ extended: false })); // Para poder leer el body
+app.use(express.json()); // Para poder leer el body
+
 // Seteamos variables Ejs y carpeta views
 app.set("view engine", "ejs");
 app.set("views", "./src/views");

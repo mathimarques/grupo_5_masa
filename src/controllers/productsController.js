@@ -1,56 +1,13 @@
-//Mathi, necesitaba declarar products de manera global para acceder desde otros métodos, por eso lo saqué
-const products = [
-  {
-    id: 1,
-    model: "Stratocaster",
-    type: "Guitarra",
-    price: 50000,
-    brand: "Fender",
-    color: "Rojo",
-    description: "Guitarra Squier Stratocaster Bullet Mini",
-    image: "guitarra.png"
-  },
-  {
-    id: 2,
-    model: "Ctk3500",
-    type: "Piano",
-    price: 20000,
-    brand: "Casio",
-    color: "Negro",
-    description: "Teclado musical Casio Ctk3500 61 teclas Negro",
-    image: "piano.png"
-  },
-  {
-    id: 3,
-    model: "Squier",
-    type: "Bajo",
-    price: 25000,
-    brand: "Fender",
-    color: "Rojo",
-    description: "Bajo Electrico Fender Squier Affinity Series Jazz Bass",
-    image: "bajo.png"
-  },
-  {
-    id: 4,
-    model: "Roadshow",
-    type: "Batería",
-    price: 302000,
-    brand: "Pearl",
-    color: "Negro",
-    description: "Pearl Roadshow Bateria 5 Cuerpos Bombo 18 Fierros Platillos",
-    image: "bateria.png"
-  },
-  {
-    id: 5,
-    model: "Mv141144",
-    type: "Violin",
-    price: 13000,
-    brand: "Stradella",
-    color: "Rojo",
-    description: "Violin Stradella Mv1411 De Medida Con Estuche Semi Rigido Arco Resina Ideal Para Estudio Pino Maple",
-    image: "violin.png"
-  },
-];
+//Requiriendo modulo para leer archivos
+const fs = require('fs');
+//Requiriendo modulo para trabajar con directorios
+const path = require('path');
+
+//Declaramos la constante para ubicar el archivo de productos
+const productsLocation = path.join(__dirname, '../data/products.json');
+//Declaramos la 'variable' products que abre el archivo products
+//y genera un objeto a partir del mismo
+const products = JSON.parse(fs.readFileSync(productsLocation, 'utf-8'));
 
 // Generamos el controlador con sus métodos
 const productsController = {
@@ -63,7 +20,21 @@ const productsController = {
     res.render("./products/createProduct");
   },
   storeProduct: (req, res) => {
-    res.send("Guardo el producto");
+    res.send(req.body);
+    console.log(req.body);
+    const newProduct = {
+      id: products[products.length-1].id + 1,
+      model: req.body.model,
+      type: req.body.type,
+      price: req.body.price,
+      brand: req.body.brand,
+      color: req.body.color,
+      description: req.body.description,
+      upload_img: 'default-img.png'
+    }
+
+    products.push(newProduct);
+    fs.writeFileSync(productsLocation, JSON.stringify(products, null, " "));
   },
   // Editar Producto
   editProduct: (req, res) => {

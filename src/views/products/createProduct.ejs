@@ -11,11 +11,11 @@
         </section>
         <!-- SIGN IN -->
         <section class="sign_in_form">
-          <form action="/">
+          <form action="/products" method="POST">
 
             <div class="input_containers">
               <label for="model">Modelo</label>
-              <input class="login_input" type="text" id="model" />
+              <input class="login_input" type="text" name="model" id="model" />
             </div>
 
             <div class="input_containers">
@@ -24,7 +24,6 @@
                   <input class="login_input" type="radio" name="type" id="guitarra" />
                   <label for="guitarra">Guitarra</label>
             </div>
-
               <div class="product_radio">
                   <input class="login_input" type="radio" name="type" id="piano" />
                 <label for="piano">Piano</label>
@@ -68,7 +67,7 @@
               </div>
               
             </div>
-            <button class="create_button">Crear</button>
+            <button type="submit" class="create_button">Crear</button>
           </form>
         </section>
       </div>
