@@ -57,6 +57,46 @@
   "brand": "test",
   "color": "test",
   "description": "test",
-  "upload_img": "default-img.png"
+  "image": "default-image.png"
+ },
+ {
+  "id": 7,
+  "model": "nxt",
+  "type": "on",
+  "price": "222",
+  "brand": "fendr",
+  "color": "verde",
+  "description": "Trial MG",
+  "image": "default-image.png"
+ },
+ {
+  "id": 8,
+  "model": "nxt",
+  "type": "on",
+  "price": "222",
+  "brand": "fendr",
+  "color": "verde",
+  "description": "Trial MG",
+  "image": "default-image.png"
+ },
+ {
+  "id": 9,
+  "model": "otro nombre",
+  "type": "on",
+  "price": "200",
+  "brand": "test2",
+  "color": "azul",
+  "description": "una description",
+  "image": "default-image.png"
+ },
+ {
+  "id": 10,
+  "model": "ajaja",
+  "type": "on",
+  "price": "23123",
+  "brand": "test3",
+  "color": "verde",
+  "description": "lalala",
+  "image": "default-image.png"
  }
 ]

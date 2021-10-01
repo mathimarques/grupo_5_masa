@@ -20,8 +20,8 @@ const productsController = {
     res.render("./products/createProduct");
   },
   storeProduct: (req, res) => {
-    res.send(req.body);
-    console.log(req.body);
+    // res.send(req.body);
+    // console.log(req.body);
     const newProduct = {
       id: products[products.length-1].id + 1,
       model: req.body.model,
@@ -30,11 +30,12 @@ const productsController = {
       brand: req.body.brand,
       color: req.body.color,
       description: req.body.description,
-      upload_img: 'default-img.png'
+      image: 'default-image.png'
     }
 
     products.push(newProduct);
     fs.writeFileSync(productsLocation, JSON.stringify(products, null, " "));
+    res.redirect('/products');
   },
   // Editar Producto
   editProduct: (req, res) => {
