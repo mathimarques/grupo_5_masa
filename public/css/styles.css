@@ -25,7 +25,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
-  /* background-color: #7fffd4; /// ATENCION QUE ESTO VA A AFECTAR TODAS LAS VIEWS */
+
 }
 .home-body {
   font-family: roboto;
@@ -204,9 +204,7 @@ body {
     text-decoration: none;
     color: aliceblue;
   }
-  /*.navbar a:hover{
-    color: rgb(159, 206, 247);
-}*/
+  
   /* main */
   main .banner .left_banner h2 {
     position: absolute;
