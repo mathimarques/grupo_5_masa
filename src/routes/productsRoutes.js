@@ -13,12 +13,12 @@ router.post("/create", productsController.storeProduct);
 
 // Editar un producto
 router.get("/edit/:id", productsController.editProduct);
-// router.put("/edit/:id", productsController.updateProduct);
+router.put("/edit/:id", productsController.updateProduct);
 
 // Devolver un producto
 router.get('/detail/:id', productsController.detailProduct); 
 
 // Eliminar un producto 
-// router.delete('/delete/:id', productsController.destroyProduct);
+router.delete('/delete/:id', productsController.destroyProduct);
 
 module.exports = router;
