@@ -47,7 +47,6 @@ const productsController = {
     res.render("./products/editProduct", {
       product: product
     });
-    console.log(products);
   },
   updateProduct: (req, res) => {
     res.send("Actualizo el producto");
