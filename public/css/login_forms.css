@@ -1,0 +1,107 @@
+/* * * * * * * * *    L O G     I N     F O R M    * * * * * * * * */
+.main_login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    min-height: 100vh;
+  }
+  
+  .login_container {
+    border: 1px solid #caccd2;
+    border-radius: 20px;
+    margin-top: 20vh;
+    width: auto;
+    backdrop-filter: blur(4px);
+    background: #bdc3c7; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #2c3e50,
+      #bdc3c7
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #d3dadf9c,
+      #e8ebed71
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  
+  .intro_login {
+    text-align: center;
+    margin-top: 6vh;
+    padding: 0 8%;
+  }
+  
+  .sign_in_form {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 450px;
+    padding: 30px 30px;
+    margin: auto;
+    /* background-image: url('/img/login-bck.jpg'); */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input_containers {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0 0 0;
+  }
+  
+  .nombre_usuario_login {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0 0 0;
+  }
+  .password_login {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+  }
+  
+  .login_input {
+    border: 0.0625rem solid #caccd2;
+    border-radius: 6px;
+    height: 2.5rem;
+  }
+  
+  form button {
+    background-color: #f49f46;
+    color: white;
+    border-radius: 5px;
+    appearance: none;
+    font-family: "roboto";
+    font-weight: 900;
+    height: 2.5rem;
+    border: none;
+  }
+  .btn_login {
+    display: flex;
+  }
+  .btn_login button {
+    width: 48%;
+    margin: 1%;
+  }
+  .borrar {
+    border: 1px solid #a34e1d;
+    background-color: #f4a04600;
+    color: #a34e1d;
+    transition: ease-in-out 1s;
+  }
+  .borrar:hover {
+    background-color: #f49f46;
+    color: white;
+    border: 0px;
+  }
+
+/* INPUT */
+input {
+  background-color: #ffffff2e;
+  border: 1px solid #a0a0a057;
+  height: 30px;
+}

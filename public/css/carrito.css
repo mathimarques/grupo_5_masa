@@ -1,0 +1,72 @@
+/*  C A R R I T O   */ 
+
+.cart {
+    display: block;
+    height: inherit;
+    align-items: center;
+    width: 90%;
+    margin: 20vh auto 5vh;
+    border-radius: 8px;
+    padding: 11% 5%;
+    background: #ffffffb0;
+  }
+  
+  .cart img {
+    mix-blend-mode: multiply;
+    width: 80%;
+  }
+  .cart section .title {
+    padding-top: 3%;
+    padding-bottom: 20px;
+  }
+  .cart section .title h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 5em;
+    text-transform: uppercase;
+    color: #12261c;
+  }
+  .btn-submit {
+    background-color: #f49f46;
+    color: white;
+    border-radius: 45px;
+    appearance: none;
+    font-family: "Roboto";
+    height: 2.5rem;
+    padding: 2% 10%;
+    border: none;
+  }
+  .btn-add {
+    background-color: #f4a04600;
+    color: #ca771e;
+    border-radius: 45px;
+    appearance: none;
+    font-family: "Roboto";
+    height: 2.5rem;
+    padding: 2% 10%;
+    border: 2px solid #ca771e;
+  }
+
+  /* CARRITO STYLES */
+
+main section p {
+  padding-right: 5px;
+}
+
+.mapa-carrito {
+  display: flex;
+  width: 10px;
+  padding-top: 20px;
+}
+
+.selection {
+  width: 10%;
+}
+
+.btn-submit {
+  margin-top: 20px;
+}
+
+.contenido {
+  padding-top: 5px;
+}
+  

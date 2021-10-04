@@ -1,0 +1,27 @@
+/* FOOTER */
+
+.login_footer {
+    display: flex;
+    margin-left: 8vw;
+    margin-right: 5vw;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+  
+  .login_bar {
+    height: 1px;
+    width: 41vw;
+    border: 1px solid black;
+  }
+  .login_social_media {
+    display: flex;
+    width: 41vw;
+    justify-content: space-around;
+    list-style: none;
+  }
+  
+  .login_social_media i {
+    color: black;
+    font-size: 1.4em;
+  }
