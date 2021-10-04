@@ -1,0 +1,31 @@
+/* Styles for 'PRODUCTS/CREATE' */
+
+.product_radio {
+    display: flex;
+    align-items: center;
+  }
+  
+  .product_radio label {
+    margin-left: 15px;
+  }
+  
+  .new_product_price {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .create_button {
+    margin-top: 30px;
+  }
+  
+  .price_input {
+    height: var(--input_box_height);
+    border-radius: 6px;
+    width: 60px;
+  }
+  
+  .upload_file {
+    border: 1px solid rgb(197, 196, 196);
+    height: 260px;
+    background-color: rgb(230, 224, 224);
+  }

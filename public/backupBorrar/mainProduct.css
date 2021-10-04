@@ -1,0 +1,151 @@
+/* Styles for MAIN PRODUCT */
+
+.mainProduct {
+    padding-top: 20vh;
+  }
+  .estilo-imagen-product {
+    width: 80%;
+    mix-blend-mode: multiply;
+    position: absolute;
+    top: 0%;
+  }
+  
+  .container-flex1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 5%;
+    width: 50%;
+  }
+  .container-flex1 h1 {
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 3em;
+    margin-bottom: 30px;
+  }
+  .container-flex1 h3,
+  .container-flex1 h5 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+  }
+  .container-flex1 h5 {
+    margin-top: 30px;
+  }
+  .container-flex1 span {
+    font-family: "Oswald", sans-serif;
+    font-weight: 100;
+    font-size: 6em;
+    letter-spacing: -5px;
+    color: #e7e7e7;
+  }
+  
+  .button-arrows {
+    background-color: #12261c;
+    padding: 0 20px;
+    height: 100px;
+    display: block;
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .button-arrows i {
+    font-size: 2.5em;
+  }
+  
+  .section1-main-product {
+    width: 90%;
+    margin: 5% 0;
+    padding-left: 10%;
+    background-color: white;
+    color: #143018;
+    position: relative;
+    min-height: 85vh;
+  }
+  
+  .section2-main-product {
+    width: 90%;
+    margin: 5%;
+  }
+  
+  .arrow {
+    padding: 5px 0;
+  }
+  .section2-main-product h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    margin-bottom: 30px;
+  }
+  .estilo-precio {
+    color: #143018;
+    display: inline;
+    font-family: "Oswald";
+    font-weight: 500;
+    font-size: 1.4em;
+  }
+  
+  .estilo-comprar {
+    color: #143018;
+    font-weight: bold;
+    display: inline;
+    border: 0 solid gray;
+    border-radius: 50px;
+    padding: 15px 35px;
+    margin: 0 20px;
+    background-color: white;
+    transition: 0.5s ease-in-out;
+  }
+  .estilo-comprar:hover {
+    color: #fff;
+    background-color: #143018;
+  }
+  .sale-prod {
+    margin-top: 30px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+  .list-descrip {
+    margin-top: 30px;
+    width: 100%;
+  }
+  
+  .sale-listProduct {
+    margin-top: 30px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 40%;
+  }
+  
+  .image-listProducts {
+    width: 50%;
+    height: 50%;
+  }
+  
+  .divListProducts {
+    margin-top: 30px;
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .divListProducts h3 {
+    width: 200px;
+    text-transform: uppercase;
+    margin-bottom: 0px !important;
+  }
+  
+  .articleListProducts {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+    padding-bottom: 30px;
+  }
