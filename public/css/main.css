@@ -1,0 +1,17 @@
+.home-body {
+    font-family: roboto;
+    cursor: none;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff !important;
+    background-image: none;
+    overflow-x: inherit;
+  }
+  /* BANNER */
+  
+  .banner {
+    display: flex;
+    position: relative;
+    top: -122px;
+    left: 0;
+  }
