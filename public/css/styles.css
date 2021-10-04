@@ -34,7 +34,6 @@ body {
 
 .banner {
   display: flex;
-  /*justify-content: space-evenly;*/
 }
 
 /* * * * * *  Header y Navbar * * * * * */
@@ -42,7 +41,7 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: -150px;
+  /* margin-bottom: -150px; No entiendo esta linea chicos. Evitaría márgenes negativos*/
   z-index: 999;
   position: relative;
 }
