@@ -51,22 +51,52 @@
  },
  {
   "id": 6,
-  "model": "multer",
+  "model": "2",
   "type": "on",
-  "price": "1000",
-  "brand": "multer",
-  "color": "multer",
-  "description": "probando multer",
+  "price": "2",
+  "brand": "2",
+  "color": "2",
+  "description": "2",
   "image": "default-image.png"
  },
  {
   "id": 7,
-  "model": "1",
+  "model": "3",
   "type": "on",
-  "price": "1",
-  "brand": "1",
-  "color": "1",
-  "description": "1",
+  "price": "3",
+  "brand": "3",
+  "color": "3",
+  "description": "3",
+  "image": "default-image.png"
+ },
+ {
+  "id": 8,
+  "model": "3",
+  "type": "on",
+  "price": "3",
+  "brand": "3",
+  "color": "3",
+  "description": "3",
+  "image": "default-image.png"
+ },
+ {
+  "id": 9,
+  "model": "3",
+  "type": "on",
+  "price": "3",
+  "brand": "3",
+  "color": "3",
+  "description": "3",
+  "image": "default-image.png"
+ },
+ {
+  "id": 10,
+  "model": "5",
+  "type": "on",
+  "price": "5",
+  "brand": "5",
+  "color": "5",
+  "description": "5",
   "image": "default-image.png"
  }
 ]
