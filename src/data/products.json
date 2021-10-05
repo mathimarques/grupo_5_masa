@@ -48,5 +48,25 @@
   "color": "Rojo",
   "description": "Violin Stradella Mv1411 De Medida Con Estuche Semi Rigido Arco Resina Ideal Para Estudio Pino Maple",
   "image": "violin.png"
+ },
+ {
+  "id": 6,
+  "model": "multer",
+  "type": "on",
+  "price": "1000",
+  "brand": "multer",
+  "color": "multer",
+  "description": "probando multer",
+  "image": "default-image.png"
+ },
+ {
+  "id": 7,
+  "model": "1",
+  "type": "on",
+  "price": "1",
+  "brand": "1",
+  "color": "1",
+  "description": "1",
+  "image": "default-image.png"
  }
 ]

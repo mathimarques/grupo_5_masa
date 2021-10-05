@@ -3,6 +3,7 @@ const fs = require('fs');
 //Requiriendo modulo para trabajar con directorios
 const path = require('path');
 
+
 //Declaramos la constante para ubicar el archivo de productos
 const productsLocation = path.join(__dirname, '../data/products.json');
 //Declaramos la 'variable' products que abre el archivo products
