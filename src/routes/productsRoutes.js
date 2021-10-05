@@ -8,7 +8,7 @@ const router = express.Router();
 const multer = require('multer');
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
-        let folder = ('./public/img/uploaded_products');
+        let folder = ('./public/img');
         cb(null, folder);
     },
     filename: function (req, file, cb){
@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
 });
 
 //Guardamos en una variable la ejecucion de Multer
-const uploadFile = multer({storage: storage}); //pdemos obviar storage como valor ya que coincide con su "clave"
+const uploadFile = multer({storage: storage}); //podemos obviar storage como valor ya que coincide con su clave
 
 // Devolver todos los productos
 router.get("/", productsController.listProducts);

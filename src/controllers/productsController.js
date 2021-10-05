@@ -3,7 +3,6 @@ const fs = require('fs');
 //Requiriendo modulo para trabajar con directorios
 const path = require('path');
 
-
 //Declaramos la constante para ubicar el archivo de productos
 const productsLocation = path.join(__dirname, '../data/products.json');
 //Declaramos la 'variable' products que abre el archivo products
@@ -22,7 +21,6 @@ const productsController = {
   },
   storeProduct: (req, res) => {
     // res.send(req.body);
-    // console.log(req.body);
     
     const newProduct = {
       id: products[products.length-1].id + 1,
@@ -32,18 +30,18 @@ const productsController = {
       brand: req.body.brand,
       color: req.body.color,
       description: req.body.description,
-      image: (()=>{
-        if(req.body.upload_img==null){
+      image: (()=>{ 
+        if(req.file.filename==null){
           return 'default-image.png';
         }
         else{
-          return req.body.image;
+          return req.file.filename;
         }
       })()
     }
 
     products.push(newProduct);
-    console.log(req.body.upload_img);
+    console.log(req.file.filename);
     fs.writeFileSync(productsLocation, JSON.stringify(products, null, " "));
     res.redirect('/products');
   },
