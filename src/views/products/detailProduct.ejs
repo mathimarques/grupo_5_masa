@@ -9,17 +9,17 @@
                 <i class="fas fa-angle-right arrow"></i>
             </div>
             <div class="container-flex1">
-                <h1>Fender</h1>
-                <h3>Player Stratocaster Floyd Rose MN TPL</h3>
-                <h5>Guitarra eléctrica Strat</h5>
-                <span>01/12</span>
+                <h1><%= product.brand %></h1>
+                <h3><%= product.model %></h3>
+                <h5><%= product.type %></h5>
+                <!-- <span>01/12</span> --><br>
             </div>
             
-            <img class="estilo-imagen-product" src="/img/guitarra-product.png">
+            <img class="estilo-imagen-product" src="/img/<%= product.image %>">
         </section>
         <section class="section2-main-product">
                 <h3><strong>Descripción /</strong> Opciones / videos</h3>
-                <p class="margen-superior"> Guitarra eléctrica Fender Player Stratocaster Floyd Rose MN TPL. El inspirador sonido de una Stratocaster es uno de los fundamentos de Fender. Con este clásico sonido "acampanado", medios fuertes y graves robustos, combinado con una articulación cristalina, la Player Stratocaster HSS Floyd Rose está repleta de la auténtica sensación y estilo Fender. Está lista para servir a tu visión musical, es lo suficientemente versátil como para manejar cualquier estilo de música y es la plataforma perfecta para crear tu propio sonido.</p>
+                <p class="margen-superior"> <%= product.description %></p>
                 <ul class="list-descrip">
                     <li>Cuerpo de aliso con acabado "gloss"</li>
                     <li>1x Pastilla Humbucker Player Series, 2x Pastillas Player Series single-coil Stratocaster</li>
@@ -31,7 +31,7 @@
                     <li>Acabado: Tidepool</li>
                 </ul>
             <div class="sale-prod">
-                <h4 class="estilo-precio">$191.85</h4>
+                <h4 class="estilo-precio">$<%= product.price %></h4>
                 <p class="estilo-comprar">COMPRAR</p>
             </div>
         </section>

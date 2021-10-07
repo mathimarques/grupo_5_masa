@@ -53,7 +53,15 @@ const productsController = {
   },
   // Devolver un producto
   detailProduct: (req, res) => {
-    res.render("./products/detailProduct");
+    const id = req.params.id;
+		const product = products.find(product => {
+			return product.id == id
+		})
+
+		/*res.render("detail.ejs"*/
+    res.render("./products/detailProduct", {
+			product: product
+		})
   },
   // Eliminar un producto
   destroyProduct: (req, res) => {
