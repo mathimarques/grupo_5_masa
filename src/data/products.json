@@ -51,11 +51,22 @@
  },
  {
   "id": 6,
-  "model": "1",
-  "price": "1",
-  "brand": "1",
-  "color": "1",
-  "description": "1",
-  "image": "product-1633457712196.png"
+  "model": "asdas",
+  "type": "on",
+  "price": "333",
+  "brand": "asdasd",
+  "color": "asdasd",
+  "description": "asdasd",
+  "image": "product-1633992436711.png"
+ },
+ {
+  "id": 7,
+  "model": "test",
+  "type": "on",
+  "price": "33",
+  "brand": "ss",
+  "color": "ss",
+  "description": "sss",
+  "image": "default-image.png"
  }
 ]

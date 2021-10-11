@@ -30,18 +30,10 @@ const productsController = {
       brand: req.body.brand,
       color: req.body.color,
       description: req.body.description,
-      image: (()=>{ 
-        if(req.file.filename==null){
-          return 'default-image.png';
-        }
-        else{
-          return req.file.filename;
-        }
-      })()
+      image: req.file ? req.file.filename : 'default-image.png'
     }
 
     products.push(newProduct);
-    console.log(req.file.filename);
     fs.writeFileSync(productsLocation, JSON.stringify(products, null, " "));
     res.redirect('/products');
   },
