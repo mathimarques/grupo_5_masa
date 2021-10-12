@@ -11,21 +11,21 @@
           <p>Si ya tienes una cuenta, <a href="/login">Ingresa aquí</a>.</p>
         </section>
         <section class="sign_in_form">
-        <form action="/" method="GET">
+        <form action="/register" method="post" >
           <div class="nombre_usuario_login">
             <h3><strong>Datos de Usuario</strong></h3>
             <br>
             <label for="name">Nombre y apellido</label>
-            <input type="text" minlength="4" name="name" id="name" required=true/>
+            <input type="text" name="name" id="name" />
             <!-- Usuario -->
             <label for="username">Usuario</label>
-            <input type="text" name="username" id="username" required=true/>
+            <input type="text" name="username" id="username" />
             <!-- Fecha de nacimiento -->
             <label for="date">Fecha de nacimiento</label>
-            <input type="date" name="date" id="date" required=true/>
+            <input type="date" name="date" id="date" />
             <!-- Domicilio -->
             <label for="addres">Domicilio</label>
-            <input type="text" name="addres" id="address" required=true/>
+            <input type="text" name="addres" id="address" />
           </div>
           <br>
           <div class="password_login">
@@ -33,10 +33,10 @@
             <br>
             <!-- Contraseña -->
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" required=true/>
+            <input type="password" name="password" id="password" />
             <!-- Confirmar contraseña -->
             <label for="confirm-pass">Confirmar Password</label>
-            <input type="password" name="confirm-pass" id="confirm-pass" required=true/>
+            <input type="password" name="confirm-pass" id="confirm-pass" />
           </div>
           <div class="btn_login">
             <!-- boton Enviar -->
