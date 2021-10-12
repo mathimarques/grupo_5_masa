@@ -22,6 +22,8 @@ const productsController = {
   storeProduct: (req, res) => {
     // res.send(req.body);
     
+    //Se crea la constante newProduct que va a contener
+    //la info que venga por el body
     const newProduct = {
       id: products[products.length-1].id + 1,
       model: req.body.model,
@@ -33,6 +35,7 @@ const productsController = {
       image: req.file ? req.file.filename : 'default-image.png'
     }
 
+    //agrega newProduct a la lista de productos y sobreescribe el archivo
     products.push(newProduct);
     fs.writeFileSync(productsLocation, JSON.stringify(products, null, " "));
     res.redirect('/products');
