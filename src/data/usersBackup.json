@@ -1,0 +1,34 @@
+[
+ {
+  "id": 1,
+  "name": "Antonio Santafe",
+  "userneme": "tonysanb",
+  "date": "28/09/1987",
+  "address": "Bolivar 4659, Villa Dominico",
+  "password": 200510186
+ },
+ {
+  "id": 2,
+  "name": "Santiago Vitali",
+  "username": "Santivit",
+  "date": "12/11/1989",
+  "address": "Peru 620, CABA",
+  "password": 2654681650
+ },
+ {
+  "id": 3,
+  "name": "Santiago Vazques",
+  "username": "SantiVB",
+  "date": "30/12/1985",
+  "address": "Hipolito Yrigoyen 1320, Lanus",
+  "password": 546808486
+ },
+ {
+  "id": 4,
+  "name": "Mathias Marques",
+  "username": "Marqma",
+  "date": "05/05/1984",
+  "address": "Salta 2245, La Plata",
+  "password": 1216845
+ }
+]
