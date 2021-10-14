@@ -51,22 +51,68 @@
  },
  {
   "id": 6,
-  "model": "asdas",
-  "type": "on",
-  "price": "333",
-  "brand": "asdasd",
-  "color": "asdasd",
-  "description": "asdasd",
   "image": "product-1633992436711.png"
  },
  {
   "id": 7,
-  "model": "test",
-  "type": "on",
-  "price": "33",
-  "brand": "ss",
-  "color": "ss",
-  "description": "sss",
   "image": "default-image.png"
+ },
+ {
+  "id": 8,
+  "image": "default-image.png"
+ },
+ {
+  "id": 9,
+  "model": "asdasd",
+  "type": "Guitarra",
+  "price": "22",
+  "brand": "asd",
+  "color": "asd",
+  "description": "2323",
+  "image": "product-1634142244140.png"
+ },
+ {
+  "id": 10,
+  "model": "Pruebas Mathias",
+  "type": "Bateria",
+  "price": "2222",
+  "brand": "asdasd",
+  "color": "aaaa",
+  "description": "aaaaaaaaaaaaaa",
+  "image": "default-image.png"
+ },
+ {
+  "id": 11,
+  "image": "product-1634142799756.jpg"
+ },
+ {
+  "id": 12,
+  "model": "bbbbbbbbbbbb",
+  "type": "Piano",
+  "price": "2333",
+  "brand": "bbbb",
+  "color": "asdasd",
+  "description": "asdasd",
+  "image": "default-image.png"
+ },
+ {
+  "id": 13,
+  "model": "asdasd",
+  "type": "Bateria",
+  "price": "232",
+  "brand": "asdasd",
+  "color": "asdasd",
+  "description": "asdasd",
+  "image": "default-image.png"
+ },
+ {
+  "id": 14,
+  "model": "Mathias si",
+  "type": "Guitarra",
+  "price": "222",
+  "brand": "Mathias si",
+  "color": "Mathias si",
+  "description": "223232323",
+  "image": "product-1634153977060.png"
  }
 ]

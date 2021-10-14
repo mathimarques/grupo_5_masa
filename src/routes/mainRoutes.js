@@ -10,6 +10,8 @@ router.get("/", mainController.index);
 router.get("/login", mainController.login);
 // Metodo get de la ruta register
 router.get("/register", mainController.register);
+// Metodo post de la ruta register
+router.post("/register", mainController.processRegister);
 // Metodo get de la ruta productCart
 router.get("/productCart", mainController.productCart);
 

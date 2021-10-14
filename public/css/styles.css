@@ -175,10 +175,10 @@ body {
 }
 .estilo-imagen-product {
   width: 75%;
-  mix-blend-mode: multiply;
+  /*mix-blend-mode: multiply;*/
   position: absolute;
   top: 0%;
-  left: 30%;
+  left: 17%;
 }
 /* CARRITO */
 .cart {

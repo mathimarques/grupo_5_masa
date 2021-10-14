@@ -7,7 +7,7 @@ const path = require('path');
 const productsLocation = path.join(__dirname, '../data/products.json');
 //Declaramos la 'variable' products que abre el archivo products
 //y genera un objeto a partir del mismo
-const products = JSON.parse(fs.readFileSync(productsLocation, 'utf-8'));
+const products = JSON.parse(fs.readFileSync(productsLocation, { encoding: "utf-8" }));
 
 // Generamos el controlador con sus métodos
 const productsController = {
@@ -52,7 +52,30 @@ const productsController = {
     });
   },
   updateProduct: (req, res) => {
-    res.send("Actualizo el producto");
+    const id = req.params.id;
+    let productToEdit = products.find(product => product.id == id);
+
+    console.log(productToEdit);
+
+    productToEdit = {
+      id: productToEdit.id,
+      model: req.body.model,
+      type: req.body.type,
+      price: req.body.price,
+      brand: req.body.brand,
+      color: req.body.color,
+      description: req.body.description,
+      image: req.file ? req.file.filename : productToEdit.image
+    }
+
+    console.log(productToEdit);
+
+    let newProducts = products;
+		newProducts[id-1] = productToEdit;
+
+    fs.writeFileSync(productsLocation, JSON.stringify(newProducts, null, " "));
+    res.redirect('/products');
+
   },
   // Devolver un producto
   detailProduct: (req, res) => {

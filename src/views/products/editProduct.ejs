@@ -11,42 +11,42 @@
         </section>
         <!-- SIGN IN -->
         <section class="sign_in_form">
-          <form action="/">
+          <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
             <div class="input_containers">
               <label for="model">Modelo</label>
-              <input class="login_input" type="text" id="model" placeholder="<%= product.model %> "/>
+              <input class="login_input" type="text" name="model" id="model" value="<%= product.model %>" />
             </div>
 
             <div class="input_containers">
               <p>Categoría</p>
               <div class="product_radio">
-                  <input class="login_input" type="radio" name="type" id="guitarra"  <% if(product.type == 'Guitarra'){
+                  <input class="login_input" type="radio" name="type" id="guitarra" value="Guitarra" <% if(product.type == 'Guitarra'){
                       %> checked="checked" <%
                   } %>  />
                   <label for="guitarra">Guitarra</label>
             </div>
 
               <div class="product_radio">
-                  <input class="login_input" type="radio" name="type" id="piano" <% if(product.type == 'Piano'){
+                  <input class="login_input" type="radio" name="type" id="piano" value="Piano" <% if(product.type == 'Piano'){
                       %> checked="checked" <%
                   } %>/>
                 <label for="piano">Piano</label>
             </div>
               <div class="product_radio">
-                  <input class="login_input" type="radio" name="type" id="bajo" <% if(product.type == 'Bajo'){
+                  <input class="login_input" type="radio" name="type" id="bajo" value="Bajo" <% if(product.type == 'Bajo'){
                       %> checked="checked" <%
                   } %>/>
                 <label for="bajo">Bajo</label>
             </div>
             <div class="product_radio">
-                  <input class="login_input" type="radio" name="type" id="bateria" <% if(product.type == 'Batería'){
+                  <input class="login_input" type="radio" name="type" id="bateria" value="Bateria" <% if(product.type == 'Bateria'){
                       %> checked="checked" <%
                   } %>/>
                 <label for="bateria">Batería</label>
             </div>
               <div class="product_radio">
-                  <input class="login_input" type="radio" name="type" id="violin" <% if(product.type == 'Violin'){
+                  <input class="login_input" type="radio" name="type" id="violin" value="Violin" <% if(product.type == 'Violin'){
                       %> checked="checked" <%
                   } %>/>    
                 <label for="violin">Violín</label>
@@ -54,35 +54,31 @@
 
             <div class="new_product_price">
               <label for="price">Precio</label>
-              <input class="price_input" type="number" name="price" id="price" placeholder="<%= product.price  %> " />
+              <input class="price_input" type="number" name="price" id="price" value="<%= product.price %>" />
             </div>
 
             <div class="input_containers">
               <label for="brand">Marca</label>
-              <input class="login_input" type="text" name="brand" id="brand" placeholder="<%= product.brand %> "/>
+              <input class="login_input" type="text" name="brand" id="brand" value="<%= product.brand %>" />
             </div>
 
             <div class="input_containers">
               <label for="color">Color</label>
-              <input class="login_input" type="text" name="color" id="color" placeholder="<%= product.color %> "/>
+              <input class="login_input" type="text" name="color" id="color" value="<%= product.color %>" />
             </div>
 
             <div class="input_containers">
               <label for="description">Descripción del producto</label>
-              <input class="login_input" type="text" name="description" id="description" placeholder="<%= product.description %> "/>
+              <input class="login_input" type="text" name="description" id="description" value="<%= product.description %>" />
             </div>
-            
             <br>
-            
               <br>
-
               <div class="upload_file">
                   <input type="file" name="upload_img" id="upload_img">
                   <label for="upload_img">Upload Image (this will be a drag and drop)</label>
               </div>
-              
             </div>
-            <button class="create_button">Crear</button>
+            <button type="submit" class="create_button">Editar</button>
           </form>
         </section>
       </div>

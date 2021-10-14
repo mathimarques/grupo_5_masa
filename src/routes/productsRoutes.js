@@ -29,7 +29,7 @@ router.post("/create", uploadFile.single('upload_img'), productsController.store
 
 // Editar un producto
 router.get("/edit/:id", productsController.editProduct);
-router.put("/edit/:id", productsController.updateProduct);
+router.put("/edit/:id", uploadFile.single('upload_img'), productsController.updateProduct);
 
 // Devolver un producto
 router.get('/detail/:id', productsController.detailProduct); 

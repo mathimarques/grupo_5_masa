@@ -1,7 +1,7 @@
 /*MAIN PRODUCT*/
 .mainProduct {
     padding-top: 20vh;
-    margin-bottom: 200px;
+    margin-bottom: 10%;
   }
 .estilo-imagen-product {
     width: 100%;
@@ -58,11 +58,11 @@
   .section1-main-product {
     width: 100%;
     margin: 5% 0;
-    padding-left: 10%;
+    padding-left: 1%;
     background-color: white;
     color: #143018;
     position: relative;
-    min-height: 85vh;
+    height: 100vh;
   }
   
   .section2-main-product {

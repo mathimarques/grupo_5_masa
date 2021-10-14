@@ -2,17 +2,20 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const methodOverride = require('method-override'); // Para poder usar los métodos PUT y DELETE
+
+// Definimos el path public como recurso de archivo estatico
+const public = path.resolve(__dirname, "../public");
+// Middlewares
+app.use(express.static(public));
+app.use(express.urlencoded({extended: false})); // Para poder leer el body
+app.use(express.json()); // Para poder leer el body
+app.use(methodOverride('_method')); // Para poder usar los métodos PUT y DELETE
 
 // Requerimos rutas
 const mainRoutes = require("./routes/mainRoutes");
 const productsRoutes = require("./routes/productsRoutes");
 
-// Definimos el path public como recurso de archivo estatico
-const public = path.resolve(__dirname, "../public");
-app.use(express.static(public));
-
-app.use(express.urlencoded({ extended: false })); // Para poder leer el body
-app.use(express.json()); // Para poder leer el body
 
 // Seteamos variables Ejs y carpeta views
 app.set("view engine", "ejs");
