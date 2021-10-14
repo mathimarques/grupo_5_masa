@@ -2,10 +2,10 @@
  {
   "id": 1,
   "model": "Stratocaster",
-  "type": "Guitarra",
-  "price": 50000,
+  "type": "Bajo",
+  "price": "50000",
   "brand": "Fender",
-  "color": "Rojo",
+  "color": "BLANCO",
   "description": "Guitarra Squier Stratocaster Bullet Mini",
   "image": "guitarra.png"
  },
