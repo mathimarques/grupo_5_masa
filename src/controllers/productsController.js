@@ -89,10 +89,15 @@ const productsController = {
 			product: product
 		})
   },
-  // Eliminar un producto
-  destroyProduct: (req, res) => {
-    res.send("Se va a eliminar el producto: " + req.params.id);
-  },
+  // (delete) Delete - Eliminar un producto
+	destroyProduct : (req, res) => {
+		let id = req.params.id;
+		let finalProducts = products.filter(product=> {
+			return id !=  product.id
+		})
+		fs.writeFileSync(productsLocation, JSON.stringify(finalProducts, null, " "));
+		res.redirect("/products");
+	},
 };
 
 module.exports = productsController;

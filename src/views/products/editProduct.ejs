@@ -80,7 +80,12 @@
             </div>
             <button type="submit" class="create_button">Editar</button>
           </form>
+
+          <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
+            <button type="submit" class="create_button">Borrar</button>
+            </form>
         </section>
+        
       </div>
     </main>
 

@@ -1,15 +1,5 @@
 [
  {
-  "id": 1,
-  "model": "Stratocaster",
-  "type": "Bajo",
-  "price": "50000",
-  "brand": "Fender",
-  "color": "NEGRO",
-  "description": "Guitarra Squier Stratocaster Bullet Mini",
-  "image": "guitarra.png"
- },
- {
   "id": 2,
   "model": "Ctk3500",
   "type": "Piano",
@@ -104,15 +94,5 @@
   "color": "asdasd",
   "description": "asdasd",
   "image": "default-image.png"
- },
- {
-  "id": 14,
-  "model": "Mathias si",
-  "type": "Guitarra",
-  "price": "222",
-  "brand": "Mathias si",
-  "color": "Mathias si",
-  "description": "223232323",
-  "image": "product-1634153977060.png"
  }
 ]
