@@ -15,7 +15,8 @@ app.use(methodOverride('_method')); // Para poder usar los métodos PUT y DELETE
 // Requerimos rutas
 const mainRoutes = require("./routes/mainRoutes");
 const productsRoutes = require("./routes/productsRoutes");
-
+const usersRoutes = require("./routes/usersRoutes");
+const { use } = require("./routes/usersRoutes");
 
 // Seteamos variables Ejs y carpeta views
 app.set("view engine", "ejs");
@@ -30,6 +31,8 @@ app.listen("3000", () => {
 app.use("/", mainRoutes);
 // Ruta de productos del proyecto
 app.use("/products", productsRoutes);
+// Ruta de usuarios
+app.use("/users", usersRoutes);
 // Ruta NotFound404
 app.use((req, res, next) => {
   res.status(404).render("error404")
