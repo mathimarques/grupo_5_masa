@@ -21,7 +21,10 @@
               <%} %> 
 
               <label for="username">Nombre de usuario o Email</label>
-              <input class="login_input" type="text" name="username" id="username" value=" <%= locals.old && old.username %>"/>
+              <input class="login_input" type="text" name="username" id="username"
+               <% if(locals.errors){ %>
+                value=" <%= locals.old && old.username %>"
+              <%} %>  />
             </div>
             <div class="password_login">
               <% if(locals.errors && errors.password){%>
