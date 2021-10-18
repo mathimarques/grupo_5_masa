@@ -29,7 +29,6 @@ const usersController = {
       if(errors.isEmpty()){
           console.log('NO ERRORS');
           for(let i=0; i<users.length; i++){
-              console.log(users[i]);
               if(users[i].username == req.body.username){
 
                   console.log('Username: ' + req.body.username + users[i].name);

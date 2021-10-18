@@ -9,7 +9,7 @@ const validateLogin = [
     check('username')
         .notEmpty().withMessage('Completar nombre de usuario'),
     check('password')
-        .notEmpty().withMessage('Completar el password') 
+        .notEmpty().withMessage('Completar el password')
 ];
 
 // Rutas para login
