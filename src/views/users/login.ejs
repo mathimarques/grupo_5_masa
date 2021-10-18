@@ -14,14 +14,21 @@
         <!-- SIGN IN -->
         <section class="sign_in_form">
           <h3>Log in</h3>
-          <form action="/">
+          <form action="/users/login" method="POST">
             <div class="nombre_usuario_login">
+              <% if(locals.errors && errors.username){%>
+                <p style="color:red"><%= errors.username.msg %></p>
+              <%} %> 
+
               <label for="username">Nombre de usuario o Email</label>
-              <input class="login_input" type="text" id="username" />
+              <input class="login_input" type="text" name="username" id="username" value=" <%= locals.old && old.username %>"/>
             </div>
             <div class="password_login">
+              <% if(locals.errors && errors.password){%>
+                <p style="color:red"><%= errors.password.msg %></p>
+              <%} %> 
               <label for="password">Password</label>
-              <input class="login_input" type="password" name="" id="password" />
+              <input class="login_input" type="password" name="password" id="password" />
             </div>
             <button>Ingresar</button>
           </form>
