@@ -30,5 +30,12 @@
   "date": "05/05/1984",
   "address": "Salta 2245, La Plata",
   "password": 1216845
+ },
+ {
+  "id": 5,
+  "name": "aaa",
+  "username": "aaa",
+  "date": "2021-10-01",
+  "password": "$2a$10$bwfjq34GQSXKA8l60tul/OfIT.MYcmyhJNL7PJBd8u0SLsOPpyP6m"
  }
 ]
