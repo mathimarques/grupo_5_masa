@@ -70,7 +70,7 @@ const usersController = {
 			username: req.body.username,
 			date: req.body.date,
 			address: req.body.address,
-            password: bcrypt.hashSync(req.body.password, 10)
+      password: bcrypt.hashSync(req.body.password, 10)
 		}
 	users.push(newUsers);
 	fs.writeFileSync(usersLocation, JSON.stringify(users, null, " "))
