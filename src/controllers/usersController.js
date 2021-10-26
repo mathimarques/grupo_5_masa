@@ -39,16 +39,19 @@ const usersController = {
               }
           }
 
-          console.log(users);
+          console.log(userToLog);
 
           if(userToLog==undefined){
             res.render('./users/login', {errors: [
                 {msg: 'Hay errores de login'}
                 ]})
             }
-            console.log(userToLog);
+            else{
+              req.session.userToLog = userToLog;
+              res.send('username logueado: ' + userToLog.username + ' nombre de usuario: ' + userToLog.name);
+            }
   
-            res.send('username logueado: ' + userToLog.username + ' nombre de usuario: ' + userToLog.name);
+                        
       }
 
       else{
