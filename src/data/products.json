@@ -94,5 +94,25 @@
   "color": "asdasd",
   "description": "asdasd",
   "image": "default-image.png"
+ },
+ {
+  "id": 14,
+  "model": "nxt",
+  "type": "Guitarra",
+  "price": "13",
+  "brand": "13",
+  "color": "12",
+  "description": "12",
+  "image": "product-1635356908624.jpeg"
+ },
+ {
+  "id": 15,
+  "model": "123",
+  "type": "Violin",
+  "price": "1",
+  "brand": "13",
+  "color": "12",
+  "description": "1",
+  "image": "product-1635357169031.jpeg"
  }
 ]

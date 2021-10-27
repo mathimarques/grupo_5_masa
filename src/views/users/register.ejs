@@ -11,7 +11,7 @@
           <p>Si ya tienes una cuenta, <a href="/login">Ingresa aquí</a>.</p>
         </section>
         <section class="sign_in_form">
-        <form action="/users/register" method="post" >
+        <form action="/users/register" method="post" enctype="multipart/form-data">
           <div class="nombre_usuario_login">
             <h3><strong>Datos de Usuario</strong></h3>
             <br>
@@ -37,6 +37,9 @@
             <!-- Confirmar contraseña -->
             <label for="confirm-pass">Confirmar Password</label>
             <input type="password" name="confirm-pass" id="confirm-pass" />
+
+            <label for="user-pic">Foto de perfil</label>
+            <input type="file" name="user-pic" id="user-pic" />
           </div>
           <div class="btn_login">
             <!-- boton Enviar -->

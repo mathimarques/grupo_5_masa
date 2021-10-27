@@ -35,6 +35,8 @@ const productsController = {
       image: req.file ? req.file.filename : 'default-image.png'
     }
 
+    console.log(req.file);
+
     //agrega newProduct a la lista de productos y sobreescribe el archivo
     products.push(newProduct);
     fs.writeFileSync(productsLocation, JSON.stringify(products, null, " "));
