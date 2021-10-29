@@ -69,5 +69,13 @@
   "date": "2021-09-29",
   "password": "$2a$10$geMcXOBlLXR.0NaE9rpZa.NDXdsqU2PdyQ8T5hAPOq3mbFZ.uMnaO",
   "image": "userPicture-1635357299552.jpeg"
+ },
+ {
+  "id": 12,
+  "name": "Mathias",
+  "username": "mathimarques",
+  "date": "1990-03-28",
+  "password": "$2a$10$7VAIsyTE9i5WXoynHdHik.YhUcnqkrutTcY/FnseDIewkHHSUdSFa",
+  "image": "userPicture-1635523964538.jpg"
  }
 ]

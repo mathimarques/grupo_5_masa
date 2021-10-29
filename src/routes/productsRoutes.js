@@ -1,6 +1,7 @@
 // Requerimos módulos
 const express = require('express');
 const productsController = require('../controllers/productsController');
+const authMiddleware = require('../middlewares/authMiddleware');
 const path = require('path');
 // Requerimos router
 const router = express.Router();
@@ -24,17 +25,17 @@ const uploadFile = multer({storage: storage}); //podemos obviar storage como val
 router.get("/", productsController.listProducts);
 
 // Crear un producto
-router.get("/create", productsController.createProduct);
+router.get("/create", authMiddleware, productsController.createProduct);
 router.post("/create", uploadFile.single('upload_img'), productsController.storeProduct);
 
 // Editar un producto
-router.get("/edit/:id", productsController.editProduct);
+router.get("/edit/:id", authMiddleware, productsController.editProduct);
 router.put("/edit/:id", uploadFile.single('upload_img'), productsController.updateProduct);
 
 // Devolver un producto
 router.get('/detail/:id', productsController.detailProduct); 
 
 // Eliminar un producto 
-router.delete('/delete/:id', productsController.destroyProduct);
+router.delete('/delete/:id', authMiddleware, productsController.destroyProduct);
 
 module.exports = router;
