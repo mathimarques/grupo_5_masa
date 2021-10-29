@@ -2,8 +2,11 @@
 const express = require('express');
 const usersController = require('../controllers/usersController');
 const {body, check} = require('express-validator');
-const router = express.Router();
+const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 const path = require('path')
+const router = express.Router();
+
 
 //Multer
 const multer = require('multer');
@@ -31,11 +34,11 @@ const validateLogin = [
 ];
 
 // Rutas para login
-router.get('/login', usersController.login);
+router.get('/login', guestMiddleware, usersController.login);
 router.post('/login', validateLogin, usersController.processLogin);
 
 // Rutas para crear usuario
-router.get('/register', usersController.register);
+router.get('/register', guestMiddleware, usersController.register);
 router.post('/register', uploadFile.single('user-pic'), usersController.processRegister);
 
 module.exports = router;
