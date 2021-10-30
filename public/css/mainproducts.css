@@ -86,19 +86,41 @@
     font-weight: 500;
     font-size: 1.4em;
   }
-  
+  .formularioDetalleProducto {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 10% auto;
+  }
   .estilo-comprar {
     color: #ffffff;
     font-weight: bold;
-    display: block;
     border: 0 solid gray;
     border-radius: 50px;
     padding: 15px 35px;
-    margin: 5% auto;
+    margin-left: 10%;
     background-color: #12261c;
     transition: 0.5s ease-in-out;
     text-align: center;
-    width: 50%;
+    width: 30%;
+    display: inline;
+  }
+  .estilo-comprar1 {
+    color: #ffffff;
+    font-weight: bold;
+    border: 0 solid gray;
+    border-radius: 50px;
+    padding: 15px 40px;
+    margin-left: 10%;
+    background-color: #12261c;
+    transition: 0.5s ease-in-out;
+    text-align: center;
+    width: 30%;
+    display: inline;
+    height: 60px;
+  }
+  .comprar {
+    text-decoration: none;
   }
   
   .estilo-comprar:hover {

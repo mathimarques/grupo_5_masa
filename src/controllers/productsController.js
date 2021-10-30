@@ -49,6 +49,9 @@ const productsController = {
       return product.id ==id;
     })
 
+    
+    
+
     res.render("./products/editProduct", {
       product: product
     });

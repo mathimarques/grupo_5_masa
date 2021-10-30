@@ -30,9 +30,16 @@
                     <li>Diapasón de arce</li>
                     <li>Acabado: Tidepool</li>
                 </ul>
-            <div class="sale-prod">
-                <h4 class="estilo-precio">$<%= product.price %></h4>
-                <p class="estilo-comprar">COMPRAR</p>
+                          
+                <!--<p class="estilo-comprar">COMPRAR</p>-->
+                <form action="/products/edit/<%= product.id %> " method="get" >
+                    <div class="formularioDetalleProducto">
+                        <h4 class="estilo-precio">$<%= product.price %></h4>
+                        <a href="/productCart" class="estilo-comprar comprar">Comprar</a> 
+                        <button class="estilo-comprar1">Editar Producto</button>
+                    </div>
+                    
+                </form>
             </div>
         </section>
     </main>

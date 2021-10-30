@@ -77,5 +77,13 @@
   "date": "1990-03-28",
   "password": "$2a$10$7VAIsyTE9i5WXoynHdHik.YhUcnqkrutTcY/FnseDIewkHHSUdSFa",
   "image": "userPicture-1635523964538.jpg"
+ },
+ {
+  "id": 13,
+  "name": "tony bonalde",
+  "username": "ddd",
+  "date": "2000-10-20",
+  "password": "$2a$10$KUmXO0/USfPmbI06FEseu.paTC7yWKQ2qPbmt5gMxu6mgb/i6306m",
+  "image": "default-image.png"
  }
 ]

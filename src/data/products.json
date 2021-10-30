@@ -10,14 +10,14 @@
   "image": "piano.png"
  },
  {
-  "id": 3,
-  "model": "Squier",
-  "type": "Bajo",
-  "price": 25000,
-  "brand": "Fender",
-  "color": "Rojo",
-  "description": "Bajo Electrico Fender Squier Affinity Series Jazz Bass",
-  "image": "bajo.png"
+  "id": 2,
+  "model": "Ctk3500",
+  "type": "Piano",
+  "price": "20000",
+  "brand": "Casio",
+  "color": "Negr",
+  "description": "Teclado musical Casio Ctk3500 61 teclas Negro",
+  "image": "piano.png"
  },
  {
   "id": 4,
