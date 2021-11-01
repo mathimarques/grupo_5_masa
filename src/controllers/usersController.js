@@ -48,7 +48,16 @@ const usersController = {
             }
             else{
               req.session.userToLog = userToLog;
-              res.send('username logueado: ' + userToLog.username + ' nombre de usuario: ' + userToLog.name);
+
+              // remember Cookie
+              if(req.body.remember != undefined){
+                res.cookie('remember account', userToLog.username, {maxAge: 60000});
+              }
+              else{
+                console.log("Account not remembered");
+              }
+
+              res.redirect('/');
             }
   
                         
@@ -81,6 +90,11 @@ const usersController = {
 	fs.writeFileSync(usersLocation, JSON.stringify(users, null, " "))
     
     res.redirect("/");
+  },
+
+  logout: (req,res) =>{
+    delete req.session.userToLog;
+    res.redirect('/');
   }
 };
 

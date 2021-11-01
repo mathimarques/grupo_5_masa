@@ -85,5 +85,13 @@
   "date": "2000-10-20",
   "password": "$2a$10$KUmXO0/USfPmbI06FEseu.paTC7yWKQ2qPbmt5gMxu6mgb/i6306m",
   "image": "default-image.png"
+ },
+ {
+  "id": 14,
+  "name": "Santiago Vazquez Bare",
+  "username": "santivb",
+  "date": "2021-11-02",
+  "password": "$2a$10$Az9NtszXtiyJcP0wMPmon.rG7zJBMqwm6XgvFPghPCSZcFOLefhLu",
+  "image": "default-image.png"
  }
 ]

@@ -9,15 +9,20 @@ const productsLocation = path.join(__dirname, '../data/products.json');
 //y genera un objeto a partir del mismo
 const products = JSON.parse(fs.readFileSync(productsLocation, { encoding: "utf-8" }));
 
+
+
 // Generamos el controlador con sus métodos
 const productsController = {
   // Listar todos productos
   listProducts: (req, res) => {
-    res.render("./products/product", {'products':products});
+    res.render("./products/product", {
+      'products':products,
+      userLogged: req.session.userToLog
+  });
   },
   // Crear Producto
   createProduct: (req, res) => {
-    res.render("./products/createProduct");
+    res.render("./products/createProduct", {userLogged: req.session.userToLog});
   },
   storeProduct: (req, res) => {
     // res.send(req.body);
@@ -49,11 +54,9 @@ const productsController = {
       return product.id ==id;
     })
 
-    
-    
-
     res.render("./products/editProduct", {
-      product: product
+      product: product,
+      userLogged: req.session.userToLog
     });
   },
   updateProduct: (req, res) => {
@@ -91,7 +94,8 @@ const productsController = {
 
 		/*res.render("detail.ejs"*/
     res.render("./products/detailProduct", {
-			product: product
+			product: product,
+      userLogged: req.session.userToLog
 		})
   },
   // (delete) Delete - Eliminar un producto

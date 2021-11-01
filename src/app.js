@@ -5,7 +5,10 @@ const path = require("path");
 const methodOverride = require('method-override'); // Para poder usar los métodos PUT y DELETE
 const session = require('express-session'); // Para poder utilizar session de usuario
 const cookieParser = require('cookie-parser'); // Para poder guardar los cookies de usuario
-const cookieAuthMiddleware = require('./middlewares/cookieAuthMiddleware');
+const rememberMiddleware = require('./middlewares/cookieAuthMiddleware');
+
+// Esto va en las rutas
+// const cookieAuthMiddleware = require('./middlewares/cookieAuthMiddleware');
 
 // Definimos el path public como recurso de archivo estatico
 const public = path.resolve(__dirname, "../public");
@@ -14,11 +17,20 @@ app.use(express.static(public));
 app.use(express.urlencoded({extended: false})); // Para poder leer el body
 app.use(express.json()); // Para poder leer el body
 app.use(methodOverride('_method')); // Para poder usar los métodos PUT y DELETE
+
 // Session
-app.use(session({secret: 'session_grupo5masa'}));
+app.use(session({
+  secret: 'session_grupo5masa',
+  resave: false,
+  saveUninitialized: false
+}));
+
 // Cookies
 app.use(cookieParser());
-app.use(cookieAuthMiddleware);
+app.use(rememberMiddleware);
+
+// va en Rutas
+// app.use(cookieAuthMiddleware);
 
 
 // Requerimos rutas

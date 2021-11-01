@@ -13,6 +13,7 @@ header {
     width: 42vw;
   }
 
+
   /* nav */
   nav {
     display: none;
@@ -21,6 +22,18 @@ header {
     background-color: #12261c;
     width: 30%;
     display: flex;
+  }
+
+  .user_info_header{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .user_info_header li{
+    font-size: 0.7em;
+    width: 100px;
   }
   
   .burger {

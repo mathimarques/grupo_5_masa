@@ -40,4 +40,6 @@ router.post('/login', validateLogin, usersController.processLogin);
 router.get('/register', guestMiddleware, usersController.register);
 router.post('/register', uploadFile.single('user-pic'), usersController.processRegister);
 
+router.get('/logout', usersController.logout);
+
 module.exports = router;
