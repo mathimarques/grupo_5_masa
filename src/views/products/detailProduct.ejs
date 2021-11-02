@@ -36,9 +36,10 @@
                     <div class="formularioDetalleProducto">
                         <h4 class="estilo-precio">$<%= product.price %></h4>
                         <a href="/productCart" class="estilo-comprar comprar">Comprar</a> 
-                        <button class="estilo-comprar1">Editar Producto</button>
-                    </div>
-                    
+                         <!-- A continuacion SOLO se muestra si hay NO usuario logueado -->
+                         <% if (locals.userLogged) { %>
+                                <button class="estilo-comprar1">Editar Producto</button>
+                         <% } %>                
                 </form>
             </div>
         </section>
