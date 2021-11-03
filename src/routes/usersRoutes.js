@@ -42,4 +42,6 @@ router.post('/register', uploadFile.single('user-pic'), usersController.processR
 
 router.get('/logout', usersController.logout);
 
+router.get('/profile/:id', usersController.profile);
+
 module.exports = router;

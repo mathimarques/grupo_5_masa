@@ -1,0 +1,22 @@
+<%- include ("../partials/head") %>  <!-- HEAD -->
+
+    <body>
+        <%- include ('../partials/header') %> 
+
+        <main>
+            <div class="profile_container">
+                <div class="profile">
+                    <h2>Perfil de usuario</h2>
+                    <ul>
+                        <li>ID: <%=userLogged.id%></li>
+                        <li>Nombre de usuario: <%=userLogged.username%></li>
+                        <li> <img src="/img/<%=userLogged.image%>" alt="profile_pic"> </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+<%- include ('../partials/footer') %>
+    <%- include ('../partials/cursor') %>  
+  </body>
+</html>

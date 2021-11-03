@@ -15,3 +15,21 @@
     top: -122px;
     left: 0;
   }
+
+  /* TRASLADAR A UN CSS USERS */
+.profile_container{
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.profile{
+  background-color: rgb(230, 230, 230);
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.profile img{
+  width: 150px;
+  height: auto;
+}

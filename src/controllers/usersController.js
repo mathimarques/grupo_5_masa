@@ -95,6 +95,10 @@ const usersController = {
   logout: (req,res) =>{
     delete req.session.userToLog;
     res.redirect('/');
+  },
+
+  profile: (req,res)=>{
+    res.render('./users/profile', {userLogged: req.session.userToLog});
   }
 };
 
