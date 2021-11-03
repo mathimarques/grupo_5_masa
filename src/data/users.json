@@ -93,5 +93,13 @@
   "date": "2021-11-02",
   "password": "$2a$10$Az9NtszXtiyJcP0wMPmon.rG7zJBMqwm6XgvFPghPCSZcFOLefhLu",
   "image": "default-image.png"
+ },
+ {
+  "id": 15,
+  "name": "2",
+  "username": "2",
+  "date": "2021-11-03",
+  "password": "$2a$10$KQlLwFmxDAT0s.a8KvzxPOed8yTThjkDNOXpJUnWiQdHcpdA8dGSC",
+  "image": "userPicture-1635952001668.JPG"
  }
 ]
