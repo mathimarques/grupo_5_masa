@@ -51,7 +51,7 @@ const usersController = {
 
               // remember Cookie
               if(req.body.remember != undefined){
-                res.cookie('remember account', userToLog.username, {maxAge: 60000});
+                res.cookie('rememberAccount', userToLog.username, {maxAge: 1000 * 60 * 60}); //1 hour
               }
               else{
                 console.log("Account not remembered");
@@ -93,7 +93,13 @@ const usersController = {
   },
 
   logout: (req,res) =>{
+    // Delete info inside session about the user
     delete req.session.userToLog;
+    // delete the cookie
+    if(res.cookies){
+      delete res.cookies.rememberAccount;
+    }
+    
     res.redirect('/');
   },
 
