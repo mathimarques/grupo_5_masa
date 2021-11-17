@@ -9,9 +9,8 @@ const users = JSON.parse(fs.readFileSync(usersLocation, 'utf-8'));
 function cookieAuthMiddleware(req, res, next) {
   let userToLog;
   if(req.cookies.rememberAccount != undefined && req.session.userToLog == undefined){
-
       for(let i=0; i<users.length; i++){
-        if(users[i].username == req.cookies.remember){
+        if(users[i].username == req.cookies.rememberAccount){
           userToLog = users[i];
         }
       }

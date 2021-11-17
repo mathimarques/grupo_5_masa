@@ -96,8 +96,9 @@ const usersController = {
     // Delete info inside session about the user
     delete req.session.userToLog;
     // delete the cookie
-    if(res.cookies){
-      delete res.cookies.rememberAccount;
+    if(req.cookies.rememberAccount){
+      res.clearCookie('rememberAccount');
+      // delete req.cookies.rememberAccount;
     }
     
     res.redirect('/');

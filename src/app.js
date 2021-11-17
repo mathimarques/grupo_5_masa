@@ -7,9 +7,6 @@ const session = require('express-session'); // Para poder utilizar session de us
 const cookieParser = require('cookie-parser'); // Para poder guardar los cookies de usuario
 const rememberMiddleware = require('./middlewares/cookieAuthMiddleware');
 
-// Esto va en las rutas
-// const cookieAuthMiddleware = require('./middlewares/cookieAuthMiddleware');
-
 // Definimos el path public como recurso de archivo estatico
 const public = path.resolve(__dirname, "../public");
 // Middlewares

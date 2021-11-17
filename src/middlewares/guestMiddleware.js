@@ -3,8 +3,8 @@ function guestMiddleware(req, res, next) {
     if (req.session.userToLog == undefined) {
       next();
     } else {
-        let mensaje = "invitados, por favor realice log-off para ingresar...";
-        res.render("authError", { mensaje });
+        let mensaje = "Ya estás logueado!";
+        res.render("authError", { mensaje, userLogged: req.session.userToLog });
     }
   }
   
