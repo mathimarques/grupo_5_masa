@@ -9,6 +9,7 @@ const router = express.Router();
 
 //Multer
 const multer = require('multer');
+const authMiddleware = require('../middlewares/authMiddleware');
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
         let folder = ('./public/img');
@@ -42,6 +43,6 @@ router.post('/register', uploadFile.single('user-pic'), usersController.processR
 
 router.get('/logout', usersController.logout);
 
-router.get('/profile/:id', usersController.profile);
+router.get('/profile/:id', authMiddleware, usersController.profile);
 
 module.exports = router;
