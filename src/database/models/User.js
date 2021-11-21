@@ -26,6 +26,28 @@ module.exports = (sequelize, dataTypes)=>{
         password: {
             type: dataTypes.STRING(255),
             allowNull: false
+        },
+        id_role: {
+            type: dataTypes.INTEGER,
+            allowNull: true
         }
     }
+
+    let config = {
+        tableName: "users",
+        timestamp: false
+    }
+
+    let User = sequelize.define(alias, cols, config);
+
+    // Associate
+    User.associate = function(models){
+        User.belongsTo(models.Role, {
+            as: 'role',
+            foreignKey: 'id_role',
+            timestamp: false
+        })
+    }
+
+    return User;
 };
