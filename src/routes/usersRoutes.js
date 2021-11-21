@@ -45,4 +45,6 @@ router.get('/logout', usersController.logout);
 
 router.get('/profile/:id', authMiddleware, usersController.profile);
 
+router.get('/usersdb', usersController.findAll);
+
 module.exports = router;

@@ -16,7 +16,7 @@ module.exports = (sequelize, dataTypes)=>{
             allowNull: false
         },
         date_of_order: {
-            type: dataTypes.DATETIME,
+            type: dataTypes.DATE,
             allowNull: false
         }
         
