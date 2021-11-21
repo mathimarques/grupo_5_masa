@@ -2,7 +2,7 @@ CREATE TABLE `products` (
    `id` INT NOT NULL,
    `model` VARCHAR(255) NOT NULL,
    `id_type` INT NOT NULL,
-   `price` INT,
+   `price` DECIMAL,
    `id_brand` INT NOT NULL,
    `id_color` INT NOT NULL,
    `description` TEXT,
