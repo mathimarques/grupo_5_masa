@@ -15,7 +15,7 @@ module.exports = (sequelize, dataTypes)=>{
 
     let config = {
         tableName: "brands",
-        timestamp: false
+        timestamps: false
     }
 
     let Brand = sequelize.define(alias, cols, config);
@@ -25,7 +25,7 @@ module.exports = (sequelize, dataTypes)=>{
         Brand.hasMany(models.Product, {
             as: 'product', //estamos llamando a varias asociaciones de la misma manera (?)
             foreignKey: 'id_brand',
-            timestamp: false
+            timestamps: false
         })
     }
     

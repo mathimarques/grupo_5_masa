@@ -15,7 +15,7 @@ module.exports = (sequelize, dataTypes)=>{
 
     let config = {
         tableName: "types",
-        timestamp: false
+        timestamps: false
     }
 
     let Type = sequelize.define(alias, cols, config);
@@ -25,7 +25,7 @@ module.exports = (sequelize, dataTypes)=>{
         Type.hasMany(models.Product, {
             as: 'product',
             foreignKey: 'id_product',
-            timestamp: false
+            timestamps: false
         })
     }
     

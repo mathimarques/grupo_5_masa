@@ -35,7 +35,7 @@ module.exports = (sequelize, dataTypes)=>{
 
     let config = {
         tableName: "users",
-        timestamp: false
+        timestamps: false
     }
 
     let User = sequelize.define(alias, cols, config);
@@ -45,7 +45,7 @@ module.exports = (sequelize, dataTypes)=>{
         User.belongsTo(models.Role, {
             as: 'role',
             foreignKey: 'id_role',
-            timestamp: false
+            timestamps: false
         })
 
         User.belongsToMany(models.Product, {
@@ -53,7 +53,13 @@ module.exports = (sequelize, dataTypes)=>{
             through: 'product_user',
             foreignKey: 'id_user',
             otherKey: 'id_product',
-            timestamp: false
+            timestamps: false
+        })
+
+        User.hasMany(models.Order, {
+            as: 'order',
+            foreignKey: 'id_user',
+            timestamps: false
         })
     }
 

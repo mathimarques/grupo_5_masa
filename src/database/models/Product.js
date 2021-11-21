@@ -16,7 +16,7 @@ module.exports = (sequelize, dataTypes)=>{
             allowNull: false
         },
         price: {
-            type: dataTypes.INTEGER,
+            type: dataTypes.DECIMAL,
             allowNull: true
         },
         id_brand: {
@@ -43,7 +43,7 @@ module.exports = (sequelize, dataTypes)=>{
 
     let config = {
         tableName: "products",
-        timestamp: false
+        timestamps: false
     }
 
     let Product = sequelize.define(alias, cols, config);
@@ -53,26 +53,35 @@ module.exports = (sequelize, dataTypes)=>{
         Product.belongsTo(models.Type, {
             as: 'type',
             foreignKey: 'id_type',
-            timestamp: false
+            timestamps: false
         })
 
         Product.belongsTo(models.Brand, {
             as: 'brand',
             foreignKey: 'id_brand',
-            timestamp: false
+            timestamps: false
         })
 
         Product.belongsTo(models.Color, {
             as: 'color',
             foreignKey: 'id_color',
-            timestamp: false
+            timestamps: false
         })
 
         Product.belongsToMany(models.User, {
             as: 'user',
             through: 'product_user',
             foreignKey: 'id_product',
-            otherKey: 'id_user'
+            otherKey: 'id_user',
+            timestamps: false
+        })
+
+        Product.belongsToMany(models.Order, {
+            as: 'order',
+            through: 'product_order',
+            foreignKey: 'id_product',
+            otherKey: 'id_order',
+            timestamps: false
         })
     }
 
