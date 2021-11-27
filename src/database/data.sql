@@ -35,7 +35,7 @@ VALUES(1, 'Negro'),
 (5, 'Blanco');
 
 
--- LLENAR SOLO SI ES NECESARIO YA QUE NO DEJA HACER EL DELETE SIN PARANOIND
+-- LLENAR SOLO SI ES NECESARIO YA QUE NO DEJA HACER EL DELETE SIN PARANOID DELETED AT
 -- INSERT INTO product_user(id, id_user, id_product)
 -- VALUES(1, 1, 1),
 -- (2, 2, 2),
@@ -47,5 +47,5 @@ INSERT INTO products (id, model, id_type, price, id_brand, id_color, description
 VALUES (1, 'ABC123', 1, 50000, 1, 1, 'DESCRIPCION 1', 'piano.png', 5),
 (2, 'CBA321', 2, 150000, 3, 1, 'DESCRIPCION 2', 'bateria.png', 3),
 (3, 'MAS555', 3, 30000, 4, 2, 'DESCRIPCION 3', 'violin.png', 2),
-(4, 'XBN841', 4, 170000, 2, 5, 'DESCRIPCION 4', 'guitarra.png' 1),
+(4, 'XBN841', 4, 170000, 2, 5, 'DESCRIPCION 4', 'guitarra.png', 1),
 (5, 'WSX359', 5, 120000, 2, 4, 'DESCRIPCION 5', 'bajo.png' ,4);
