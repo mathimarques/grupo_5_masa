@@ -1,193 +1,222 @@
 /*MAIN PRODUCT*/
 .mainProduct {
-    padding-top: 20vh;
-    margin-bottom: 10%;
-  }
+  padding-top: 20vh;
+  margin-bottom: 10%;
+}
 .estilo-imagen-product {
-    width: 100%;
-    mix-blend-mode: multiply;
-    position: absolute;
-    top: 35%;
-    left: 0%;
-  } 
-  
-  .container-flex1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-top: 5%;
-    width: 50%;
-  }
-  .container-flex1 h1 {
-    font-family: "Oswald", sans-serif;
-    font-weight: 700;
-    font-size: 3em;
-    margin-bottom: 30px;
-  }
-  .container-flex1 h3,
-  .container-flex1 h5 {
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;
-  }
-  .container-flex1 h5 {
-    margin-top: 30px;
-  }
-  .container-flex1 span {
-    font-family: "Oswald", sans-serif;
-    font-weight: 100;
-    font-size: 6em;
-    letter-spacing: -5px;
-    color: #e7e7e7;
-  }
-  
-  .button-arrows {
-    background-color: #12261c;
-    padding: 0 20px;
-    height: 100px;
-    display: block;
-    color: white;
-    text-align: center;
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-  .button-arrows i {
-    font-size: 2.5em;
-  }
-  
-  .section1-main-product {
-    width: 100%;
-    margin: 5% 0;
-    padding-left: 1%;
-    background-color: white;
-    color: #143018;
-    position: relative;
-    height: 100vh;
-  }
-  
-  .section2-main-product {
-    width: 90%;
-    margin: 1% 5%;
-  }
-  
-  .arrow {
-    padding: 5px 0;
-  }
-  .section2-main-product h3 {
-    font-family: "Oswald", sans-serif;
-    font-weight: 300;
-    margin-bottom: 30px;
-  }
-  
-  .estilo-precio {
-    color: #143018;
-    display: inline;
-    font-family: "Oswald";
-    font-weight: 500;
-    font-size: 1.4em;
-  }
-  .formularioDetalleProducto {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: 10% auto;
-  }
-  .estilo-comprar {
-    color: #ffffff;
-    font-weight: bold;
-    border: 0 solid gray;
-    border-radius: 50px;
-    padding: 15px 35px;
-    margin-left: 10%;
-    background-color: #12261c;
-    transition: 0.5s ease-in-out;
-    text-align: center;
-    width: 30%;
-    display: inline;
-  }
-  .estilo-comprar1 {
-    color: #ffffff;
-    font-weight: bold;
-    border: 0 solid gray;
-    border-radius: 50px;
-    padding: 15px 40px;
-    margin-left: 10%;
-    background-color: #12261c;
-    transition: 0.5s ease-in-out;
-    text-align: center;
-    width: 30%;
-    display: inline;
-    height: 60px;
-  }
-  .comprar {
-    text-decoration: none;
-  }
-  
-  .estilo-comprar:hover {
-    color: #fff;
-    background-color: #a34e1d;
-  }
-  .sale-prod {
-    margin-top: 30px;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-  }
-  .list-descrip {
-    margin-top: 30px;
-    width: 100%;
-  }
-  .list-descrip li {
-    list-style: none;
-    line-height: 1.5;
-    color: #12261ca6;
-  }
-  .sale-listProduct {
-    margin-top: 30px;
-    display: block;
-    justify-content: end;
-    align-items: center;
-    width: 100%;
-  }
-  
-  
-  .image-listProducts {
-    width: 100%;
-    height: 50%;
-    text-align: center;
-    mix-blend-mode: multiply;
-  }
-  
-  .divListProducts {
-    margin-top: 30px;
-    display: flex;
-    justify-content: end;
-    width: 100%;
-    flex-direction: column;
-  }
-  
-  .divListProducts h3 {
-    width: 200px;
-    font-size: 2em;
-    text-transform: uppercase;
-    margin-bottom: 0px !important;
-  }
-  
-  .articleListProducts {
-    display: block;
-    flex-wrap: nowrap;
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-    align-content: center;
-    justify-content: space-between;
-    padding: 3%;
-    background: #ffffffb5;
-    border: 2px solid #ffffff38;
-    border-radius: 8px;
-    margin-bottom: 7%;
-    transition: ease-in-out 1s;
-  }
-  .articleListProducts:hover {
-    background: #fff;
-  }
+  width: 100%;
+  mix-blend-mode: multiply;
+  position: absolute;
+  top: 35%;
+  left: 0%;
+}
+
+.container-flex1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 5%;
+  width: 50%;
+}
+.container-flex1 h1 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 3em;
+  margin-bottom: 30px;
+}
+.container-flex1 h3,
+.container-flex1 h5 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+.container-flex1 h5 {
+  margin-top: 30px;
+}
+.container-flex1 span {
+  font-family: "Oswald", sans-serif;
+  font-weight: 100;
+  font-size: 6em;
+  letter-spacing: -5px;
+  color: #e7e7e7;
+}
+
+.button-arrows {
+  background-color: #12261c;
+  padding: 0 20px;
+  height: 100px;
+  display: block;
+  color: white;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.button-arrows i {
+  font-size: 2.5em;
+}
+
+.section1-main-product {
+  width: 100%;
+  margin: 5% 0;
+  padding-left: 1%;
+  background-color: white;
+  color: #143018;
+  position: relative;
+  height: 100vh;
+}
+
+.section2-main-product {
+  width: 90%;
+  margin: 1% 5%;
+}
+
+.arrow {
+  padding: 5px 0;
+}
+.section2-main-product h3 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.estilo-precio {
+  color: #143018;
+  display: inline;
+  font-family: "Oswald";
+  font-weight: 500;
+  font-size: 1.4em;
+}
+.formularioDetalleProducto {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 10% auto;
+}
+.estilo-comprar {
+  color: #ffffff;
+  font-weight: bold;
+  border: 0 solid gray;
+  border-radius: 50px;
+  padding: 15px 35px;
+  margin-left: 10%;
+  background-color: #12261c;
+  transition: 0.5s ease-in-out;
+  text-align: center;
+  width: 30%;
+  display: inline;
+}
+.estilo-comprar1 {
+  color: #ffffff;
+  font-weight: bold;
+  border: 0 solid gray;
+  border-radius: 50px;
+  padding: 15px 40px;
+  margin-left: 10%;
+  background-color: #12261c;
+  transition: 0.5s ease-in-out;
+  text-align: center;
+  width: 30%;
+  display: inline;
+  height: 60px;
+}
+.comprar {
+  text-decoration: none;
+}
+
+.estilo-comprar:hover {
+  color: #fff;
+  background-color: #a34e1d;
+}
+.sale-prod {
+  margin-top: 30px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.list-descrip {
+  margin-top: 30px;
+  width: 100%;
+}
+.list-descrip li {
+  list-style: none;
+  line-height: 1.5;
+  color: #12261ca6;
+}
+.sale-listProduct {
+  margin-top: 30px;
+  display: block;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+}
+
+.image-listProducts {
+  width: 100%;
+  height: 50%;
+  text-align: center;
+  mix-blend-mode: multiply;
+}
+
+.divListProducts {
+  margin-top: 30px;
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  flex-direction: column;
+}
+
+.divListProducts h3 {
+  width: 200px;
+  font-size: 2em;
+  text-transform: uppercase;
+  margin-bottom: 0px !important;
+}
+
+.articleListProducts {
+  display: block;
+  flex-wrap: nowrap;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  padding: 3%;
+  background: #ffffffb5;
+  border: 2px solid #ffffff38;
+  border-radius: 8px;
+  margin-bottom: 7%;
+  transition: ease-in-out 1s;
+}
+.articleListProducts:hover {
+  background: #fff;
+}
+
+.buscadorForm {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.inputBuscar {
+  width: 100%;
+  margin-right: 20px;
+}
+
+.btnBuscar {
+  color: white;
+  font-weight: bold;
+  display: inline;
+  border: 0 solid gray;
+  border-radius: 50px;
+  padding: 10px 35px;
+  margin: 0 0px;
+  background-color: 143018;
+  transition: 0.5s ease-in-out;
+}
+.btnBuscar:hover {
+  color: #fff;
+  background-color: #143018;
+}

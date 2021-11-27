@@ -24,6 +24,9 @@ const uploadFile = multer({storage: storage}); //podemos obviar storage como val
 // Devolver todos los productos
 router.get("/", productsController.listProducts);
 
+// Buscar productos
+router.get("/search", productsController.search);
+
 // Crear un producto
 router.get("/create", authMiddleware, productsController.createProduct);
 router.post("/create", uploadFile.single('upload_img'), productsController.storeProduct);
