@@ -94,20 +94,3 @@ ALTER TABLE `order` ADD CONSTRAINT `FK_c8321e35-54ad-4399-a38f-7f6098a9604b` FOR
 ALTER TABLE `product_order` ADD CONSTRAINT `FK_f930d9ea-cc44-425d-ae22-c8bc674b0ecd` FOREIGN KEY (`id_product`) REFERENCES `products`(`id`)  ;
 
 ALTER TABLE `product_order` ADD CONSTRAINT `FK_a84f77aa-132e-4c94-9f8e-f879a844ca6a` FOREIGN KEY (`id_order`) REFERENCES `order`(`id`)  ;
-
--- INSERTS --
-
-INSERT INTO role
-VALUES (1, 'admin');
-
-INSERT INTO role
-VALUES (2, 'user');
-
-INSERT INTO role
-VALUES (3, 'guest');
-
-INSERT INTO users (id, name, username, email, password, id_role)
-VALUES (1, 'Mathias Marques', 'mathimarques','asdasd@asas.com.ar', '1234', 1), 
-(2, 'Santiago Vitali', 'santivit','asdasd@asas.com.ar', '1234', 1),
-(3, 'Santiago Vazquez Bare', 'santivb','asdasd@asas.com.ar', '1234', 1),
-(4, 'Antonio Santafe', 'toni','asdasd@asas.com.ar', '1234', 1);
