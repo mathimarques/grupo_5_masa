@@ -7,19 +7,19 @@
         <% for( let i = 0; i < products.length; i++ ) { %>
         <article class="articleListProducts">
           <div class="divListProducts">
-            <h3><strong><%= products[i].type %> </strong></h3>
+            <h3><strong><%= products[i].type.name %> </strong></h3>
             <ul class="list-descrip">
               <li>
                 <i><strong>ID: </strong></i><%= products[i].id %>
               </li>
               <li>
-                <i><strong>MARCA: </strong></i><%= products[i].brand %>
+                <i><strong>MARCA: </strong></i><%= products[i].brand.name %>
               </li>
               <li>
-                <i><strong>MODELO: </strong></i> <%= products[i].model %>
+                <i><strong>MODELO: </strong></i> <%= products[i].model.name %>
               </li>
               <li>
-                <i><strong>COLOR: </strong></i><%= products[i].color %>
+                <i><strong>COLOR: </strong></i><%= products[i].color.name %>
               </li>
               <li>
                 <i><strong>DESCRIPCION: </strong></i><%= products[i].description
