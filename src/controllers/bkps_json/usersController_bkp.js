@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Llamar la base de datos
-const db = require('../database/models');
+const db = require('../../database/models');
 const sequelize = db.sequelize;
 const { Op } = require('sequelize');
 
@@ -18,7 +18,7 @@ const users = JSON.parse(fs.readFileSync(usersLocation, 'utf-8'));
 // Requerimos modulo para encriptar password
 const bcrypt = require('bcryptjs');
 const { off } = require('process');
-const User = require('../database/models/User');
+const User = require('../../database/models/User');
 
 // Generamos el controlador con sus métodos
 const usersController = {
