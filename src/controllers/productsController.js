@@ -64,15 +64,22 @@ const productsController = {
   },
   // Editar Producto
   editProduct: (req, res) => {
-    const id = req.params.id;
-    const product = products.find((product) => {
-      return product.id == id;
-    });
-
-    res.render("./products/editProduct", {
-      product: product,
-      userLogged: req.session.userToLog,
-    });
+    db.Product.findByPk(req.params.id, {
+      include: [
+        { association: "type" },
+        { association: "brand" },
+        { association: "color" },
+      ],
+    })
+      .then((product) => {
+        res.render("./products/editProduct", {
+          product: product,
+          userLogged: req.session.userToLog,
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   },
   updateProduct: (req, res) => {
     const id = req.params.id;
@@ -101,28 +108,33 @@ const productsController = {
   },
   // Devolver un producto
   detailProduct: (req, res) => {
-    const id = req.params.id;
-    const product = products.find((product) => {
-      return product.id == id;
-    });
-
-    /*res.render("detail.ejs"*/
-    res.render("./products/detailProduct", {
-      product: product,
-      userLogged: req.session.userToLog,
-    });
+    db.Product.findByPk(req.params.id, {
+      include: [
+        { association: "type" },
+        { association: "brand" },
+        { association: "color" },
+      ],
+    })
+      .then((product) => {
+        res.render("./products/detailProduct", {
+          product: product,
+          userLogged: req.session.userToLog,
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   },
   // (delete) Delete - Eliminar un producto
   destroyProduct: (req, res) => {
-    let id = req.params.id;
-    let finalProducts = products.filter((product) => {
-      return id != product.id;
-    });
-    fs.writeFileSync(
-      productsLocation,
-      JSON.stringify(finalProducts, null, " ")
-    );
-    res.redirect("/products");
+    db.Product.destroy({
+      where: {
+        id: req.params.id,
+      },
+      force: true,
+    })
+      .then(() => res.redirect("/products"))
+      .catch((error) => res.send(error));
   },
 };
 

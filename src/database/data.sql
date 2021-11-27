@@ -34,12 +34,14 @@ VALUES(1, 'Negro'),
 (4, 'Marron'),
 (5, 'Blanco');
 
-INSERT INTO product_user(id, id_user, id_product)
-VALUES(1, 1, 1),
-(2, 2, 2),
-(3, 3, 3),
-(4, 4, 4),
-(5, 5, 5);
+
+-- LLENAR SOLO SI ES NECESARIO YA QUE NO DEJA HACER EL DELETE SIN PARANOIND
+-- INSERT INTO product_user(id, id_user, id_product)
+-- VALUES(1, 1, 1),
+-- (2, 2, 2),
+-- (3, 3, 3),
+-- (4, 4, 4),
+-- (5, 5, 5);
 
 INSERT INTO products (id, model, id_type, price, id_brand, id_color, description, image, stock)
 VALUES (1, 'ABC123', 1, 50000, 1, 1, 'DESCRIPCION 1', 'piano.png', 5),

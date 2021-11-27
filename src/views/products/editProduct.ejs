@@ -21,32 +21,32 @@
             <div class="input_containers">
               <p>Categoría</p>
               <div class="product_radio">
-                  <input class="login_input" type="radio" name="type" id="guitarra" value="Guitarra" <% if(product.type == 'Guitarra'){
+                  <input class="login_input" type="radio" name="type" id="guitarra" value="Guitarra" <% if(product.type.name == 'Guitarra'){
                       %> checked="checked" <%
                   } %>  />
                   <label for="guitarra">Guitarra</label>
             </div>
 
               <div class="product_radio">
-                  <input class="login_input" type="radio" name="type" id="piano" value="Piano" <% if(product.type == 'Piano'){
+                  <input class="login_input" type="radio" name="type" id="piano" value="Piano" <% if(product.type.name == 'Piano'){
                       %> checked="checked" <%
                   } %>/>
                 <label for="piano">Piano</label>
             </div>
               <div class="product_radio">
-                  <input class="login_input" type="radio" name="type" id="bajo" value="Bajo" <% if(product.type == 'Bajo'){
+                  <input class="login_input" type="radio" name="type" id="bajo" value="Bajo" <% if(product.type.name == 'Bajo'){
                       %> checked="checked" <%
                   } %>/>
                 <label for="bajo">Bajo</label>
             </div>
             <div class="product_radio">
-                  <input class="login_input" type="radio" name="type" id="bateria" value="Bateria" <% if(product.type == 'Bateria'){
+                  <input class="login_input" type="radio" name="type" id="bateria" value="Bateria" <% if(product.type.name == 'Bateria'){
                       %> checked="checked" <%
                   } %>/>
                 <label for="bateria">Batería</label>
             </div>
               <div class="product_radio">
-                  <input class="login_input" type="radio" name="type" id="violin" value="Violin" <% if(product.type == 'Violin'){
+                  <input class="login_input" type="radio" name="type" id="violin" value="Violin" <% if(product.type.name == 'Violin'){
                       %> checked="checked" <%
                   } %>/>    
                 <label for="violin">Violín</label>
@@ -59,12 +59,12 @@
 
             <div class="input_containers">
               <label for="brand">Marca</label>
-              <input class="login_input" type="text" name="brand" id="brand" value="<%= product.brand %>" />
+              <input class="login_input" type="text" name="brand" id="brand" value="<%= product.brand.name %>" />
             </div>
 
             <div class="input_containers">
               <label for="color">Color</label>
-              <input class="login_input" type="text" name="color" id="color" value="<%= product.color %>" />
+              <input class="login_input" type="text" name="color" id="color" value="<%= product.color.name %>" />
             </div>
 
             <div class="input_containers">
