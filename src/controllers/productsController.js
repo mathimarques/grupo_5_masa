@@ -1,5 +1,6 @@
 // Requerimos models de sequelize
 const db = require("../database/models");
+const Op = db.Sequelize.Op;
 
 // BORRAR CUANDO ESTÉ LISTO EL CRUD CON BD
 //Requiriendo modulo para leer archivos
@@ -33,6 +34,32 @@ const productsController = {
         console.log(error);
       });
   },
+
+  // Buscar productos
+  search: (req, res) => {
+    db.Product.findAll(
+      {
+        where: {
+          description: { [Op.like]: "%" + req.query.keyword + "%" },
+        },
+        include: [
+          { association: "type" },
+          { association: "brand" },
+          { association: "color" },
+        ],
+      },
+    )
+      .then((products) => {
+        res.render("./products/product", {
+          products: products,
+          userLogged: req.session.userToLog,
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  },
+
   // Crear Producto
   createProduct: (req, res) => {
     res.render("./products/createProduct", {

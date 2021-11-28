@@ -4,6 +4,12 @@
     <%- include ('../partials/header') %>
     <main class="mainProduct">
       <section class="section2-main-product">
+        <div class="articleListProducts">
+          <form class="buscadorForm" action="/products/search" method="GET">
+             <input class="inputBuscar" type="text" name="keyword" id="keyword">
+              <button class="btnBuscar" type="submit">BUSCAR</button>
+          </form>
+        </div>
         <% for( let i = 0; i < products.length; i++ ) { %>
         <article class="articleListProducts">
           <div class="divListProducts">
