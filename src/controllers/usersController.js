@@ -26,72 +26,57 @@ const usersController = {
     res.render("./users/login");
   },
   processLogin: (req,res) =>{
-      let errors = validationResult(req); //variable  para checkear si el middleware en el router detectó errores
-      let userToLog = undefined; //variable para luego asignar al usuario logueandose
+    let errors = validationResult(req)
+    let userToLog = undefined;
+     db.User.findOne({
+      where: {
+        username: req.body.username
+      }
+    }).then((user)=>{
+      console.log (user.dataValues)
+      userToLog = user.dataValues
+      if(userToLog==undefined){
+        res.render('./users/login', {errors: [
+            {msg: 'Hay errores de login'}
+            ]})
+        }
+        else{
+          req.session.userToLog = userToLog;
 
-    // Logica para checkear si no hay errores, y si el usuario y contraseña en el 
-    // formulario (req.body) coinciden con algun usuario en nuestra base de datos (json por ahora)
-    // En caso que exista, se asigna el usuario a userToLog, caso contrario rebota
-      if(errors.isEmpty()){
-          console.log('NO ERRORS');
-          for(let i=0; i<users.length; i++){
-              if(users[i].username == req.body.username){
-
-                  console.log('Username: ' + req.body.username + users[i].name);
-                  if(bcrypt.compareSync(req.body.password, users[i].password)){
-                      userToLog = users[i];
-                      break;
-                  }
-              }
+          // remember Cookie
+          if(req.body.remember != undefined){
+            res.cookie('rememberAccount', userToLog.username, {maxAge: 1000 * 60 * 60}); //1 hour
+          }
+          else{
+            console.log("Account not remembered");
           }
 
-          console.log(userToLog);
-
-          if(userToLog==undefined){
-            res.render('./users/login', {errors: [
-                {msg: 'Hay errores de login'}
-                ]})
-            }
-            else{
-              req.session.userToLog = userToLog;
-
-              // remember Cookie
-              if(req.body.remember != undefined){
-                res.cookie('rememberAccount', userToLog.username, {maxAge: 1000 * 60 * 60}); //1 hour
-              }
-              else{
-                console.log("Account not remembered");
-              }
-
-              res.redirect('/');
-            }    
-      }
-
-      else{
-          console.log(errors.mapped());
-          res.render('./users/login', {errors: errors.mapped(), old: req.body});
-      }
-
-      
-
-    //   res.redirect('/');
+          res.redirect('/');
+        } 
+    })
+    .catch(function (error) {
+      console.log(errors.mapped());
+      res.render('./users/login', {errors: errors.mapped(), old: req.body});
+      console.log(error);
+    });
   },
+  
   register: (req, res) => {
     res.render("./users/register");
   },
   processRegister: (req, res) => {
-    const newUsers = {
-			id: users[users.length - 1].id + 1,
+      db.User.create({
 			name: req.body.name,
 			username: req.body.username,
+      email: req.body.email,
 			date: req.body.date,
 			address: req.body.address,
-      password: bcrypt.hashSync(req.body.password, 10),
+      password: /*bcrypt.hashSync(req.body.password, 10)*/ req.body.password,
       image: req.file ? req.file.filename : 'default-image.png'
-		}
-    console.log(req.file);
-	users.push(newUsers);
-	fs.writeFileSync(usersLocation, JSON.stringify(users, null, " "))
+		})  
+    //console.log(req.file);
+	//users.push(newUsers);
+	//fs.writeFileSync(usersLocation, JSON.stringify(users, null, " "))
     
     res.redirect("/");
   },
@@ -109,7 +94,11 @@ const usersController = {
   },
 
   profile: (req,res)=>{
-    res.render('./users/profile', {userLogged: req.session.userToLog});
+    db.User.findByPk(req.params.id)
+    .then(user=>{
+      res.render('./users/profile', {userLogged: req.session.userToLog});
+    })
+    
   },
 
   // PRUEBA
