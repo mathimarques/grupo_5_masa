@@ -7,7 +7,6 @@
       <div class="login_container">
         <section class="intro_login">
           <h2>Crear nuevo producto</h2>
-          <br />
         </section>
         <!-- SIGN IN -->
         <section class="sign_in_form">
@@ -19,29 +18,23 @@
               <input class="login_input" type="text" name="model" id="model" />
             </div>
 
+
+            
+
             <div class="input_containers">
               <p>Categoría</p>
-              <div class="product_radio">
-                  <input class="login_input" type="radio" name="type" id="guitarra" value="Guitarra" />
-                  <label for="guitarra">Guitarra</label>
-            </div>
-              <div class="product_radio">
-                  <input class="login_input" type="radio" name="type" id="piano" value="Piano" />
-                <label for="piano">Piano</label>
-            </div>
-              <div class="product_radio">
-                  <input class="login_input" type="radio" name="type" id="bajo" value="Bajo" />
-                <label for="bajo">Bajo</label>
-            </div>
-            <div class="product_radio">
-              <input class="login_input" type="radio" name="type" id="bateria" value="Bateria" />
-            <label for="bateria">Batería</label>
-            </div>
+                <div class="product_radio">
+                  <select name="id_type" id="id_type">
+                  <option value="" disabled selected> Seleccionar</option>
+                  <% for(let i=0; i<type.length; i++) { %>
+                    <option value="<%=type[i].id%>"><%=type[i].name%></option>
+                    <% } %> 
+                  </select>
+                </div>
+              </div>
 
-              <div class="product_radio">
-                  <input class="login_input" type="radio" name="type" id="violin" value="Violin" />
-                <label for="violin">Violín</label>
-            </div>
+                <br>
+
    
             <div class="new_product_price">
               <label for="price">Precio</label>
@@ -49,22 +42,34 @@
             </div>
 
             <div class="input_containers">
-              <label for="brand">Marca</label>
-              <input class="login_input" type="text" name="brand" id="brand" />
-            </div>
+              <p>Marca</p>
+                <div class="product_radio">
+                  <select name="id_brand" id="id_brand">
+                  <option value="" disabled selected> Seleccionar</option>
+                  <% for(let i=0; i<brand.length; i++) { %>
+                    <option value="<%=brand[i].id%>"><%=brand[i].name%></option>
+                    <% } %> 
+                  </select>
+                </div>
+              </div>
 
-            <div class="input_containers">
-              <label for="color">Color</label>
-              <input class="login_input" type="text" name="color" id="color" />
-            </div>
+              <div class="input_containers">
+                <p>Color</p>
+                  <div class="product_radio">
+                    <select name="id_color" id="id_color">
+                    <option value="" disabled selected> Seleccionar</option>
+                    <% for(let i=0; i<color.length; i++) { %>
+                      <option value="<%=color[i].id%>"><%=color[i].name%></option>
+                      <% } %> 
+                    </select>
+                  </div>
+                </div>
 
             <div class="input_containers">
               <label for="description">Descripción del producto</label>
               <input class="login_input" type="text" name="description" id="description" />
             </div>
-            
-            <br>
-            
+
               <br>
 
               <div class="upload_file">

@@ -62,32 +62,36 @@ const productsController = {
 
   // Crear Producto
   createProduct: (req, res) => {
-    res.render("./products/createProduct", {
-      userLogged: req.session.userToLog,
-    });
+    let typeProm = db.Type.findAll();
+    let brandProm = db.Brand.findAll();
+    let colorProm = db.Color.findAll();
+
+    Promise .all([typeProm, brandProm, colorProm])
+    .then(([type, brand, color])=>{
+      return res.render("./products/createProduct", {type, brand, color, userLogged: req.session.userToLog})
+
+    })
+    .catch(err=>{res.send(err)});
+
+    
   },
   storeProduct: (req, res) => {
-    // res.send(req.body);
+    // Unpacking el req.body
+    const { model, id_type, price, id_brand, id_color, description } = req.body;
 
-    //Se crea la constante newProduct que va a contener
-    //la info que venga por el body
-    const newProduct = {
-      id: products[products.length - 1].id + 1,
-      model: req.body.model,
-      type: req.body.type,
-      price: req.body.price,
-      brand: req.body.brand,
-      color: req.body.color,
-      description: req.body.description,
-      image: req.file ? req.file.filename : "default-image.png",
-    };
-
-    console.log(req.file);
-
-    //agrega newProduct a la lista de productos y sobreescribe el archivo
-    products.push(newProduct);
-    fs.writeFileSync(productsLocation, JSON.stringify(products, null, " "));
-    res.redirect("/products");
+    db.Product.create({
+      model,
+      id_type,
+      price,
+      id_brand,
+      id_color,
+      description,
+      image: req.file ? req.file.filename : 'default_course_img.jpg'
+    })
+    .then(()=>{
+      return res.redirect('/products')
+    })
+    .catch(err=>{res.send(err)});
   },
   // Editar Producto
   editProduct: (req, res) => {
