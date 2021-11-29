@@ -1,5 +1,5 @@
 CREATE TABLE `products` (
-   `id` INT NOT NULL,
+   `id` INT NOT NULL AUTO_INCREMENT,
    `model` VARCHAR(255) NOT NULL,
    `id_type` INT NOT NULL,
    `price` DECIMAL,
@@ -14,7 +14,7 @@ CREATE TABLE `products` (
 );
 
 CREATE TABLE `users` (
-   `id` INT NOT NULL,
+   `id` INT NOT NULL AUTO_INCREMENT,
    `name` VARCHAR(80) NOT NULL,
    `username` VARCHAR(80) NOT NULL,
    `email` VARCHAR(200) NOT NULL,
@@ -54,7 +54,7 @@ CREATE TABLE `product_user` (
 );
 
 CREATE TABLE `order` (
-   `id` INT NOT NULL,
+   `id` INT NOT NULL AUTO_INCREMENT,
    `id_user` INT NOT NULL,
    `total_price` DECIMAL NOT NULL,
    `date_of_order` DATETIME NOT NULL,

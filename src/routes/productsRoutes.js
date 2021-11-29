@@ -28,7 +28,7 @@ router.get("/", productsController.listProducts);
 router.get("/search", productsController.search);
 
 // Crear un producto
-router.get("/create", authMiddleware, productsController.createProduct);
+router.get("/create", /*authMiddleware,*/ productsController.createProduct);
 router.post("/create", uploadFile.single('upload_img'), productsController.storeProduct);
 
 // Editar un producto
