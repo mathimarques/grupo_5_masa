@@ -95,17 +95,24 @@ const productsController = {
   },
   // Editar Producto
   editProduct: (req, res) => {
-    db.Product.findByPk(req.params.id, {
+    // promesa para traer el producto a editar
+    let productProm = db.Product.findByPk(req.params.id, {
       include: [
         { association: "type" },
         { association: "brand" },
         { association: "color" },
-      ],
-    })
-      .then((product) => {
+      ]
+    });
+
+    // Promesas para traer de la DB las tablas tipo, marca y color
+    let typeProm = db.Type.findAll();
+    let brandProm = db.Brand.findAll();
+    let colorProm = db.Color.findAll();
+
+    Promise .all([productProm, typeProm, brandProm, colorProm])
+      .then(([product, type, brand, color]) => {
         res.render("./products/editProduct", {
-          product: product,
-          userLogged: req.session.userToLog,
+          product, type, brand, color, userLogged: req.session.userToLog,
         });
       })
       .catch(function (error) {
@@ -116,28 +123,26 @@ const productsController = {
   // TODO SANTI VB
   updateProduct: (req, res) => {
     const id = req.params.id;
-    let productToEdit = products.find((product) => product.id == id);
 
-    console.log(productToEdit);
+    const { model, id_type, price, id_brand, id_color, description } = req.body;
 
-    productToEdit = {
-      id: productToEdit.id,
-      model: req.body.model,
-      type: req.body.type,
-      price: req.body.price,
-      brand: req.body.brand,
-      color: req.body.color,
-      description: req.body.description,
-      image: req.file ? req.file.filename : productToEdit.image,
-    };
+    db.Product.update({
+      model, 
+      id_type, 
+      price, 
+      id_brand, 
+      id_color, 
+      description
+    },
+    {
+      where: {id: id}
+    })
+    .then(()=>{
+      return res.redirect("/products");
+    })
+    .catch(err=>res.send(err));
 
-    console.log(productToEdit);
-
-    let newProducts = products;
-    newProducts[id - 1] = productToEdit;
-
-    fs.writeFileSync(productsLocation, JSON.stringify(newProducts, null, " "));
-    res.redirect("/products");
+    
   },
   // Devolver un producto
   detailProduct: (req, res) => {

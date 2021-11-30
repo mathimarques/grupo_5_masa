@@ -2,6 +2,7 @@
 
   <body>
     <%- include ('../partials/header') %> 
+
     <main class="main_login">
 
       <div class="login_container">
@@ -15,68 +16,66 @@
 
             <div class="input_containers">
               <label for="model">Modelo</label>
-              <input class="login_input" type="text" name="model" id="model" value="<%= product.model %>" />
+              <input class="login_input" type="text" name="model" id="model" value="<%= product.model %> "/>
             </div>
+
 
             <div class="input_containers">
               <p>Categoría</p>
-              <div class="product_radio">
-                  <input class="login_input" type="radio" name="type" id="guitarra" value="Guitarra" <% if(product.type.name == 'Guitarra'){
-                      %> checked="checked" <%
-                  } %>  />
-                  <label for="guitarra">Guitarra</label>
-            </div>
+                <div class="product_radio">
+                  <select name="id_type" id="id_type">
+                  <option value="" disabled selected> Seleccionar</option>
+                  <% for(let i=0; i<type.length; i++) { %>
+                    <option value="<%=type[i].id%>" <% if(product.type.name==type[i].name){%> <%='selected'%> <% } %> ><%=type[i].name%></option>
+                    <% } %> 
+                  </select>
+                </div>
+              </div>
 
-              <div class="product_radio">
-                  <input class="login_input" type="radio" name="type" id="piano" value="Piano" <% if(product.type.name == 'Piano'){
-                      %> checked="checked" <%
-                  } %>/>
-                <label for="piano">Piano</label>
-            </div>
-              <div class="product_radio">
-                  <input class="login_input" type="radio" name="type" id="bajo" value="Bajo" <% if(product.type.name == 'Bajo'){
-                      %> checked="checked" <%
-                  } %>/>
-                <label for="bajo">Bajo</label>
-            </div>
-            <div class="product_radio">
-                  <input class="login_input" type="radio" name="type" id="bateria" value="Bateria" <% if(product.type.name == 'Bateria'){
-                      %> checked="checked" <%
-                  } %>/>
-                <label for="bateria">Batería</label>
-            </div>
-              <div class="product_radio">
-                  <input class="login_input" type="radio" name="type" id="violin" value="Violin" <% if(product.type.name == 'Violin'){
-                      %> checked="checked" <%
-                  } %>/>    
-                <label for="violin">Violín</label>
-            </div>
+                <br>
 
+   
             <div class="new_product_price">
               <label for="price">Precio</label>
-              <input class="price_input" type="number" name="price" id="price" value="<%= product.price %>" />
+              <input class="price_input" type="number" name="price" id="price" value="<%=product.price%>"/>
             </div>
 
             <div class="input_containers">
-              <label for="brand">Marca</label>
-              <input class="login_input" type="text" name="brand" id="brand" value="<%= product.brand.name %>" />
-            </div>
+              <p>Marca</p>
+                <div class="product_radio">
+                  <select name="id_brand" id="id_brand">
+                  <option value="" disabled selected> Seleccionar</option>
+                  <% for(let i=0; i<brand.length; i++) { %>
+                    <option value="<%=brand[i].id%>" <% if(product.brand.name==brand[i].name){%> <%='selected'%> <% } %> ><%=brand[i].name%></option>
+                    <% } %> 
+                  </select>
+                </div>
+              </div>
 
-            <div class="input_containers">
-              <label for="color">Color</label>
-              <input class="login_input" type="text" name="color" id="color" value="<%= product.color.name %>" />
-            </div>
+              <div class="input_containers">
+                <p>Color</p>
+                  <div class="product_radio">
+                    <select name="id_color" id="id_color">
+                    <option value="" disabled selected> Seleccionar</option>
+                    <% for(let i=0; i<color.length; i++) { %>
+                      <option value="<%=color[i].id%>" <% if(product.color.name==color[i].name){%> <%='selected'%> <% } %> ><%=color[i].name%></option>
+                      <% } %> 
+                    </select>
+                  </div>
+                </div>
 
             <div class="input_containers">
               <label for="description">Descripción del producto</label>
-              <input class="login_input" type="text" name="description" id="description" value="<%= product.description %>" />
+              <input class="login_input" type="text" name="description" id="description" value="<%=product.description%>"/>
             </div>
-            <br>
+
               <br>
+
               <div class="upload_file">
                   <input type="file" name="upload_img" id="upload_img">
                   <label for="upload_img">Upload Image (this will be a drag and drop)</label>
               </div>
+              
             </div>
             <button type="submit" class="create_button">Editar</button>
           </form>
