@@ -112,6 +112,8 @@ const productsController = {
         console.log(error);
       });
   },
+
+  // TODO SANTI VB
   updateProduct: (req, res) => {
     const id = req.params.id;
     let productToEdit = products.find((product) => product.id == id);
