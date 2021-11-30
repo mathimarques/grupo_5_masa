@@ -72,10 +72,9 @@ const usersController = {
       name: req.body.name,
       username: req.body.username,
       email: req.body.email,
-      date: req.body.date,
       address: req.body.address,
-      password: /*bcrypt.hashSync(req.body.password, 10)*/ req.body.password,
-      image: req.file ? req.file.filename : "default-image.png",
+      password: bcrypt.hashSync(req.body.password, 10), /*req.body.password */
+      id_role: 2
     });
     //console.log(req.file);
     //users.push(newUsers);
