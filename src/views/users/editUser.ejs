@@ -11,7 +11,7 @@
           <p>Si ya tienes una cuenta, <a href="/login">Ingresa aquí</a>.</p>
         </section>
         <section class="sign_in_form">
-        <form action="/users/edit/<%= userLogged.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <form action="/users/edit/<%= userLogged.id %>?_method=PUT" method="POST">
           <div class="nombre_usuario_login">
             <h3><strong>Datos de Usuario</strong></h3>
             <br>
@@ -24,23 +24,16 @@
             <label for="email">Email</label>
             <input type="email" name="email" id="email" value="<%= userLogged.email %> "/>
             <!-- Domicilio -->
-            <label for="addres">Domicilio</label>
-            <input type="text" name="addres" id="address" value="<%= userLogged.address %> "/>
-            <!-- Rol -->
-            <label for="id_role">id_rol</label>
-            <input type="text" name="id_role" id="id_role" value="<%= userLogged.id_role %> "/>
+            <label for="address">Domicilio</label>
+            <input type="text" name="address" id="address" value="<%= userLogged.address %> "/>
+            
           </div>
           <br>
-          <div class="password_login">
-            <h3><strong>Contraseña</strong></h3>
-            <br>
-            <!-- Contraseña -->
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" value="<%= userLogged.password %> "/>
+          
+           
 
-            <label for="user-pic">Foto de perfil</label>
-            <input type="file" name="user-pic" id="user-pic" />
-          </div>
+    
+          
           <div class="btn_login">
             <!-- boton Enviar -->
           <button type="submit">Editar Usuario</button>

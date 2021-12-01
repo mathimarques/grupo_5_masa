@@ -102,7 +102,7 @@ const usersController = {
   profile: (req, res) => {
     db.User.findByPk(req.params.id)
     .then((user) => {
-      res.render("./users/profile", { userLogged: req.session.userToLog });
+      res.render("./users/profile", { userLogged: user });
     })
     .catch(err=>{
       res.render(err)
@@ -112,6 +112,7 @@ const usersController = {
   edit: (req, res) => {
     db.User.findByPk(req.params.id)
     .then((user) => {
+      
       res.render("./users/editUser", { userLogged: req.session.userToLog });
     })
     .catch(err=>{
@@ -123,23 +124,22 @@ const usersController = {
   update: (req,res)=>{
     const id = req.params.id;
 
-    const { name, username, email, address, password, id_role } = req.body;
+    const { name, username, email, address} = req.body;
     
-    
+    console.log(req.body)
     db.User.update({
       name, 
       username, 
       email, 
-      address, 
-      password, 
-      id_role
+      address
     },
     {
       where: {id: id}
     })
     .then(user=>{
-       console.log(user.dataValues)
-       return res.redirect('/')
+       console.log(user.dataValues);
+       req.session.userLogged = user;
+       return res.render('/');
        
      })
       .catch(err=>{res.send(err)});
