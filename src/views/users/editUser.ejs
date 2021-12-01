@@ -1,0 +1,57 @@
+<%- include ("../partials/head") %>  <!-- HEAD -->
+
+  <body>
+    <%- include ('../partials/header') %> 
+    <main class="main_login">
+      <div class="login_container"> 
+        <section class="intro_login">
+          <h2>Crea tu cuenta de Usuario</h2>
+          <br />
+          <p>Completa el formulario de admisión.</p>
+          <p>Si ya tienes una cuenta, <a href="/login">Ingresa aquí</a>.</p>
+        </section>
+        <section class="sign_in_form">
+        <form action="/users/editUser/<%= userLogged.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+          <div class="nombre_usuario_login">
+            <h3><strong>Datos de Usuario</strong></h3>
+            <br>
+            <label for="name">Nombre y apellido</label>
+            <input type="text" name="name" id="name" value="<%= userLogged.name %> "/>
+            <!-- Usuario -->
+            <label for="username">Usuario</label>
+            <input type="text" name="username" id="username" value="<%= userLogged.username %> "/>
+            <!-- Fecha de nacimiento -->
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" value="<%= userLogged.email %> "/>
+            <!-- Domicilio -->
+            <label for="addres">Domicilio</label>
+            <input type="text" name="addres" id="address" value="<%= userLogged.address %> "/>
+            <!-- Rol -->
+            <label for="id_role">id_rol</label>
+            <input type="text" name="id_role" id="id_role" value="<%= userLogged.id_role %> "/>
+          </div>
+          <br>
+          <div class="password_login">
+            <h3><strong>Contraseña</strong></h3>
+            <br>
+            <!-- Contraseña -->
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" value="<%= userLogged.password %> "/>
+
+            <label for="user-pic">Foto de perfil</label>
+            <input type="file" name="user-pic" id="user-pic" />
+          </div>
+          <div class="btn_login">
+            <!-- boton Enviar -->
+          <button type="submit">Editar Usuario</button>
+          </div>
+          
+        </form>
+        </section>
+      </div>
+        
+      </main>
+      <%- include ('../partials/footer') %> 
+      <%- include ('../partials/cursor') %> 
+  </body>
+</html>

@@ -17,6 +17,7 @@ const { validationResult } = require("express-validator");
 // Requerimos modulo para encriptar password
 const bcrypt = require("bcryptjs");
 const { off } = require("process");
+const { name } = require("ejs");
 // const User = require('../database/models/User');
 
 // Generamos el controlador con sus métodos
@@ -100,9 +101,34 @@ const usersController = {
   // VER EL PERFIL DEL USUARIO
   profile: (req, res) => {
     db.User.findByPk(req.params.id).then((user) => {
-      res.render("./users/profile", { userLogged: req.session.userToLog });
+      res.render("./users/editUser", { userLogged: req.session.userToLog });
     });
-  }
-};
+  },
+
+  //EDITAR USUARIO
+  editUser: (req,res)=>{
+    const id = req.params.id;
+
+    const { name, username, email, address, password, id_role } = req.body;
+    
+    db.User.update({
+      name, 
+      username, 
+      email, 
+      address, 
+      password, 
+      id_role
+    },
+    {
+      where: {id: id}
+    })
+     .then(user=>{
+       console.log(user)
+       return res.redirect('/')
+       
+     })
+      .catch(err=>{res.send(err)});
+}
+}
 
 module.exports = usersController;
