@@ -6,7 +6,7 @@
         <main>
             <div class="profile_container">
                 <div class="profile">
-                    <form action="/users/editUser<%= userLogged.id %>" method="get">
+                    
                         <h2>Perfil de usuario</h2>
                         <ul>
                             <li>ID: <%=userLogged.id%></li>
@@ -16,10 +16,14 @@
                             <li>Fecha de Naciemiento: <%=userLogged.date%></li>
                             <li>Direccion: <%=userLogged.address%></li>
                             <li> <img src="/img/<%=userLogged.image%>" alt="profile_pic"> </li>
+                            
                         </ul>
-                        <button>Editar Usuario</button>
-                    </form>
+                        <br>
+                        <a href="/users/edit/<%= userLogged.id %> " class="estilo-comprar2">Editar Usuario</a>
+                    
+                    
                 </div>
+                
             </div>
         </main>
 

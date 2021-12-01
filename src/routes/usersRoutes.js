@@ -43,9 +43,9 @@ router.post('/register', uploadFile.single('user-pic'), usersController.processR
 
 router.get('/logout', usersController.logout);
 
-//router.get('/profile/:id', authMiddleware, usersController.profile);
+router.get('/profile/:id', authMiddleware, usersController.profile);
 
-router.get('/editUser/:id', authMiddleware, usersController.profile)
-router.put('/editUser/:id', authMiddleware, usersController.editUser)
+router.get('/edit/:id', authMiddleware, usersController.edit)
+router.put('/edit/:id', authMiddleware, usersController.update)
 
 module.exports = router;

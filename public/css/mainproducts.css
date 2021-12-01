@@ -119,6 +119,21 @@
   display: inline;
   height: 60px;
 }
+.estilo-comprar2 {
+  color: #ffffff;
+  font-weight: bold;
+  border: 0 solid gray;
+  border-radius: 50px;
+  padding: 15px 40px;
+  margin-left: 10%;
+  margin-top: 30px;
+  background-color: #12261c;
+  transition: 0.5s ease-in-out;
+  text-align: center;
+  width: 30%;
+  display: inline;
+  height: 60px;
+}
 .comprar {
   text-decoration: none;
 }

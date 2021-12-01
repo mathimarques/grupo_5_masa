@@ -100,16 +100,31 @@ const usersController = {
 
   // VER EL PERFIL DEL USUARIO
   profile: (req, res) => {
-    db.User.findByPk(req.params.id).then((user) => {
+    db.User.findByPk(req.params.id)
+    .then((user) => {
+      res.render("./users/profile", { userLogged: req.session.userToLog });
+    })
+    .catch(err=>{
+      res.render(err)
+    })
+  },
+
+  edit: (req, res) => {
+    db.User.findByPk(req.params.id)
+    .then((user) => {
       res.render("./users/editUser", { userLogged: req.session.userToLog });
-    });
+    })
+    .catch(err=>{
+      res.render(err)
+    })
   },
 
   //EDITAR USUARIO
-  editUser: (req,res)=>{
+  update: (req,res)=>{
     const id = req.params.id;
 
     const { name, username, email, address, password, id_role } = req.body;
+    
     
     db.User.update({
       name, 
@@ -122,8 +137,8 @@ const usersController = {
     {
       where: {id: id}
     })
-     .then(user=>{
-       console.log(user)
+    .then(user=>{
+       console.log(user.dataValues)
        return res.redirect('/')
        
      })

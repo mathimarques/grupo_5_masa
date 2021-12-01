@@ -11,7 +11,7 @@
           <p>Si ya tienes una cuenta, <a href="/login">Ingresa aquí</a>.</p>
         </section>
         <section class="sign_in_form">
-        <form action="/users/editUser/<%= userLogged.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <form action="/users/edit/<%= userLogged.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
           <div class="nombre_usuario_login">
             <h3><strong>Datos de Usuario</strong></h3>
             <br>
