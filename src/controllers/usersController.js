@@ -137,9 +137,7 @@ const usersController = {
       where: {id: id}
     })
     .then(user=>{
-       console.log(user.dataValues);
-       req.session.userLogged = user;
-       return res.render('/');
+       return res.redirect('/');
        
      })
       .catch(err=>{res.send(err)});
