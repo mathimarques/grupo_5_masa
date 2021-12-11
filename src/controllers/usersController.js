@@ -83,19 +83,21 @@ const usersController = {
         username: req.body.username,
         email: req.body.email,
         address: req.body.address,
-        image: req.file ? req.file.filename : 'userDefault.png',
+        image: req.file ? req.file.filename : "userDefault.png",
         password: bcrypt.hashSync(req.body.password, 10) /*req.body.password */,
         id_role: 2,
       })
-      .then((user) => {
-        return res.redirect("/");
-      })
-      .catch((error) => {
-        res.send(error);
-      });
-
+        .then((user) => {
+          return res.redirect("/");
+        })
+        .catch((error) => {
+          res.send(error);
+        });
     } else {
-      res.render("./users/register", { errors: errors.mapped(), old: req.body });
+      res.render("./users/register", {
+        errors: errors.mapped(),
+        old: req.body,
+      });
       console.log(errors);
     }
   },

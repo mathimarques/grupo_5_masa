@@ -66,6 +66,9 @@
             <%} %> 
             <label for="userPic">Foto de perfil</label>
             <input type="file" name="userPic" id="userPic" />
+            <% if(locals.errors && errors.userPic){%>
+              <p style="color:red"><%= errors.userPic.msg %></p>
+            <%} %> 
           </div>
           <div class="btn_login">
             <!-- boton Enviar -->

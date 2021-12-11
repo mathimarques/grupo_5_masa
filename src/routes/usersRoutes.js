@@ -5,6 +5,7 @@ const { body, check } = require("express-validator");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const path = require("path");
 const router = express.Router();
+const db = require("../database/models");
 
 //Multer
 const multer = require("multer");
@@ -40,6 +41,13 @@ const validateRegister = [
   check("username")
     .notEmpty()
     .withMessage("Ingresar un nombre de usuario")
+    .custom((value) => {
+      return db.User.findOne({ where: { username: value } }).then((user) => {
+        if (user) {
+          return Promise.reject("Nombre de usuario ya existe");
+        }
+      });
+    })
     .isLength({ min: 6 })
     .withMessage("El nombre debe tener más de seis caracteres"),
 
@@ -59,14 +67,17 @@ const validateRegister = [
     .isLength({ min: 8 })
     .withMessage("La contraseña deberia tener un minimo de 8 caracteres")
     .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/, "i")
-    .withMessage("Debe Contener una letra mayúscula, una mínuscula, y un carácter especial"),
+    .withMessage(
+      "Debe Contener una letra mayúscula, una mínuscula, y un carácter especial"
+    ),
 
   check("repassword")
     .isLength({ min: 8 })
     .withMessage("La contraseña deberia tener un minimo de 8 caracteres")
     .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/, "i")
-    .withMessage("Debe Contener una letra mayúscula, una mínuscula, y un carácter especial"),
-
+    .withMessage(
+      "Debe Contener una letra mayúscula, una mínuscula, y un carácter especial"
+    ),
 ];
 
 // Rutas para login
