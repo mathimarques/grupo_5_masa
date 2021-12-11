@@ -1,13 +1,12 @@
 <%- include ("../partials/head") %>  <!-- HEAD -->
-
     <body>
         <%- include ('../partials/header') %> 
-
         <main>
             <div class="profile_container">
                 <div class="profile">
                     
                         <h2>Perfil de usuario</h2>
+                <br>
                         <ul>
                             <li>ID: <%=userLogged.id%></li>
                             <li>Nombre: <%=userLogged.name%></li>
@@ -15,15 +14,13 @@
                             <li>Email: <%=userLogged.email%></li>
                             <li>Direccion: <%=userLogged.address%></li>                    
                         </ul>
-                        <br>
+                    <br>
+                <br>
                         <a href="/users/edit/<%= userLogged.id %> " class="estilo-comprar2">Editar Usuario</a>
-                    
-                    
                 </div>
-                
             </div>
+        <br/>
         </main>
-
 <%- include ('../partials/footer') %>
     <%- include ('../partials/cursor') %>  
   </body>

@@ -113,7 +113,7 @@ const usersController = {
   edit: (req, res) => {
     db.User.findByPk(req.params.id)
       .then((user) => {
-        res.render("./users/editUser", { userLogged: req.session.userToLog });
+        res.render("./users/editUser", { userLogged: user });
       })
       .catch((err) => {
         res.render(err);
