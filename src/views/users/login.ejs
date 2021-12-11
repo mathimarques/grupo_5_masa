@@ -20,7 +20,7 @@
                 <p style="color:red"><%= errors.username.msg %></p>
               <%} %> 
 
-              <label for="username">Nombre de usuario o Email</label>
+              <label for="username">Nombre de usuario</label>
               <input class="login_input" type="text" name="username" id="username"
                <% if(locals.errors){ %>
                 value=" <%= locals.old && old.username %>"
