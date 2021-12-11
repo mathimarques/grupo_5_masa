@@ -35,8 +35,8 @@ const usersController = {
         },
       })
         .then((user) => {
-          //  VER COOKIES EN PROFILE DEL USER
-          if (user != null) {
+           //  VER COOKIES EN PROFILE DEL USER
+          if (user != null && bcrypt.compareSync(req.body.password, user.password)) {
             userToLog = user.dataValues;
             req.session.userToLog = userToLog;
 
