@@ -16,16 +16,37 @@
             <h3><strong>Datos de Usuario</strong></h3>
             <br>
             <label for="name">Nombre y apellido</label>
-            <input type="text" name="name" id="name" />
+            <input type="text" name="name" id="name"    <% if(locals.errors){ %>
+              value="<%= locals.old && old.name %>"
+            <%} %>  />
+            <% if(locals.errors && errors.name){%>
+              <p style="color:red"><%= errors.name.msg %></p>
+            <%} %> 
             <!-- Usuario -->
             <label for="username">Usuario</label>
-            <input type="text" name="username" id="username" />
+            <input type="text" name="username" id="username"
+            <% if(locals.errors){ %>
+              value="<%= locals.old && old.username %>"
+            <%} %>  />
+            <% if(locals.errors && errors.username){%>
+              <p style="color:red"><%= errors.username.msg %></p>
+            <%} %> 
             <!-- Fecha de nacimiento -->
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" />
+            <input type="email" name="email" id="email" <% if(locals.errors){ %>
+              value="<%= locals.old && old.email %>"
+            <%} %> />
+            <% if(locals.errors && errors.email){%>
+              <p style="color:red"><%= errors.email.msg %></p>
+            <%} %> 
             <!-- Domicilio -->
-            <label for="addres">Domicilio</label>
-            <input type="text" name="address" id="address" />
+            <label for="address">Domicilio</label>
+            <input type="text" name="address" id="address" <% if(locals.errors){ %>
+              value="<%= locals.old && old.address %>"
+            <%} %> />
+            <% if(locals.errors && errors.address){%>
+              <p style="color:red"><%= errors.address.msg %></p>
+            <%} %> 
           </div>
           <br>
           <div class="password_login">
@@ -34,12 +55,17 @@
             <!-- Contraseña -->
             <label for="password">Password</label>
             <input type="password" name="password" id="password" />
+            <% if(locals.errors && errors.password){%>
+              <p style="color:red"><%= errors.password.msg %></p>
+            <%} %> 
             <!-- Confirmar contraseña -->
-            <label for="confirm-pass">Confirmar Password</label>
-            <input type="password" name="confirm-pass" id="confirm-pass" />
-
-            <label for="user-pic">Foto de perfil</label>
-            <input type="file" name="user-pic" id="user-pic" />
+            <label for="repassword">Confirmar Password</label>
+            <input type="password" name="repassword" id="repassword" />
+            <% if(locals.errors && errors.repassword){%>
+              <p style="color:red"><%= errors.repassword.msg %></p>
+            <%} %> 
+            <!-- <label for="user-pic">Foto de perfil</label>
+            <input type="file" name="user-pic" id="user-pic" /> -->
           </div>
           <div class="btn_login">
             <!-- boton Enviar -->

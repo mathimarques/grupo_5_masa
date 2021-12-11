@@ -28,6 +28,7 @@ const usersController = {
   processLogin: (req, res) => {
     let errors = validationResult(req);
     let userToLog;
+    // SI NO HAY ERRORES PROCEDE CON EL LOGIN
     if (errors.isEmpty()) {
       db.User.findOne({
         where: {
@@ -35,8 +36,11 @@ const usersController = {
         },
       })
         .then((user) => {
-           //  VER COOKIES EN PROFILE DEL USER
-          if (user != null && bcrypt.compareSync(req.body.password, user.password)) {
+          //  VER COOKIES EN PROFILE DEL USER
+          if (
+            user != null &&
+            bcrypt.compareSync(req.body.password, user.password)
+          ) {
             userToLog = user.dataValues;
             req.session.userToLog = userToLog;
 
@@ -61,6 +65,7 @@ const usersController = {
         .catch(function (error) {
           console.log(error);
         });
+      // SI HAY ERRORES MUESTRO LOS MENSAJES EN LA VISTA
     } else {
       res.render("./users/login", { errors: errors.mapped(), old: req.body });
     }
@@ -70,20 +75,28 @@ const usersController = {
     res.render("./users/register");
   },
   processRegister: (req, res) => {
-    // TODO CAMBIAR LOGUEO POR EMAIL Y ELIMINAR DATE
-    db.User.create({
-      name: req.body.name,
-      username: req.body.username,
-      email: req.body.email,
-      address: req.body.address,
-      password: bcrypt.hashSync(req.body.password, 10) /*req.body.password */,
-      id_role: 2,
-    });
-    //console.log(req.file);
-    //users.push(newUsers);
-    //fs.writeFileSync(usersLocation, JSON.stringify(users, null, " "))
+    let errors = validationResult(req);
+    if (errors.isEmpty()) {
+      // TODO CAMBIAR LOGUEO POR EMAIL Y ELIMINAR DATE
+      db.User.create({
+        name: req.body.name,
+        username: req.body.username,
+        email: req.body.email,
+        address: req.body.address,
+        password: bcrypt.hashSync(req.body.password, 10) /*req.body.password */,
+        id_role: 2,
+      })
+      .then((user) => {
+        return res.redirect("/");
+      })
+      .catch((error) => {
+        res.send(error);
+      });
 
-    res.redirect("/");
+    } else {
+      res.render("./users/register", { errors: errors.mapped(), old: req.body });
+      console.log(errors);
+    }
   },
 
   // LOGOUT
