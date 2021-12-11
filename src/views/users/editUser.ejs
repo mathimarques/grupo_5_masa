@@ -5,10 +5,8 @@
     <main class="main_login">
       <div class="login_container"> 
         <section class="intro_login">
-          <h2>Crea tu cuenta de Usuario</h2>
+          <h2>Edita tu cuenta de Usuario</h2>
           <br />
-          <p>Completa el formulario de admisión.</p>
-          <p>Si ya tienes una cuenta, <a href="/login">Ingresa aquí</a>.</p>
         </section>
         <section class="sign_in_form">
         <form action="/users/edit/<%= userLogged.id %>?_method=PUT" method="POST">
