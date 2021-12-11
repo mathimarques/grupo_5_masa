@@ -27,55 +27,57 @@ const usersController = {
   },
   processLogin: (req, res) => {
     let errors = validationResult(req);
-    let userToLog = undefined;
-    db.User.findOne({
-      where: {
-        username: req.body.username,
-      },
-    })
-      .then((user) => {
-        // TODO VALIDAR MOSTRAR ERRORES EN CASO DE QUE INTENTE LOGUEARSE UN USUARIO NO REGISTRADO Y VER COOKIES EN PROFILE DEL USER
-        if (user == null) {
-          res.render("./users/login", {
-            errors: [{ msg: "Hay errores de login" }],
-          })
-        } else {
-          userToLog = user.dataValues;
-          console.log(userToLog);
-          req.session.userToLog = userToLog;
-
-          // remember Cookie
-          if (req.body.remember != undefined) {
-            res.cookie("rememberAccount", userToLog.username, {
-              maxAge: 1000 * 60 * 60,
-            }); //1 hour
-          } else {
-            console.log("Account not remembered");
-          }
-
-          res.redirect("/");
-        }
+    let userToLog;
+    if (errors.isEmpty()) {
+      db.User.findOne({
+        where: {
+          username: req.body.username,
+        },
       })
-      .catch(function (error) {
-        console.log(errors.mapped());
-        res.render("./users/login", { errors: errors.mapped(), old: req.body });
-        console.log(error);
-      });
+        .then((user) => {
+          //  VER COOKIES EN PROFILE DEL USER
+          if (user != null) {
+            userToLog = user.dataValues;
+            req.session.userToLog = userToLog;
+
+            // remember Cookie
+            if (req.body.remember != undefined) {
+              res.cookie("rememberAccount", userToLog.username, {
+                maxAge: 1000 * 60 * 60,
+              }); //1 hour
+            } else {
+              console.log("Account not remembered");
+            }
+            res.redirect("/");
+          }
+          // MODIFICAR ACÁ EN LAS VALIDACIONES CON EXPRESS VALIDATOR
+          if (userToLog == undefined) {
+            console.log("Entre acá");
+            res.render("./users/login", {
+              errors: [{ msg: "Hay errores de login" }],
+            });
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    } else {
+      res.render("./users/login", { errors: errors.mapped(), old: req.body });
+    }
   },
 
   register: (req, res) => {
     res.render("./users/register");
   },
   processRegister: (req, res) => {
-
     // TODO CAMBIAR LOGUEO POR EMAIL Y ELIMINAR DATE
     db.User.create({
       name: req.body.name,
       username: req.body.username,
       email: req.body.email,
       address: req.body.address,
-      password: bcrypt.hashSync(req.body.password, 10), /*req.body.password */
-      id_role: 2
+      password: bcrypt.hashSync(req.body.password, 10) /*req.body.password */,
+      id_role: 2,
     });
     //console.log(req.file);
     //users.push(newUsers);
@@ -83,7 +85,6 @@ const usersController = {
 
     res.redirect("/");
   },
-
 
   // LOGOUT
   logout: (req, res) => {
@@ -101,47 +102,49 @@ const usersController = {
   // VER EL PERFIL DEL USUARIO
   profile: (req, res) => {
     db.User.findByPk(req.params.id)
-    .then((user) => {
-      res.render("./users/profile", { userLogged: user });
-    })
-    .catch(err=>{
-      res.render(err)
-    })
+      .then((user) => {
+        res.render("./users/profile", { userLogged: user });
+      })
+      .catch((err) => {
+        res.render(err);
+      });
   },
 
   edit: (req, res) => {
     db.User.findByPk(req.params.id)
-    .then((user) => {
-      
-      res.render("./users/editUser", { userLogged: req.session.userToLog });
-    })
-    .catch(err=>{
-      res.render(err)
-    })
+      .then((user) => {
+        res.render("./users/editUser", { userLogged: req.session.userToLog });
+      })
+      .catch((err) => {
+        res.render(err);
+      });
   },
 
   //EDITAR USUARIO
-  update: (req,res)=>{
+  update: (req, res) => {
     const id = req.params.id;
 
-    const { name, username, email, address} = req.body;
-    
-    console.log(req.body)
-    db.User.update({
-      name, 
-      username, 
-      email, 
-      address
-    },
-    {
-      where: {id: id}
-    })
-    .then(user=>{
-       return res.redirect('/');
-       
-     })
-      .catch(err=>{res.send(err)});
-}
-}
+    const { name, username, email, address } = req.body;
+
+    console.log(req.body);
+    db.User.update(
+      {
+        name,
+        username,
+        email,
+        address,
+      },
+      {
+        where: { id: id },
+      }
+    )
+      .then((user) => {
+        return res.redirect("/");
+      })
+      .catch((err) => {
+        res.send(err);
+      });
+  },
+};
 
 module.exports = usersController;
