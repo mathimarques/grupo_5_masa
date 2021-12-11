@@ -5,6 +5,7 @@ const { body, check } = require("express-validator");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const path = require("path");
 const router = express.Router();
+// CONSULTAR A GUIDO SI SE PUEDE LLAMAR A LA DB DESDE ROUTES
 const db = require("../database/models");
 
 //Multer
@@ -27,8 +28,19 @@ const uploadFile = multer({ storage: storage }); //podemos obviar storage como v
 
 // Middleware para validar login
 const validateLogin = [
-  check("username").notEmpty().withMessage("Completar nombre de usuario"),
-  check("password").notEmpty().withMessage("Completar el password"),
+  check("username")
+    .notEmpty()
+    .withMessage("Completar nombre de usuario")
+    .custom((value) => {
+      return db.User.findOne({ where: {username:value} }).then((user) => {
+        if (!user) {
+          return Promise.reject("Debe ingresar una contraseña o password válido");
+        }
+      });
+    }),
+  check("password")
+    .notEmpty()
+    .withMessage("Completar el password"),
 ];
 
 const validateRegister = [

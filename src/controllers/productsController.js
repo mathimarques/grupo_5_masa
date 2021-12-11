@@ -1,7 +1,7 @@
 // Requerimos models de sequelize
 const db = require("../database/models");
 const Op = db.Sequelize.Op;
-
+const { validationResult } = require("express-validator");
 // BORRAR CUANDO ESTÉ LISTO EL CRUD CON BD
 //Requiriendo modulo para leer archivos
 // const fs = require('fs');
@@ -37,18 +37,16 @@ const productsController = {
 
   // Buscar productos
   search: (req, res) => {
-    db.Product.findAll(
-      {
-        where: {
-          description: { [Op.like]: "%" + req.query.keyword + "%" },
-        },
-        include: [
-          { association: "type" },
-          { association: "brand" },
-          { association: "color" },
-        ],
+    db.Product.findAll({
+      where: {
+        description: { [Op.like]: "%" + req.query.keyword + "%" },
       },
-    )
+      include: [
+        { association: "type" },
+        { association: "brand" },
+        { association: "color" },
+      ],
+    })
       .then((products) => {
         res.render("./products/product", {
           products: products,
@@ -66,32 +64,48 @@ const productsController = {
     let brandProm = db.Brand.findAll();
     let colorProm = db.Color.findAll();
 
-    Promise .all([typeProm, brandProm, colorProm])
-    .then(([type, brand, color])=>{
-      return res.render("./products/createProduct", {type, brand, color, userLogged: req.session.userToLog})
-
-    })
-    .catch(err=>{res.send(err)});
-
-    
+    Promise.all([typeProm, brandProm, colorProm])
+      .then(([type, brand, color]) => {
+        return res.render("./products/createProduct", {
+          type,
+          brand,
+          color,
+          userLogged: req.session.userToLog,
+        });
+      })
+      .catch((err) => {
+        res.send(err);
+      });
   },
   storeProduct: (req, res) => {
-    // Unpacking el req.body
-    const { model, id_type, price, id_brand, id_color, description } = req.body;
+    let errors = validationResult(req);
 
-    db.Product.create({
-      model,
-      id_type,
-      price,
-      id_brand,
-      id_color,
-      description,
-      image: req.file ? req.file.filename : 'default_course_img.jpg'
-    })
-    .then(()=>{
-      return res.redirect('/products')
-    })
-    .catch(err=>{res.send(err)});
+    // Unpacking el req.body
+    const { model, id_type, price, id_brand, id_color, description} = req.body;
+
+    if (errors.isEmpty()) {
+      db.Product.create({
+        model,
+        id_type,
+        price,
+        id_brand,
+        id_color,
+        description,
+        image: req.file ? req.file.filename : "default_course_img.jpg",
+      })
+        .then(() => {
+          return res.redirect("/products");
+        })
+        .catch((err) => {
+          res.send(err);
+        });
+    } else {
+      res.render("./products/createProduct", {
+        errors: errors.mapped(),
+        old: req.body,
+      });
+      console.log(errors);
+    }
   },
   // Editar Producto
   editProduct: (req, res) => {
@@ -101,7 +115,7 @@ const productsController = {
         { association: "type" },
         { association: "brand" },
         { association: "color" },
-      ]
+      ],
     });
 
     // Promesas para traer de la DB las tablas tipo, marca y color
@@ -109,10 +123,14 @@ const productsController = {
     let brandProm = db.Brand.findAll();
     let colorProm = db.Color.findAll();
 
-    Promise .all([productProm, typeProm, brandProm, colorProm])
+    Promise.all([productProm, typeProm, brandProm, colorProm])
       .then(([product, type, brand, color]) => {
         res.render("./products/editProduct", {
-          product, type, brand, color, userLogged: req.session.userToLog,
+          product,
+          type,
+          brand,
+          color,
+          userLogged: req.session.userToLog,
         });
       })
       .catch(function (error) {
@@ -126,23 +144,23 @@ const productsController = {
 
     const { model, id_type, price, id_brand, id_color, description } = req.body;
 
-    db.Product.update({
-      model, 
-      id_type, 
-      price, 
-      id_brand, 
-      id_color, 
-      description
-    },
-    {
-      where: {id: id}
-    })
-    .then(()=>{
-      return res.redirect("/products");
-    })
-    .catch(err=>res.send(err));
-
-    
+    db.Product.update(
+      {
+        model,
+        id_type,
+        price,
+        id_brand,
+        id_color,
+        description,
+      },
+      {
+        where: { id: id },
+      }
+    )
+      .then(() => {
+        return res.redirect("/products");
+      })
+      .catch((err) => res.send(err));
   },
   // Devolver un producto
   detailProduct: (req, res) => {

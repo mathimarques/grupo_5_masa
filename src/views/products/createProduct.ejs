@@ -15,12 +15,13 @@
 
             <div class="input_containers">
               <label for="model">Modelo</label>
-              <input class="login_input" type="text" name="model" id="model" />
+              <input class="login_input" type="text" name="model" id="model" <% if(locals.errors){ %>
+                value="<%= locals.old && old.model %>"
+              <%} %> />
+              <% if(locals.errors && errors.model){%>
+                <p style="color:red"><%= errors.model.msg %></p>
+              <%} %> 
             </div>
-
-
-            
-
             <div class="input_containers">
               <p>Categoría</p>
                 <div class="product_radio">
@@ -32,13 +33,15 @@
                   </select>
                 </div>
               </div>
-
                 <br>
-
-   
             <div class="new_product_price">
               <label for="price">Precio</label>
-              <input class="price_input" type="number" name="price" id="price" />
+              <input class="price_input" type="number" name="price" id="price" <% if(locals.errors){ %>
+                value="<%= locals.old && old.price %>"
+              <%} %> />
+              <% if(locals.errors && errors.price){%>
+                <p style="color:red"><%= errors.price.msg %></p>
+              <%} %> 
             </div>
 
             <div class="input_containers">
@@ -67,7 +70,12 @@
 
             <div class="input_containers">
               <label for="description">Descripción del producto</label>
-              <input class="login_input" type="text" name="description" id="description" />
+              <input class="login_input" type="text" name="description" id="description" <% if(locals.errors){ %>
+                value="<%= locals.old && old.description %>"
+              <%} %> />
+              <% if(locals.errors && errors.description){%>
+                <p style="color:red"><%= errors.description.msg %></p>
+              <%} %> 
             </div>
 
               <br>
@@ -75,6 +83,9 @@
               <div class="upload_file">
                   <input type="file" name="upload_img" id="upload_img">
                   <label for="upload_img">Upload Image (this will be a drag and drop)</label>
+                  <% if(locals.errors && errors.upload_img){%>
+                    <p style="color:red"><%= errors.upload_img.msg %></p>
+                  <%} %> 
               </div>
               
             </div>
