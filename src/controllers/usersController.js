@@ -83,6 +83,7 @@ const usersController = {
         username: req.body.username,
         email: req.body.email,
         address: req.body.address,
+        image: req.file ? req.file.filename : 'userDefault.png',
         password: bcrypt.hashSync(req.body.password, 10) /*req.body.password */,
         id_role: 2,
       })
@@ -137,7 +138,7 @@ const usersController = {
   update: (req, res) => {
     const id = req.params.id;
 
-    const { name, username, email, address } = req.body;
+    const { name, username, email, address, image } = req.body;
 
     console.log(req.body);
     db.User.update(
@@ -146,6 +147,7 @@ const usersController = {
         username,
         email,
         address,
+        image,
       },
       {
         where: { id: id },

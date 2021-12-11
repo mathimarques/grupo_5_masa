@@ -77,7 +77,7 @@ router.post("/login", validateLogin, usersController.processLogin);
 router.get("/register", guestMiddleware, usersController.register);
 router.post(
   "/register",
-  uploadFile.single("user-pic"),
+  uploadFile.single("userPic"),
   validateRegister,
   usersController.processRegister
 );

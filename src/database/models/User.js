@@ -28,6 +28,10 @@ module.exports = (sequelize, dataTypes)=>{
             type: dataTypes.STRING(255),
             allowNull: false
         },
+        image: {
+            type: dataTypes.STRING(255),
+            allowNull: true
+        },
         id_role: {
             type: dataTypes.INTEGER,
             allowNull: true
