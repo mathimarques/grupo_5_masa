@@ -2,6 +2,7 @@
 const db = require("../database/models");
 const Op = db.Sequelize.Op;
 const { validationResult } = require("express-validator");
+const { type } = require("express/lib/response");
 // BORRAR CUANDO ESTÉ LISTO EL CRUD CON BD
 //Requiriendo modulo para leer archivos
 // const fs = require('fs');
@@ -100,11 +101,24 @@ const productsController = {
           res.send(err);
         });
     } else {
-      res.render("./products/createProduct", {
-        errors: errors.mapped(),
-        old: req.body,
+    let typeProm = db.Type.findAll();
+    let brandProm = db.Brand.findAll();
+    let colorProm = db.Color.findAll();
+
+    Promise.all([typeProm, brandProm, colorProm])
+      .then(([type, brand, color]) => {
+        return res.render("./products/createProduct", {
+          type,
+          brand,
+          color,
+          userLogged: req.session.userToLog,
+          errors: errors.mapped(),
+          old: req.body,
+        });
+      })
+      .catch((err) => {
+        res.send(err);
       });
-      console.log(errors);
     }
   },
   // Editar Producto
