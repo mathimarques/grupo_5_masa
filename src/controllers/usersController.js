@@ -1,6 +1,3 @@
-// Requerimos modulos para trabajar con archivos
-// const fs = require('fs');
-// const path = require('path');
 
 // Llamar la base de datos
 const db = require("../database/models");
@@ -10,15 +7,9 @@ const { Op } = require("sequelize");
 // Requerimos modulo para validar errores en formulario de login
 const { validationResult } = require("express-validator");
 
-// Declaramos variables para trabajar con el archivo de usuarios
-// const usersLocation = path.join(__dirname, '../data/users.json');
-// const users = JSON.parse(fs.readFileSync(usersLocation, 'utf-8'));
-
 // Requerimos modulo para encriptar password
 const bcrypt = require("bcryptjs");
 const { off } = require("process");
-const { name } = require("ejs");
-// const User = require('../database/models/User');
 
 // Generamos el controlador con sus métodos
 const usersController = {

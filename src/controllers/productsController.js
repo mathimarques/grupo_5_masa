@@ -2,17 +2,6 @@
 const db = require("../database/models");
 const Op = db.Sequelize.Op;
 const { validationResult } = require("express-validator");
-const { type } = require("express/lib/response");
-// BORRAR CUANDO ESTÉ LISTO EL CRUD CON BD
-//Requiriendo modulo para leer archivos
-// const fs = require('fs');
-//Requiriendo modulo para trabajar con directorios
-// const path = require('path');
-//Declaramos la constante para ubicar el archivo de productos
-// const productsLocation = path.join(__dirname, '../data/products.json');
-//Declaramos la 'variable' products que abre el archivo products
-//y genera un objeto a partir del mismo
-// const products = JSON.parse(fs.readFileSync(productsLocation, { encoding: "utf-8" }));
 
 // Generamos el controlador con sus métodos
 const productsController = {
