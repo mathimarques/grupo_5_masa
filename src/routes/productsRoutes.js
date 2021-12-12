@@ -66,6 +66,50 @@ const validateCreateProduct = [
   }),
 ];
 
+
+const validateEditProduct = [
+  check("model")
+    .notEmpty()
+    .withMessage("Ingresar un modelo")
+    .isLength({ min: 2 })
+    .withMessage("El modelo debe tener más de dos caracteres"),
+
+  check("id_type").notEmpty().withMessage("Debe escoger una categoría"),
+
+  check("price")
+    .notEmpty()
+    .withMessage("Ingresar un precio")
+    .isNumeric()
+    .withMessage("Ingresar números"),
+
+  check("id_brand").notEmpty().withMessage("Debe escoger una marca"),
+
+  check("id_color").notEmpty().withMessage("Debe escoger un color"),
+
+  check("description")
+    .isLength({ min: 20 })
+    .withMessage("La descripcion deberia tener un minimo de 20 caracteres"),
+
+  check("upload_img").custom((value, { req }) => {
+    let file = req.file;
+    let acceptedExtensions = [".jpg", ".png", "gif"];
+
+    if (!file) {
+      throw new Error("Tienes que subir una imágen");
+    } else {
+      let fileExtension = path.extname(file.originalname);
+      if (!acceptedExtensions.includes(fileExtension)) {
+        throw new Error(
+          `Las extensiones de archivos permitidas son ${acceptedExtensions.join(
+            ","
+          )}`
+        );
+      }
+    }
+    return true;
+  }),
+];
+
 // Devolver todos los productos
 router.get("/", productsController.listProducts);
 
@@ -86,6 +130,7 @@ router.get("/edit/:id", authMiddleware, productsController.editProduct);
 router.put(
   "/edit/:id",
   uploadFile.single("upload_img"),
+  validateEditProduct,
   productsController.updateProduct
 );
 
