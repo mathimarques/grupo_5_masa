@@ -7,6 +7,8 @@ const path = require("path");
 const router = express.Router();
 // CONSULTAR A GUIDO SI SE PUEDE LLAMAR A LA DB DESDE ROUTES
 const db = require("../database/models");
+// Requerimos modulo para encriptar password
+const bcrypt = require("bcryptjs");
 
 //Multer
 const multer = require("multer");
@@ -32,15 +34,26 @@ const validateLogin = [
     .notEmpty()
     .withMessage("Completar nombre de usuario")
     .custom((value) => {
-      return db.User.findOne({ where: {username:value} }).then((user) => {
+      return db.User.findOne({ where: { username: value } }).then((user) => {
         if (!user) {
-          return Promise.reject("Debe ingresar una contraseña o password válido");
+          return Promise.reject("Debe ingresar un usuario válido");
         }
       });
     }),
   check("password")
     .notEmpty()
-    .withMessage("Completar el password"),
+    .withMessage("Completar el password")
+    .custom((value, { req }) => {
+      return db.User.findOne({ where: { username: req.body.username } }).then(
+        (user) => {
+          if (user == null) {
+            return Promise.reject("Debe ingresar una contraseña válida");
+          } else if (!bcrypt.compareSync(req.body.password, user.password)) {
+            return Promise.reject("Debe ingresar una contraseña válida");
+          }
+        }
+      );
+    }),
 ];
 
 const validateRegister = [

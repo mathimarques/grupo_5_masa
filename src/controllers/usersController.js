@@ -1,4 +1,3 @@
-
 // Llamar la base de datos
 const db = require("../database/models");
 const sequelize = db.sequelize;
@@ -9,7 +8,6 @@ const { validationResult } = require("express-validator");
 
 // Requerimos modulo para encriptar password
 const bcrypt = require("bcryptjs");
-const { off } = require("process");
 
 // Generamos el controlador con sus métodos
 const usersController = {
@@ -45,13 +43,11 @@ const usersController = {
             }
             res.redirect("/");
           }
-          // MODIFICAR ACÁ EN LAS VALIDACIONES CON EXPRESS VALIDATOR
-          if (userToLog == undefined) {
-            console.log("Entre acá");
-            res.render("./users/login", {
-              errors: [{ msg: "Hay errores de login" }],
-            });
-          }
+          // if (userToLog == undefined) {
+          //   res.render("./users/login", {
+          //     errors: [{ msg: "Hay errores de login" }],
+          //   });
+          // }
         })
         .catch(function (error) {
           console.log(error);

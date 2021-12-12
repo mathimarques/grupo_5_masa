@@ -3,6 +3,7 @@ const db = require("../database/models");
 const Op = db.Sequelize.Op;
 const { validationResult } = require("express-validator");
 
+
 // Generamos el controlador con sus métodos
 const productsController = {
   // Listar todos productos
