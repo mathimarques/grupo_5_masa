@@ -32,6 +32,9 @@
                     <% } %> 
                   </select>
                 </div>
+                <% if(locals.errors && errors.id_type){%>
+                  <p style="color:red"><%= errors.id_type.msg %></p>
+                <%} %> 
               </div>
                 <br>
             <div class="new_product_price">
@@ -54,6 +57,9 @@
                     <% } %> 
                   </select>
                 </div>
+                <% if(locals.errors && errors.id_brand){%>
+                  <p style="color:red"><%= errors.id_brand.msg %></p>
+                <%} %> 
               </div>
 
               <div class="input_containers">
@@ -66,6 +72,9 @@
                       <% } %> 
                     </select>
                   </div>
+                  <% if(locals.errors && errors.id_color){%>
+                    <p style="color:red"><%= errors.id_color.msg %></p>
+                  <%} %> 
                 </div>
 
             <div class="input_containers">

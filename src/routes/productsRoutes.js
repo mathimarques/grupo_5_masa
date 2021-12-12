@@ -30,11 +30,17 @@ const validateCreateProduct = [
     .isLength({ min: 2 })
     .withMessage("El modelo debe tener más de dos caracteres"),
 
+  check("id_type").notEmpty().withMessage("Debe escoger una categoría"),
+
   check("price")
     .notEmpty()
     .withMessage("Ingresar un precio")
     .isNumeric()
     .withMessage("Ingresar números"),
+
+  check("id_brand").notEmpty().withMessage("Debe escoger una marca"),
+
+  check("id_color").notEmpty().withMessage("Debe escoger un color"),
 
   check("description")
     .isLength({ min: 20 })
@@ -59,7 +65,6 @@ const validateCreateProduct = [
     return true;
   }),
 ];
-
 
 // Devolver todos los productos
 router.get("/", productsController.listProducts);
