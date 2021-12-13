@@ -95,7 +95,7 @@ const validateEditProduct = [
     let acceptedExtensions = [".jpg", ".png", "gif"];
 
     if (!file) {
-      throw new Error("Tienes que subir una imágen");
+      // throw new Error("Tienes que subir una imágen"); PODRÏA EDITARSE UN PRODUCTO SIN SUBIR UNA IMÁGEN
     } else {
       let fileExtension = path.extname(file.originalname);
       if (!acceptedExtensions.includes(fileExtension)) {

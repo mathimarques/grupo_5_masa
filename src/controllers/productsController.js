@@ -121,7 +121,6 @@ const productsController = {
       ],
     });
 
-
     // Promesas para traer de la DB las tablas tipo, marca y color
     let typeProm = db.Type.findAll();
     let brandProm = db.Brand.findAll();
@@ -130,7 +129,7 @@ const productsController = {
     Promise.all([productProm, typeProm, brandProm, colorProm])
       .then(([product, type, brand, color]) => {
         console.log(productProm);
-        
+
         res.render("./products/editProduct", {
           product,
           type,
@@ -149,9 +148,9 @@ const productsController = {
 
     const id = req.params.id;
     const { model, id_type, price, id_brand, id_color, description } = req.body;
-
+  
     if (errors.isEmpty()) {
-      db.Product.update(
+       db.Product.update(
         {
           model,
           id_type,
@@ -159,7 +158,7 @@ const productsController = {
           id_brand,
           id_color,
           description,
-          image: req.file ? req.file.filename : "default_course_img.jpg",
+          image: req.file ? req.file.filename : req.body.image,
         },
         {
           where: { id: id },

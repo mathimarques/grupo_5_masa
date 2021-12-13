@@ -16,9 +16,7 @@
 
             <div class="input_containers">
               <label for="model">Modelo</label>
-              <input class="login_input" type="text" name="model" id="model" value="<%=product.model%>" <% if(locals.errors){ %>
-                value="<%= locals.old && old.model %>"
-              <%} %> />
+              <input class="login_input" type="text" name="model" id="model" value="<%= locals.old ? old.model : locals.product ? product.model : null %>" />
               <% if(locals.errors && errors.model){%>
                 <p style="color:red"><%= errors.model.msg %></p>
               <%} %> 
@@ -40,9 +38,7 @@
                 <br> 
             <div class="new_product_price">
               <label for="price">Precio</label>
-              <input class="price_input" type="number" name="price" id="price" value="<%=product.price%>" <% if(locals.errors){ %>
-                value="<%= locals.old && old.price %>"
-              <%} %> />
+              <input class="price_input" type="number" name="price" id="price" value="<%= locals.old ? old.price : locals.product ? product.price : null %>" />
               <% if(locals.errors && errors.price){%>
                 <p style="color:red"><%= errors.price.msg %></p>
               <%} %> 
@@ -80,9 +76,7 @@
 
             <div class="input_containers">
               <label for="description">Descripción del producto</label>
-              <input class="login_input" type="text" name="description" id="description" value="<%=product.description%>" <% if(locals.errors){ %>
-                value="<%= locals.old && old.description %>"
-              <%} %> />
+              <input class="login_input" type="text" name="description" id="description" value="<%= locals.old ? old.description : locals.product ? product.description : null %>"/>
               <% if(locals.errors && errors.description){%>
                 <p style="color:red"><%= errors.description.msg %></p>
               <%} %> 
