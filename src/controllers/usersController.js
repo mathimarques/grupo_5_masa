@@ -106,7 +106,7 @@ const usersController = {
   profile: (req, res) => {
     db.User.findByPk(req.params.id)
       .then((user) => {
-        res.render("./users/profile", { userLogged: user });
+        res.render("./users/profile", { userLogged: user, });
       })
       .catch((err) => {
         res.render(err);
@@ -116,7 +116,7 @@ const usersController = {
   edit: (req, res) => {
     db.User.findByPk(req.params.id)
       .then((user) => {
-        res.render("./users/editUser", { userLogged: user });
+        res.render("./users/editUser", { userLogged: user, });
       })
       .catch((err) => {
         res.render(err);
