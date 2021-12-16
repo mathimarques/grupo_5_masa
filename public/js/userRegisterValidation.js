@@ -1,18 +1,23 @@
 window.onload = function(){
+    
     let formulario = document.querySelector('#regFormulario');
     let name = document.querySelector('#name');
     let username = document.querySelector('#username');
     name.focus()
     let email = document.querySelector('#email');
-    let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z]+(?:\.[a-zA-Z]+)*$/;
     let domicilio = document.querySelector('#address');
     let password = document.querySelector('#password');
     let repassword = document.querySelector('#repassword');
     let showErrores = document.querySelector('ul.errores');
 
+    
+
     formulario.addEventListener('submit', function(e){
         let messages = [];
         showErrores.innerHTML = '';
+
+        console.log(validRegex.test(email.value));
         
         if(name.value === '' || name.value == null ){
             messages.push('El nombre y apellido debe estar completo')
@@ -23,8 +28,8 @@ window.onload = function(){
         else if(username.value.length <= 6){
             messages.push('El nombre de usuario debe ser mayor a 6 letras')
         }
-        if (!email.value.match(validRegex)){
-            messages.push('El mail no es válido')
+        if (!validRegex.test(email.value)){
+            messages.push('El email no es válido')
         }
         if(domicilio.value === '' || domicilio.value == null ){
             messages.push('El domicilio debe estar completo')
