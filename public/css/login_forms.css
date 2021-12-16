@@ -105,3 +105,7 @@ input {
   border: 1px solid #a0a0a057;
   height: 30px;
 }
+
+.errores{
+  color: red;
+}

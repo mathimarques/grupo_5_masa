@@ -1,9 +1,10 @@
 window.onload = function(){
     
+    // Definimos los selectores del HTML
     let formulario = document.querySelector('#regFormulario');
     let name = document.querySelector('#name');
-    let username = document.querySelector('#username');
     name.focus()
+    let username = document.querySelector('#username');
     let email = document.querySelector('#email');
     let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z]+(?:\.[a-zA-Z]+)*$/;
     let domicilio = document.querySelector('#address');
@@ -12,7 +13,7 @@ window.onload = function(){
     let showErrores = document.querySelector('ul.errores');
 
     
-
+    // Funcion que se ejecuta al clickear Submit
     formulario.addEventListener('submit', function(e){
         let messages = [];
         showErrores.innerHTML = '';
