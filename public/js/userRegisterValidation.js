@@ -1,4 +1,4 @@
-window.onload = function(){
+window.addEventListener('load', function(){
     
     // Definimos los selectores del HTML
     let formulario = document.querySelector('#regFormulario');
@@ -49,5 +49,5 @@ window.onload = function(){
         }
     })
    
-}
+}); 
 

@@ -15,9 +15,14 @@
 
             <div class="input_containers">
               <label for="model">Modelo</label>
-              <input class="login_input" type="text" name="model" id="model" <% if(locals.errors){ %>
+              <input class="login_input" type="text" name="model" id="model" required <% if(locals.errors){ %>
                 value="<%= locals.old && old.model %>"
               <%} %> />
+              <!-- This will only appear when frontend validation fails -->
+              <div class="popup"> 
+                <span class="popuptext" id="myPopup">El nombre del producto tiene que tener más de 5 letras</span>
+              </div>
+
               <% if(locals.errors && errors.model){%>
                 <p style="color:red"><%= errors.model.msg %></p>
               <%} %> 
@@ -82,6 +87,11 @@
               <input class="login_input" type="text" name="description" id="description" <% if(locals.errors){ %>
                 value="<%= locals.old && old.description %>"
               <%} %> />
+              <!-- This will only appear when frontend validation fails -->
+              <div class="popup"> 
+                <span class="popuptext" id="myPopup2">Descripcion mayor a 20 caracteres</span>
+              </div>
+
               <% if(locals.errors && errors.description){%>
                 <p style="color:red"><%= errors.description.msg %></p>
               <%} %> 
@@ -106,5 +116,7 @@
 
     <%- include ('../partials/footer') %> 
     <%- include ('../partials/cursor') %> 
+
+    <script src="/js/productsValidations.js"></script> 
   </body>
 </html>
