@@ -12,12 +12,13 @@
           <p>Si no tienes una cuenta, <a href="/users/register">crea una</a>.</p>
         </section>
         <!-- SIGN IN -->
-        <section class="sign_in_form">
+        <section class="sign_in_form" >
           <h3>Log in</h3>
-          <form action="/users/login" method="POST">
+          <div class="errores" id="errores"></div>
+          <form action="/users/login" method="POST" id="uFormulario">
             <div class="nombre_usuario_login">
               <label for="username">Nombre de usuario</label>
-              <input class="login_input" type="text" name="username" id="username"
+              <input class="login_input" type="text" name="username" id="username" 
                <% if(locals.errors){ %>
                 value="<%= locals.old && old.username %>"
               <%} %>  />
@@ -27,7 +28,7 @@
             </div>
             <div class="password_login">
               <label for="password">Password</label>
-              <input class="login_input" type="password" name="password" id="password" />
+              <input class="login_input" type="password" name="password" id="password"  />
               <% if(locals.errors && errors.password){%>
                 <p style="color:red"><%= errors.password.msg %></p>
               <%} %> 
@@ -43,6 +44,7 @@
     </main>
 
     <%- include ('../partials/footer') %>
-    <%- include ('../partials/cursor') %>  
+    <%- include ('../partials/cursor') %> 
+    <script src="/js/userLoginValidation.js"></script> 
   </body>
 </html>

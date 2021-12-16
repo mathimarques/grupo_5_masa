@@ -11,7 +11,8 @@
           <p>Si ya tienes una cuenta, <a href="/login">Ingresa aquí</a>.</p>
         </section>
         <section class="sign_in_form">
-        <form action="/users/register" method="post" enctype="multipart/form-data">
+        <ul class="errores"></ul>
+        <form action="/users/register" method="post" enctype="multipart/form-data" id="regFormulario">
           <div class="nombre_usuario_login">
             <h3><strong>Datos de Usuario</strong></h3>
             <br>
@@ -84,5 +85,6 @@
       </main>
       <%- include ('../partials/footer') %> 
       <%- include ('../partials/cursor') %> 
+      <script src="/js/userRegisterValidation.js"></script>
   </body>
 </html>
