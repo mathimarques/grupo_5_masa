@@ -12,7 +12,7 @@
 
 3. Continuar haciendo:
 
-   - Dinámica de trabajo en equipo
+   - Discutir abiertamente distintas posibilidades para el sitio
    - Pair Programming (commits grupales)
    - Continuar ordenado tareas y responsabilidades
    - Reuniones con presentación de pantalla para ver avances
