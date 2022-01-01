@@ -36,6 +36,10 @@ const productsRoutes = require("./routes/productsRoutes");
 const usersRoutes = require("./routes/usersRoutes");
 const { use } = require("./routes/usersRoutes");
 
+// Requerimos rutas de la API
+const userAPIRoutes = require('./routes/api/usersAPIRoutes');
+const productsAPIRoutes = require('./routes/api/productsAPIRoutes');
+
 // Seteamos variables Ejs y carpeta views
 app.set("view engine", "ejs");
 app.set("views", "./src/views");
@@ -51,7 +55,13 @@ app.use("/", mainRoutes);
 app.use("/products", productsRoutes);
 // Ruta de usuarios
 app.use("/users", usersRoutes);
+
+// Rutas de la API
+app.use('/api/users', userAPIRoutes);
+app.use('/api/products', productsAPIRoutes);
+
 // Ruta NotFound404
 app.use((req, res, next) => {
   res.status(404).render("error404")
 });
+
