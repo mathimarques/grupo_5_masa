@@ -24,6 +24,13 @@ header {
     display: flex;
   }
 
+  .diagonal{
+    background-color: #12261c;
+    height: 100%;
+    width: 90px;
+    transform: skew(-45deg);
+  }
+
   .user_info_header{
     color: white;
     display: flex;

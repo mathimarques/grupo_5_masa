@@ -2,18 +2,41 @@ const db = require("../../database/models");
 
 const productsAPIController = {
   list: (req, res) => {
+    let productsArray;
+    let typesLength;
+
     // Busco en db todos los productos
-    db.Product.findAll({
+    let productsProm = db.Product.findAll({
       include: [
         { association: "type" },
         { association: "brand" },
         { association: "color" },
-      ],
-    }).then((products => {
+      ]});
+    let typesProm = db.Type.findAll();
+
+    Promise.all([productsProm, typesProm])
+    .then(([products,types]) => {
       // Genero un array con todos los productos; buena practica.
-      let productsArray = products.map((product) => {
+      productsArray = products.map((product) => {
         return product.dataValues;
       });
+
+      console.log('TYPES - - - - - - ' + types);
+
+      typesLength = types.length;
+
+
+    // db.Product.findAll({
+    //   include: [
+    //     { association: "type" },
+    //     { association: "brand" },
+    //     { association: "color" },
+    //   ],
+    // }).then((products => {
+    //   // Genero un array con todos los productos; buena practica.
+    //   let productsArray = products.map((product) => {
+    //     return product.dataValues;
+    //   });
 
       // Recorro el array de productos para eliminar datos que no queremos mostrar en el endpoint
       productsArray.forEach((product) => {
@@ -34,18 +57,35 @@ const productsAPIController = {
       return res.status(200).json({
         meta: {
           total: products.length,
-          // countByCategory: TODO ,
+          countByCategory: typesLength,
           status: 200,
           url: "api/products",
         },
         data: productsArray,
-        // dbRelations: TODO
+        // Hard coded
+        dbRelations: ['id_type', 'id_brand', 'id_color']
       });
 
-    }))
+    })
   },
   detail: (req, res) => {
-    res.send('Detalle del producto');
+    db.Product.findByPk(req.params.id, {
+      include: [
+        { association: "type" },
+        { association: "brand" },
+        { association: "color" },
+      ]
+    })
+      .then((product)=>{
+        return res.status(200).json({
+          meta: {
+            status: 200,
+            url: "api/products/" + req.params.id,
+          },
+          data: product,
+          linkImg: `http//localhost:3000/img/${product.image}` 
+        })
+      })
   },
 };
 
