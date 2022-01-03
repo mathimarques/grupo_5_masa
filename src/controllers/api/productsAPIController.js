@@ -77,6 +77,11 @@ const productsAPIController = {
       ]
     })
       .then((product)=>{
+        let productArray = product.dataValues;
+        delete productArray.id_type;
+        delete productArray.id_brand;
+        delete productArray.id_color;
+
         return res.status(200).json({
           meta: {
             status: 200,
