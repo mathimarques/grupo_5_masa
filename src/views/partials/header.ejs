@@ -2,30 +2,31 @@
     <div class="logo">
         <a href="/"><img src="/img/logo_masa_black.svg" alt=""></a>
     </div>
-    <div class="diagonal"></div>
-    <nav>
-        <ul class="navbar">
-            <li><a href="/products">Productos</a></li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Contacto</a></li>
-            <!-- A continuacion SOLO se muestra si hay NO usuario logueado -->
-            <% if(!locals.userLogged){ %> 
-            <li><a href="/users/login">Log in</a></li>
-            <% }else{%>
-                
-                <li><a href="/productCart"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="/products/create">Crear Producto</a></li>
-                <div class="user_info_header">
-                    <p> <a href="/users/profile/<%=userLogged.id%>"><%= userLogged.username %></a>   </p>
-                    <li><a href="/users/logout">Log out</a></li>
-                </div>
-            <% } %>
 
+    <div class="nav_wrapper" id="nav_wrapper">
+        <div class="diagonal"></div>
+        <nav id="nav">
+            <ul class="navbar">
+                <li><a href="/products">Productos</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+                <!-- A continuacion SOLO se muestra si hay NO usuario logueado -->
+                <% if(!locals.userLogged){ %>
+                <li><a href="/users/login">Log in</a></li>
+                <% }else{%>
+        
+                    <li><a href="/productCart"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="/products/create">Crear Producto</a></li>
+                    <div class="user_info_header">
+                        <p> <a href="/users/profile/<%=userLogged.id%>"><%= userLogged.username %></a>   </p>
+                        <li><a href="/users/logout">Log out</a></li>
+                    </div>
+                <% } %>
+            </ul>
+        </nav>
+    </div>
 
-           
-        </ul>
-    </nav>
     <div class="header-bottom-burger-menu">
-        <i class="fa fa-bars burger"></i>
+        <i class="fa fa-bars burger" id="burger"></i>
     </div>
 </header>

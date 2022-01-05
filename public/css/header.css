@@ -18,17 +18,40 @@ header {
   nav {
     display: none;
   }
+
   header .header-bottom-burger-menu {
     background-color: #12261c;
-    width: 30%;
+    width: 120px;
     display: flex;
+    z-index: 2;
+  }
+
+  .nav_wrapper{
+    display: none;
   }
 
   .diagonal{
-    background-color: #12261c;
-    height: 100%;
-    width: 90px;
-    transform: skew(-45deg);
+    display: none;
+  }
+
+  .active{
+    display: flex;
+  }
+
+  .mobile{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: max-content;
+    list-style: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    background-color: white;
+    text-align: center;
+    font-size: 2em;
+    z-index: 0;
   }
 
   .user_info_header{
@@ -47,6 +70,9 @@ header {
     text-align: center;
     margin: auto 50%;
     color: white;
+    font-size: 1.8em;
+    cursor: pointer;
+    z-index: 2;
   }
   
   main .banner .left_banner {

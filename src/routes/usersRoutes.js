@@ -91,17 +91,17 @@ const validateRegister = [
   check("password")
     .isLength({ min: 8 })
     .withMessage("La contraseña deberia tener un minimo de 8 caracteres")
-    .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/, "i")
+    .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/)
     .withMessage(
-      "Debe Contener una letra mayúscula, una mínuscula, y un carácter especial"
+      "Debe Contener una letra mayúscula, una mínuscula, y números"
     ),
 
   check("repassword")
     .isLength({ min: 8 })
     .withMessage("La contraseña deberia tener un minimo de 8 caracteres")
-    .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/, "i")
+    .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/)
     .withMessage(
-      "Debe Contener una letra mayúscula, una mínuscula, y un carácter especial"
+      "Debe Contener una letra mayúscula, una mínuscula, y números"
     ),
 
   check("userPic").custom((value, { req }) => {

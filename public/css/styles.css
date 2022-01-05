@@ -63,7 +63,7 @@ body {
     width: 350px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 860px) {
   header .header-bottom-burger-menu {
     display: none;
   }
@@ -76,6 +76,21 @@ body {
     display: flex;
     justify-content: center;
     background-color: #12261c;
+  }
+
+  .nav_wrapper{
+    display: flex;
+  }
+
+  .diagonal{
+    position: relative;
+    top: 0;
+    background-color: #12261c;
+    height: 122px;
+    width: 90px;
+    left: 30px;
+    transform: skew(-25deg);
+    z-index: -1;
   }
 
   .navbar {
