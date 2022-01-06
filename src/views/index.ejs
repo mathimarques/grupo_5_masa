@@ -1,13 +1,17 @@
 
 <%- include ("partials/head") %>  <!-- HEAD -->
 
+<%- include ("partials/header") %> <!--HEADER-->
+
 <body class="home-body">
-    <%- include ("partials/header") %> <!--HEADER-->
     
-    <main>
+    <main class="main">
+       
         <div class="banner">
+            <div class="background_image">
+                <!-- <img src="../img/guitarra-home.png" alt="guitar_img"> -->
+            </div>
             <div class="left_banner">
-                <h2>Algunas personas tienen vida, otras tienen la <span>música</span></h2>
                 <div id='circular-text'>Producto . Producto . Producto . Producto . Producto . Producto .&nbsp;</div>
             </div>
             
@@ -25,6 +29,8 @@
   return angle * (Math.PI / 180);
 };
 
+
+// Circle Style
 const radius = 120;
 const diameter = radius * 2.3;
 

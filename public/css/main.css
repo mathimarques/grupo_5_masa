@@ -8,12 +8,69 @@
     overflow-x: inherit;
   }
   /* BANNER */
-  
+  .main{
+    height: 475px;
+  }
   .banner {
     display: flex;
-    position: relative;
+    height: 100%;
+    /* position: relative;
     top: -122px;
+    left: 0; */
+  }
+
+  .background_image{
+    position: absolute;
+    height: 600px;
+    width: 100%;
+    top: 0;
+    background-image: url("../img/guitarra-home.png");
+    z-index: -1;
+    /* -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover; */
+
+    /* background-attachment: fixed; */
+    background-repeat: no-repeat;
+  }
+
+.left_banner {
+    width: 50%;
+    height: max-content;
+    position: relative;
+    top: 0;
     left: 0;
+  }
+  #circular-text {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    background: #ff782ad4;
+    color: #272727;
+    border-radius: 100%;
+    box-shadow: 0 0 30px rgb(0 0 0 / 15%);
+    padding: 20px;
+  }
+  
+  #circular-text span {
+    position: absolute;
+    transform-origin: top left;
+  }
+  
+  main .banner .right_banner h2 {
+    position: relative;
+    top: 25%;
+    width: 50%;
+    left: 30%;
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 2em;
+    text-transform: uppercase;
+  }
+  
+  main .banner .left_banner #circular-text {
+    right: 10%;
+    top: 62%;
   }
 
   /* TRASLADAR A UN CSS USERS */

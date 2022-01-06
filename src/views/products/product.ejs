@@ -4,49 +4,56 @@
     <%- include ('../partials/header') %>
     <main class="mainProduct">
       <section class="section2-main-product">
-        <div class="articleListProducts">
+
+        <div class="browse_products">
           <form class="buscadorForm" action="/products/search" method="GET">
              <input class="inputBuscar" type="text" name="keyword" id="keyword">
               <button class="btnBuscar" type="submit">BUSCAR</button>
           </form>
         </div>
-        <% for( let i = 0; i < products.length; i++ ) { %>
-        <article class="articleListProducts">
-          <div class="divListProducts">
-            <h3><strong><%= products[i].type.name %> </strong></h3>
-            <ul class="list-descrip">
-              <li>
-                <i><strong>ID: </strong></i><%= products[i].id %>
-              </li>
-              <li>
-                <i><strong>MARCA: </strong></i><%= products[i].brand.name %>
-              </li>
-              <li>
-                <i><strong>MODELO: </strong></i> <%= products[i].model %>
-              </li>
-              <li>
-                <i><strong>COLOR: </strong></i><%= products[i].color.name %>
-              </li>
-              <li>
-                <i><strong>DESCRIPCION: </strong></i><%= products[i].description
-                %>
-              </li>
-              <li>
-                <i><strong>PRECIO: </strong></i><%= products[i].price %>
-              </li>
-            </ul>
-          </div>
-          <div class="sale-listProduct">
-            <img
-              class="image-listProducts"
-              src="../img/<%= products[i].image %> "
-              alt="<%= products[i].image %>"
-            />
-            <!--<p class="estilo-comprar">VER</p>-->
-            <a href="./products/detail/<%= products[i].id %>" class="estilo-comprar">VER</a>
-          </div>
-        </article>
-        <% } %>
+
+
+        <div class="product_list_wrapper">
+          <% for( let i = 0; i < products.length; i++ ) { %>
+          <article class="articleListProducts">
+            <div class="divListProducts">
+              <h3><strong><%= products[i].type.name %> </strong></h3>
+              <ul class="list-descrip">
+                <li>
+                  <i><strong>ID: </strong></i><%= products[i].id %>
+                </li>
+                <li>
+                  <i><strong>MARCA: </strong></i><%= products[i].brand.name %>
+                </li>
+                <li>
+                  <i><strong>MODELO: </strong></i> <%= products[i].model %>
+                </li>
+                <li>
+                  <i><strong>COLOR: </strong></i><%= products[i].color.name %>
+                </li>
+                <li>
+                  <i><strong>DESCRIPCION: </strong></i><%= products[i].description
+                  %>
+                </li>
+                <li>
+                  <i><strong>PRECIO: </strong></i><%= products[i].price %>
+                </li>
+              </ul>
+            </div>
+            <div class="sale-listProduct">
+              <img
+                class="image-listProducts"
+                src="../img/<%= products[i].image %> "
+                alt="<%= products[i].image %>"
+              />
+              <!--<p class="estilo-comprar">VER</p>-->
+              <a href="./products/detail/<%= products[i].id %>" class="estilo-comprar">VER</a>
+            </div>
+          </article>
+          <% } %>
+        </div>
+
+
       </section>
     </main>
     <%- include('../partials/footer') %> <%- include('../partials/cursor') %>

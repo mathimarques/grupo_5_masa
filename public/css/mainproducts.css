@@ -55,6 +55,11 @@
   font-size: 2.5em;
 }
 
+.product_list_wrapper{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .section1-main-product {
   width: 100%;
   margin: 5% 0;
@@ -95,9 +100,10 @@
 .estilo-comprar {
   color: #ffffff;
   font-weight: bold;
+  font-size: 0.7em;
   border: 0 solid gray;
   border-radius: 50px;
-  padding: 15px 35px;
+  padding: 10px 20px;
   margin-left: 10%;
   background-color: #12261c;
   transition: 0.5s ease-in-out;
@@ -151,6 +157,7 @@
 .list-descrip {
   margin-top: 30px;
   width: 100%;
+  padding: 0;
 }
 .list-descrip li {
   list-style: none;
@@ -187,6 +194,13 @@
   margin-bottom: 0px !important;
 }
 
+.browse_products{
+  padding: 3%;
+  background: #ffffffb5;
+  border: 2px solid #ffffff38;
+  border-radius: 8px;
+  margin-bottom: 7%;
+}
 .articleListProducts {
   display: block;
   flex-wrap: nowrap;

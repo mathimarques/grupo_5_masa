@@ -1,4 +1,9 @@
 /* FOOTER */
+footer{
+  background-color: rgba(149,222,182);
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
 
 .login_footer {
     display: flex;
@@ -6,7 +11,7 @@
     margin-right: 5vw;
     justify-content: space-around;
     align-items: center;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
   }
   
   .login_bar {
@@ -24,4 +29,18 @@
   .login_social_media i {
     color: black;
     font-size: 1.4em;
+  }
+
+  .footer_links_wrapper{
+    display: flex;
+    justify-content: center;
+    
+  }
+  .footer_links{
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9em;  
+  }
+  .footer_links ul{
+    list-style: none;
   }
