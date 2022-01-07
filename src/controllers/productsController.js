@@ -28,17 +28,18 @@ const productsController = {
   // Buscar productos
   search: (req, res) => {
     db.Product.findAll({
-      where: {
-        [Op.or]: [
-          {description: { [Op.like]: "%" + req.query.keyword + "%" }},
-          {model: { [Op.like]: "%" + req.query.keyword + "%" }}
-        ]
-      },
       include: [
         { association: "type" },
         { association: "brand" },
         { association: "color" },
       ],
+      where: {
+        [Op.or]: [
+          {description: { [Op.like]: "%" + req.query.keyword + "%" }},
+          {model: { [Op.like]: "%" + req.query.keyword + "%" }},
+          // To Do: Agregar busquedas de otros parametros
+        ]
+      }
     })
       .then((products) => {
         res.render("./products/product", {
