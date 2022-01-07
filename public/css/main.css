@@ -13,10 +13,9 @@
   }
   .banner {
     display: flex;
+    flex-direction: column;
     height: 100%;
-    /* position: relative;
-    top: -122px;
-    left: 0; */
+
   }
 
   .background_image{
@@ -35,14 +34,16 @@
   }
 
 .left_banner {
-    width: 50%;
+    width: 100%;
     height: max-content;
     position: relative;
     top: 0;
     left: 0;
+    display: flex;
+    justify-content: center;
   }
   #circular-text {
-    position: absolute;
+    /* position: absolute; */
     right: 10%;
     top: 50%;
     background: #ff782ad4;
@@ -58,10 +59,11 @@
   }
   
   main .banner .right_banner h2 {
+    display: none;
     position: relative;
-    top: 25%;
-    width: 50%;
-    left: 30%;
+    top: 45%;
+    left: 65%;
+    width: 30%;
     font-family: "Oswald", sans-serif;
     font-weight: 700;
     font-size: 2em;

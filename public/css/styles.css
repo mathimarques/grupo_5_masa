@@ -71,6 +71,7 @@ body {
   .magen-precio-comprar {
     margin-top: 50px;
   }
+  
   /* nav bar*/
   nav {
     display: flex;
@@ -133,14 +134,19 @@ body {
     color: rgb(159, 206, 247);
 }*/
   /* main */
-  main .banner .left_banner h2 {
+  .left_banner{
+    width: 50%;
+  }
+
+  main .banner .right_banner h2 {
+    display: block;
     position: relative;
-    top: 0%;
+    top: 130px;
     width: 33%;
     right: 70%;
     font-family: "Oswald", sans-serif;
     font-weight: 700;
-    font-size: 4em;
+    font-size: 3em;
     line-height: 1.15;
     text-transform: uppercase;
 }
@@ -148,7 +154,8 @@ body {
     color: #95deb6;
   }
   main .banner .left_banner #circular-text {
-    left: 80%;
+    position: absolute;
+    left: 65%;
     top: 50px;
   }
 /* ARTICLES  */

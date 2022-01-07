@@ -29,7 +29,10 @@ const productsController = {
   search: (req, res) => {
     db.Product.findAll({
       where: {
-        description: { [Op.like]: "%" + req.query.keyword + "%" },
+        [Op.or]: [
+          {description: { [Op.like]: "%" + req.query.keyword + "%" }},
+          {model: { [Op.like]: "%" + req.query.keyword + "%" }}
+        ]
       },
       include: [
         { association: "type" },
