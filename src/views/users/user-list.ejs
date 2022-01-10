@@ -1,0 +1,49 @@
+<%- include ("../partials/head") %>
+    <!-- HEAD -->
+
+    <body>
+        <%- include ('../partials/header') %>
+
+
+            <main class="user_list_main">
+                <h3>Lista de usuarios</h3>
+                <div class="userList-wrapper">
+
+                    <table class="userList-container">
+                        <tr>
+                            <th>Email</th>
+                            <th>Full name</th>
+                            <th> </th>
+                        </tr>
+                        <% for(let i=0;i<users.length;i++){ %>
+                            <div class="userL">
+                                <tr>
+                                    <td>
+                                        <h4 class="sub subborder">
+                                            <%=users[i].email%>:
+                                        </h4>
+                                    </td>
+                                    <td>
+                                        <p class="sub subborder">
+                                            <%=users[i].first_name%>
+                                                <%=users[i].last_name%>
+                                        </p>
+                                    </td>
+                                    <td> <a class="sub" <%if(users[i].id!=1){%> href="/edit-user/<%=users[i].id%>" <%}%>
+                                                    >Edit</a></td>
+                                </tr>
+                            </div>
+                            <% } %>
+
+                    </table>
+
+                    <p class="p_without_margin">Cantidad de usuarios: <%= users.length%>
+                    </p>
+                </div>
+            </main>
+
+            <%- include ('../partials/footer') %>
+                <%- include ('../partials/cursor') %>
+    </body>
+
+    </html>

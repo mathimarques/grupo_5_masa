@@ -144,4 +144,7 @@ router.get("/profile/:id", authMiddleware, usersController.profile);
 router.get("/edit/:id", authMiddleware, usersController.edit);
 router.put("/edit/:id", authMiddleware, usersController.update);
 
+router.get("/admin", authMiddleware, usersController.admin);
+router.get("/user-list", authMiddleware, usersController.adminUserList);
+
 module.exports = router;

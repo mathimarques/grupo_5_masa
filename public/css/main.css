@@ -92,3 +92,88 @@
   width: 150px;
   height: auto;
 }
+
+
+.admin_wrapper{
+  background-color: rgb(200, 225, 250);
+  width: 60vw;
+  border-radius: 20px;
+  margin-top: 40px;
+}
+.admin_wrapper h2{
+  text-align: center;
+}
+
+.admin_container{
+  padding: 0 20px;
+}
+.admin_container li{
+  width: 120px;
+  /* border: 1px solid black; */
+  padding: 3px;
+  border-radius: 12px;
+  background-color: rgb(255, 255, 255);
+  margin: 5px 0;
+  cursor: pointer;
+  text-align: center;
+}
+
+.user_list_main{
+  justify-content: left;
+  align-items: left;
+}
+
+.userList-wrapper{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.userList-container{
+  margin: 30px 0 10px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center; 
+  border-collapse: collapse; 
+  width: max-content;
+  background-color: white;
+}
+
+.userList-container td, .userList-container th{
+  border: 1px solid #ddd;
+  padding-right: 5px;
+}
+
+.userList-container th{
+  background-color: #f0f08e;
+}
+.userList-container tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+
+.userL{
+  width: 750px;
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr;
+  /* margin-top: 1px; */
+  /* border: 1px solid black; */
+}
+
+.sub{
+  /* width: calc(100% / 3); */
+  width: 250px;
+}
+.subborder{
+  /* border-right: 1px solid black; */
+}
+
+.userL h4, p, a{
+  margin: 0;
+  
+}
+
+.p_without_margin{
+  margin-left: 30px;
+}

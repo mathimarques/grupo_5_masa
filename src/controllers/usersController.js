@@ -8,6 +8,7 @@ const { validationResult } = require("express-validator");
 
 // Requerimos modulo para encriptar password
 const bcrypt = require("bcryptjs");
+const session = require("express-session");
 
 // Generamos el controlador con sus métodos
 const usersController = {
@@ -149,6 +150,15 @@ const usersController = {
         res.send(err);
       });
   },
+  admin: (req,res)=>{
+    res.render('./users/adminUser', {userLogged: req.session.userToLog})
+  },
+  adminUserList: (req,res)=>{
+    db.User.findAll()
+    .then(users=>{
+      res.render('./users/user-list', {users: users});
+    })
+  }
 };
 
 module.exports = usersController;
