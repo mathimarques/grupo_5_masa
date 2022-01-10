@@ -3,46 +3,50 @@
 <body>
     <%- include ('../partials/header') %> 
     <main class="mainProduct">
-        <section class="section1-main-product">
-            <div class="button-arrows">
-                <i class="fas fa-angle-left arrow"></i><br>
-                <i class="fas fa-angle-right arrow"></i>
-            </div>
-            <div class="container-flex1">
-                <h1><%= product.brand.name %></h1>
-                <h3><%= product.model %></h3>
-                <h5><%= product.type.name %></h5>
-                <!-- <span>01/12</span> --><br>
-            </div>
+        <div class="product_detail_container">
+            <section class="section1-main-product">
+                <div class="button-arrows">
+                    <i class="fas fa-angle-left arrow"></i><br>
+                    <i class="fas fa-angle-right arrow"></i>
+                </div>
+                <div class="container-flex1">
+                    <h1><%= product.brand.name %></h1>
+                    <h3><%= product.model %></h3>
+                    <h5><%= product.type.name %></h5>
+                    <!-- <span>01/12</span> --><br>
+                </div>
             
-            <img class="estilo-imagen-product" src="/img/<%= product.image %>">
-        </section>
-        <section class="section2-main-product">
-                <h3><strong>Descripción /</strong> Opciones / videos</h3>
-                <p class="margen-superior"> <%= product.description %></p>
-                <ul class="list-descrip">
-                    <li>Cuerpo de aliso con acabado "gloss"</li>
-                    <li>1x Pastilla Humbucker Player Series, 2x Pastillas Player Series single-coil Stratocaster</li>
-                    <li>Perfil de mástil en "Modern C"</li>
-                    <li>Diapasón con radio 12"</li>
-                    <li>Trastes Medium Jumbo</li>
-                    <li>Puente Floyd Rose Double-Locking Tremolo System</li>
-                    <li>Diapasón de arce</li>
-                    <li>Acabado: Tidepool</li>
-                </ul>
-                          
-                <!--<p class="estilo-comprar">COMPRAR</p>-->
-                <form action="/products/edit/<%= product.id %> " method="get" >
-                    <div class="formularioDetalleProducto">
-                        <h4 class="estilo-precio">$<%= product.price %></h4>
-                        <a href="/productCart" class="estilo-comprar comprar">Comprar</a> 
-                         <!-- A continuacion SOLO se muestra si hay NO usuario logueado -->
-                         <% if (locals.userLogged) { %>
-                                <button class="estilo-comprar1">Editar Producto</button>
-                         <% } %>                
-                </form>
-            </div>
-        </section>
+                <div class="img_container_detail">
+                    <img class="estilo-imagen-product" src="/img/<%= product.image %>">
+                </div>
+            </section>
+            <section class="section2-main-product">
+                    <h3><strong>Descripción /</strong> Opciones / videos</h3>
+                    <p class="margen-superior"> <%= product.description %></p>
+                    <ul class="list-descrip">
+                        <li>Cuerpo de aliso con acabado "gloss"</li>
+                        <li>1x Pastilla Humbucker Player Series, 2x Pastillas Player Series single-coil Stratocaster</li>
+                        <li>Perfil de mástil en "Modern C"</li>
+                        <li>Diapasón con radio 12"</li>
+                        <li>Trastes Medium Jumbo</li>
+                        <li>Puente Floyd Rose Double-Locking Tremolo System</li>
+                        <li>Diapasón de arce</li>
+                        <li>Acabado: Tidepool</li>
+                    </ul>
+            
+                    <!--<p class="estilo-comprar">COMPRAR</p>-->
+                    <form action="/products/edit/<%= product.id %> " method="get" >
+                        <div class="formularioDetalleProducto">
+                            <h4 class="estilo-precio">$<%= product.price %></h4>
+                            <a href="/productCart" class="estilo-comprar comprar">Comprar</a>
+                             <!-- A continuacion SOLO se muestra si hay NO usuario logueado -->
+                             <% if (locals.userLogged) { %>
+                                    <button class="estilo-comprar1">Editar Producto</button>
+                             <% } %>
+                    </form>
+                </div>
+            </section>
+        </div>
     </main>
     <%- include('../partials/footer') %>
     <%- include('../partials/cursor') %> 
