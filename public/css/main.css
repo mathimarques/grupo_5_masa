@@ -43,9 +43,9 @@
     justify-content: center;
   }
   #circular-text {
-    /* position: absolute; */
-    right: 10%;
-    top: 50%;
+    position: relative;
+    left: 35%;
+    top: 50px;
     background: #ff782ad4;
     color: #272727;
     border-radius: 100%;

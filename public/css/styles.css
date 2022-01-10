@@ -143,8 +143,7 @@ body {
 
   main .banner .right_banner h2 {
     display: block;
-    position: relative;
-    top: 130px;
+    position: absolute;
     width: 33%;
     right: 70%;
     font-family: "Oswald", sans-serif;
@@ -207,7 +206,7 @@ body {
 }
 /* DETALLE DE PRODUCTO */
 .mainProduct {
-  padding-top: 10vh;
+  /* padding-top: 10vh; */
   display: flex;
 }
 .section1-main-product {

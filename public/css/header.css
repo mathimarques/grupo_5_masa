@@ -47,11 +47,16 @@ header {
     position: absolute;
     top: 0;
     left: 0;
-    padding: 0;
-    background-color: white;
+    padding: 20px 0;
+    background-color: #12261c;
     text-align: center;
     font-size: 2em;
     z-index: 0;
+  }
+
+  .mobile a{
+    color: white;
+    text-decoration: none;
   }
 
   .user_info_header{
