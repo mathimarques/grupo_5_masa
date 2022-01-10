@@ -54,7 +54,7 @@ const usersController = {
         });
       // SI HAY ERRORES MUESTRO LOS MENSAJES EN LA VISTA
     } else {
-      res.render("./users/login", { errors: errors.mapped(), old: req.body });
+      res.render("./users/login", { errors: errors.mapped(), old: req.body, userLogged: req.session.userToLog });
     }
   },
 

@@ -7,6 +7,9 @@
         <div class="diagonal"></div>
         <nav id="nav">
             <ul class="navbar">
+                <% if(locals.userLogged && userLogged.id_role==1) { %>
+                <li><a href="/admin">Admin</a></li>
+                <% } %> 
                 <li><a href="/products">Productos</a></li>
                 <li><a href="#">Nosotros</a></li>
                 <li><a href="#">Contacto</a></li>
