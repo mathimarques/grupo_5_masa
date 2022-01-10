@@ -194,6 +194,7 @@ body {
   align-items: center;
   /* width: 50%; */
 }
+
 .image-listProducts {
   width: 70%;
   height: 50%;
@@ -295,4 +296,23 @@ input {
   visibility: visible;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s
+}
+
+@media (max-width: 1010px){
+  .sale-listProduct {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .sale-listProduct a{
+    background: none;
+    color: #12261c;
+    margin-left: 0;
+    font-size: 1em;
+    /* position: relative;
+    bottom: 10px; */
+  }
 }
