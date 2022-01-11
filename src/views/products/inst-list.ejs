@@ -11,8 +11,9 @@
 
                     <table class="userList-container">
                         <tr>
-                            <th>Instrument</th>
-                            <th>Full name</th>
+                            <th>Id</th>
+                            <th>Tipo</th>
+                            <th>Marca</th>
                             <th> </th>
                         </tr>
                         <% for(let i=0;i<products.length;i++){ %>
@@ -25,12 +26,15 @@
                                     </td>
                                     <td>
                                         <p class="sub subborder">
-                                                <%=products[i].type%>
-                                                <%=products[i].brand%>
+                                                <%=products[i].type.name%>
                                         </p>
                                     </td>
-                                    <td> <a class="sub" <%if(products[i].id!=1){%> href="/users/edit/<%=products[i].id%>" <%}%>
-                                                    >Edit</a></td>
+                                    <td>
+                                        <p class="sub subborder">
+                                            <%=products[i].brand.name%>
+                                        </p>
+                                    </td>
+                                    <td> <a class="sub" href="../products/edit/">Edit</a></td>
                                 </tr>
                             </div>
                             <% } %>
@@ -42,7 +46,6 @@
                 </div>
             </main>
 
-            <%- include ('../partials/footer') %>
                 <%- include ('../partials/cursor') %>
     </body>
 

@@ -25,8 +25,7 @@
                                     </td>
                                     <td>
                                         <p class="sub subborder">
-                                            <%=users[i].first_name%>
-                                                <%=users[i].last_name%>
+                                            <%=users[i].name%>
                                         </p>
                                     </td>
                                     <td> <a class="sub" <%if(users[i].id!=1){%> href="/users/edit/<%=users[i].id%>" <%}%>
@@ -42,7 +41,6 @@
                 </div>
             </main>
 
-            <%- include ('../partials/footer') %>
                 <%- include ('../partials/cursor') %>
     </body>
 

@@ -156,7 +156,7 @@ const usersController = {
   adminUserList: (req,res)=>{
     db.User.findAll()
     .then(users=>{
-      res.render('./users/user-list', {users: users});
+      res.render('./users/user-list', {userLogged: req.session.userToLog, users: users});
     })
   }
 };
