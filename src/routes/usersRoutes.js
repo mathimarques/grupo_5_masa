@@ -149,6 +149,6 @@ router.get("/admin", authMiddleware, usersController.admin);
 router.get("/user-list", authMiddleware, usersController.adminUserList);
 
 // admin
-router.get("/inst-list", productsController.instrumentList);
+router.get("/inst-list", authMiddleware, productsController.instrumentList);
 
 module.exports = router;

@@ -1,14 +1,16 @@
 /*MAIN PRODUCT*/
 .mainProduct {
-  padding-top: 20vh;
+  padding-top: 10vh;
   margin-bottom: 10%;
 }
 .estilo-imagen-product {
   width: 20vw;
-  /* mix-blend-mode: multiply;
-  position: absolute;
-  top: 35%;
-  left: 0%; */
+}
+
+.products_h2{
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2em;
 }
 
 .container-flex1 {
