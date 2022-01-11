@@ -1,6 +1,7 @@
 // Requerimos modulos
 const express = require("express");
 const usersController = require("../controllers/usersController");
+const productsController = require("../controllers/productsController");
 const { body, check } = require("express-validator");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const path = require("path");
@@ -146,5 +147,8 @@ router.put("/edit/:id", authMiddleware, usersController.update);
 
 router.get("/admin", authMiddleware, usersController.admin);
 router.get("/user-list", authMiddleware, usersController.adminUserList);
+
+// admin
+router.get("/inst-list", productsController.instrumentList);
 
 module.exports = router;

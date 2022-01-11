@@ -93,12 +93,19 @@
   height: auto;
 }
 
+/* ADMIN  */
+.admin_main{
+  display: flex;
+  justify-content: center;
+  height: 440px;
+}
 
 .admin_wrapper{
-  background-color: rgb(200, 225, 250);
+  background-color: rgb(255, 255, 255);
   width: 60vw;
   border-radius: 20px;
-  margin-top: 40px;
+  margin: 40px 0;
+  padding: 30px 0;
 }
 .admin_wrapper h2{
   text-align: center;
@@ -108,7 +115,7 @@
   padding: 0 20px;
 }
 .admin_container li{
-  width: 120px;
+  width: 150px;
   /* border: 1px solid black; */
   padding: 3px;
   border-radius: 12px;

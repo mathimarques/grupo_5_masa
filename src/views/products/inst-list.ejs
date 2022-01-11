@@ -6,30 +6,30 @@
 
 
             <main class="user_list_main">
-                <h3>Lista de usuarios</h3>
+                <h3>Lista de instrumentos</h3>
                 <div class="userList-wrapper">
 
                     <table class="userList-container">
                         <tr>
-                            <th>Email</th>
+                            <th>Instrument</th>
                             <th>Full name</th>
                             <th> </th>
                         </tr>
-                        <% for(let i=0;i<users.length;i++){ %>
+                        <% for(let i=0;i<products.length;i++){ %>
                             <div class="userL">
                                 <tr>
                                     <td>
                                         <h4 class="sub subborder">
-                                            <%=users[i].email%>:
+                                            <%=products[i].id%>:
                                         </h4>
                                     </td>
                                     <td>
                                         <p class="sub subborder">
-                                            <%=users[i].first_name%>
-                                                <%=users[i].last_name%>
+                                                <%=products[i].type%>
+                                                <%=products[i].brand%>
                                         </p>
                                     </td>
-                                    <td> <a class="sub" <%if(users[i].id!=1){%> href="/users/edit/<%=users[i].id%>" <%}%>
+                                    <td> <a class="sub" <%if(products[i].id!=1){%> href="/users/edit/<%=products[i].id%>" <%}%>
                                                     >Edit</a></td>
                                 </tr>
                             </div>
@@ -37,7 +37,7 @@
 
                     </table>
 
-                    <p class="p_without_margin">Cantidad de usuarios: <%= users.length%>
+                    <p class="p_without_margin">Cantidad de instrumentos: <%= products.length%>
                     </p>
                 </div>
             </main>

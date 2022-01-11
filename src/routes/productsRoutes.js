@@ -140,4 +140,6 @@ router.get("/detail/:id", productsController.detailProduct);
 // Eliminar un producto
 router.delete("/delete/:id", authMiddleware, productsController.destroyProduct);
 
+
+
 module.exports = router;

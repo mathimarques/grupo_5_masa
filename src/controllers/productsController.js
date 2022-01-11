@@ -35,8 +35,8 @@ const productsController = {
       ],
       where: {
         [Op.or]: [
-          {description: { [Op.like]: "%" + req.query.keyword + "%" }},
-          {model: { [Op.like]: "%" + req.query.keyword + "%" }},
+          { description: { [Op.like]: "%" + req.query.keyword + "%" } },
+          { model: { [Op.like]: "%" + req.query.keyword + "%" } },
           // To Do: Agregar busquedas de otros parametros
         ]
       }
@@ -152,9 +152,9 @@ const productsController = {
 
     const id = req.params.id;
     const { model, id_type, price, id_brand, id_color, description } = req.body;
-  
+
     if (errors.isEmpty()) {
-       db.Product.update(
+      db.Product.update(
         {
           model,
           id_type,
@@ -232,6 +232,18 @@ const productsController = {
       .then(() => res.redirect("/products"))
       .catch((error) => res.send(error));
   },
+  instrumentList: (req, res) => {
+    db.Product.findAll({
+      include: [
+        { association: "type" },
+        { association: "brand" },
+        { association: "color" },
+      ]
+    })
+      .then(products => {
+        res.render('./products/inst-list', { userLogged: req.session.userToLog, products });
+      })
+  }
 };
 
 module.exports = productsController;
