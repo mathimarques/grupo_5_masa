@@ -18,6 +18,11 @@
           <form action="/users/login" method="POST" id="uFormulario">
             <div class="nombre_usuario_login">
               <label for="username">Nombre de usuario</label>
+
+              <div class="popup"> 
+                <span class="popuptext" id="loginPopup1">Completar nombre de usuario</span>
+              </div>
+
               <input class="login_input" type="text" name="username" id="username" 
                <% if(locals.errors){ %>
                 value="<%= locals.old && old.username %>"
@@ -27,6 +32,10 @@
               <%} %> 
             </div>
             <div class="password_login">
+              <div class="popup"> 
+                <span class="popuptext" id="loginPopup2">Completar password</span>
+              </div>
+
               <label for="password">Password</label>
               <input class="login_input" type="password" name="password" id="password"  />
               <% if(locals.errors && errors.password){%>
