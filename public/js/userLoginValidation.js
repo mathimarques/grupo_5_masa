@@ -6,16 +6,25 @@ window.onload = function () {
     let errores = document.querySelector('#errores');
 
     let usernamePopup = document.getElementById("loginPopup1");
+    let passwordPopup = document.getElementById("loginPopup2");
 
 
-    formulario.addEventListener('focusout', function () {
+    username.addEventListener('focusout', function () {
         if (username.value === '' || username.value == null) {
             usernamePopup.classList.add("show");
         }
         else{
             usernamePopup.classList.remove("show");
         }
-    })
+    });
+    password.addEventListener('focusout', function () {
+        if (password.value === '' || username.value == null) {
+            passwordPopup.classList.add("show");
+        }
+        else{
+            passwordPopup.classList.remove("show");
+        }
+    });
 
 
     formulario.addEventListener('submit', function (e) {
