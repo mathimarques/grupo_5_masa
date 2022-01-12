@@ -54,10 +54,16 @@ header {
     z-index: 0;
   }
 
-  .mobile a{
+  .mobile a {
     color: white;
     text-decoration: none;
-  }
+    font-size: 0.7em;
+}
+.mobile a:hover {
+  color: rgb(80, 252, 200);
+  text-decoration: none;
+  font-size: 0.7em;
+}
 
   .user_info_header{
     color: white;

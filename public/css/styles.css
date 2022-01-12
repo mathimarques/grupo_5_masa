@@ -144,7 +144,7 @@ body {
   main .banner .right_banner h2 {
     display: block;
     position: absolute;
-    width: 33%;
+    width: 23%;
     right: 70%;
     font-family: "Oswald", sans-serif;
     font-weight: 700;
@@ -240,8 +240,9 @@ body {
     width: 14vw;
   }
   .login_container {
-    margin-top: 10vh;
-  }
+    margin-top: 3%;
+    margin-bottom: 2%;
+}
   .sign_in_form {
     padding: 30px 40px;
   }

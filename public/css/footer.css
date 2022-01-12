@@ -1,7 +1,6 @@
 /* FOOTER */
 footer{
   bottom: 0;
-  background-color: rgba(149,222,182);
   padding-top: 10px;
   padding-bottom: 20px;
 }
@@ -45,3 +44,10 @@ footer{
   .footer_links ul{
     list-style: none;
   }
+
+  @media (max-width: 1010px){
+  .footer_links_wrapper {
+    display: block;
+    justify-content: center;
+}
+}
