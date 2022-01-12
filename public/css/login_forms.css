@@ -4,13 +4,13 @@
     flex-direction: column;
     align-items: center;
     padding-top: 30px;
-    min-height: 100vh;
   }
   
   .login_container {
     border: 1px solid #caccd2;
     border-radius: 20px;
-    margin-top: 20vh;
+    margin-top: 15%;
+    margin-bottom: 20%;
     width: auto;
     backdrop-filter: blur(4px);
     background: #bdc3c7; /* fallback for old browsers */
