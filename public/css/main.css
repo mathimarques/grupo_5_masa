@@ -9,7 +9,7 @@
   }
   /* BANNER */
   .main{
-    min-height: 69vh;
+    min-height: 64vh;
   }
   .banner {
     display: flex;
@@ -196,4 +196,10 @@
   width: 40px;
   
   margin-left: 3vw;
+}
+
+@media (max-width: 1280px){
+  #circular-text {
+    left: 30%;
+}
 }
