@@ -21,10 +21,10 @@ window.addEventListener('load', function(){
         console.log(validRegex.test(email.value));
         
         if(name.value === '' || name.value == null ){
-            messages.push('El nombre y apellido debe estar completo')
+            messages.push('Completar nombre y apellido')
         }
         if(username.value === '' || username.value == null ){
-            messages.push('El nombre de usuario debe estar completo')
+            messages.push('Completar nombre de usuario')
         }
         else if(username.value.length <= 6){
             messages.push('El nombre de usuario debe ser mayor a 6 letras')
