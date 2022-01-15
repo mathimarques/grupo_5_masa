@@ -2,7 +2,6 @@
 Grupo 5 Digital House
 
 
-
 #### Descripción: 
 Se brindará el servicio de venta online de instrumentos musicales. 
 
@@ -27,6 +26,13 @@ Target: Bandas, músicos, estudiantes y público en general
 - Santiago VB: 32 años. Productor musical y emprendedor online.
 - Santiago Vitalli: Diseñador, 35 años, entusiasmado con el resultado de este proyecto!
 
-### Tablero de trabajo  en Trello
+### Tablero de trabajo en Trello
 https://trello.com/b/xxYpakT9/proyecto-integrador
+
+### App WEB
+https://github.com/mathimarques/grupo_5_masa
+### Dashboard React
+https://github.com/santheartist/grupo_5_masa_react
+
+
 
